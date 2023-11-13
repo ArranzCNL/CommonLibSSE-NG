@@ -11,7 +11,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraPrimitive;
-		inline static auto           EXTRADATATYPE = ExtraDataType::kPrimitive;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kPrimitive;
 
 		~ExtraPrimitive() override;  // 00
 

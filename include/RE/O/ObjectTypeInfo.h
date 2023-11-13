@@ -139,8 +139,8 @@ namespace RE
 				}
 			}
 
-			UnlinkedNativeFunction*       GetUnlinkedFunctionIter();
-			const UnlinkedNativeFunction* GetUnlinkedFunctionIter() const;
+			UnlinkedNativeFunction*               GetUnlinkedFunctionIter();
+			const UnlinkedNativeFunction*         GetUnlinkedFunctionIter() const;
 
 			[[nodiscard]] constexpr std::uint32_t GetNumUserFlags() const noexcept { return userFlagCount; }
 			UserFlagInfo*                         GetUserFlagIter();
@@ -171,7 +171,7 @@ namespace RE
 			NamedStateInfo*                       GetNamedStateIter();
 			const NamedStateInfo*                 GetNamedStateIter() const;
 
-			std::uint32_t GetPropertyIndex(const BSFixedString& a_name) const;
+			std::uint32_t                         GetPropertyIndex(const BSFixedString& a_name) const;
 
 			// members
 			BSFixedString                   name;                               // 08

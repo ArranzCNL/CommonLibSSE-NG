@@ -36,11 +36,11 @@ namespace RE
 	static_assert(sizeof(AMMO_DATA) == 0x10);
 
 	class TESAmmo :
-		public TESBoundObject,       // 000
-		public TESFullName,          // 030
-		public TESModelTextureSwap,  // 040
-		public TESIcon,              // 078
-		public BGSMessageIcon,       // 088
+		public TESBoundObject,             // 000
+		public TESFullName,                // 030
+		public TESModelTextureSwap,        // 040
+		public TESIcon,                    // 078
+		public BGSMessageIcon,             // 088
 #ifndef ENABLE_SKYRIM_VR
 		public TESValueForm,               // 0A0
 		public TESWeightForm,              // 0B0

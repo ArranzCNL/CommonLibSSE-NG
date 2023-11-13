@@ -40,48 +40,43 @@ namespace RE
 	public:
 		static TESDataHandler* GetSingleton();
 
-		std::uint32_t LoadScripts();
-		TESForm*      LookupForm(FormID a_localFormID, std::string_view a_modName);
-		TESForm*      LookupFormRaw(FormID a_rawFormID, std::string_view a_modName);
+		bool                         AddFormToDataHandler(TESForm* a_form);
+		std::uint32_t                LoadScripts();
+		TESForm*                     LookupForm(FormID a_localFormID, std::string_view a_modName);
+		TESForm*                     LookupFormRaw(FormID a_rawFormID, std::string_view a_modName);
 		template <class T>
-		T* LookupForm(FormID a_localFormID, std::string_view a_modName);
+		T*                           LookupForm(FormID a_localFormID, std::string_view a_modName);
 		template <class T>
-		T*     LookupFormRaw(FormID a_rawFormID, std::string_view a_modName);
-		FormID LookupFormID(FormID a_localFormID, std::string_view a_modName);
-		FormID LookupFormIDRaw(FormID a_rawFormID, std::string_view a_modName);
-
-		const TESFile*              LookupModByName(std::string_view a_modName);
-		std::optional<std::uint8_t> GetModIndex(std::string_view a_modName);
-
-		const TESFile*              LookupLoadedModByName(std::string_view a_modName);
-		const TESFile*              LookupLoadedModByIndex(std::uint8_t a_index);
-		std::optional<std::uint8_t> GetLoadedModIndex(std::string_view a_modName);
-
+		T*                           LookupFormRaw(FormID a_rawFormID, std::string_view a_modName);
+		FormID                       LookupFormID(FormID a_localFormID, std::string_view a_modName);
+		FormID                       LookupFormIDRaw(FormID a_rawFormID, std::string_view a_modName);
+		const TESFile*               LookupModByName(std::string_view a_modName);
+		std::optional<std::uint8_t>  GetModIndex(std::string_view a_modName);
+		const TESFile*               LookupLoadedModByName(std::string_view a_modName);
+		const TESFile*               LookupLoadedModByIndex(std::uint8_t a_index);
+		std::optional<std::uint8_t>  GetLoadedModIndex(std::string_view a_modName);
 		const TESFile*               LookupLoadedLightModByName(std::string_view a_modName);
 		const TESFile*               LookupLoadedLightModByIndex(std::uint16_t a_index);
 		std::optional<std::uint16_t> GetLoadedLightModIndex(std::string_view a_modName);
-
-		bool IsGeneratedID(FormID a_formID);
-
-		BSTArray<TESForm*>& GetFormArray(FormType a_formType);
+		bool                         IsGeneratedID(FormID a_formID);
+		BSTArray<TESForm*>&          GetFormArray(FormType a_formType);
 		template <class T>
-		BSTArray<T*>& GetFormArray();
-
-		ObjectRefHandle CreateReferenceAtLocation(TESBoundObject* a_base, const NiPoint3& a_location, const NiPoint3& a_rotation, TESObjectCELL* a_targetCell, TESWorldSpace* a_selfWorldSpace, TESObjectREFR* a_alreadyCreatedRef, BGSPrimitive* a_primitive, const ObjectRefHandle& a_linkedRoomRefHandle, bool a_forcePersist, bool a_arg11);
+		BSTArray<T*>&                GetFormArray();
+		ObjectRefHandle              CreateReferenceAtLocation(TESBoundObject* a_base, const NiPoint3& a_location, const NiPoint3& a_rotation, TESObjectCELL* a_targetCell, TESWorldSpace* a_selfWorldSpace, TESObjectREFR* a_alreadyCreatedRef, BGSPrimitive* a_primitive, const ObjectRefHandle& a_linkedRoomRefHandle, bool a_forcePersist, bool a_arg11);
 
 		struct RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT \
-	bool masterSave;         \
-	bool blockSave;          \
-	bool saveLoadGame;       \
-	bool autoSaving;         \
-	bool exportingPlugin;    \
-	bool clearingData;       \
-	bool hasDesiredFiles;    \
-	bool checkingModels;     \
-	bool loadingFiles;       \
-	bool dontRemoveIDs;
+#define RUNTIME_DATA_CONTENT        \
+			bool masterSave;         \
+			bool blockSave;          \
+			bool saveLoadGame;       \
+			bool autoSaving;         \
+			bool exportingPlugin;    \
+			bool clearingData;       \
+			bool hasDesiredFiles;    \
+			bool checkingModels;     \
+			bool loadingFiles;       \
+			bool dontRemoveIDs;
 
 			RUNTIME_DATA_CONTENT
 		};
@@ -183,13 +178,13 @@ namespace RE
 		TESRegionDataManager*             regionDataManager;                              // DB0
 		InventoryChanges*                 merchantInventory;                              // DB8
 #elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
-		std::uint32_t         loadedModCount;     // D70
-		std::uint32_t         pad14;              // D74
-		TESFile*              loadedMods[0xFF];   // D78
+		std::uint32_t                     loadedModCount;                                 // D70
+		std::uint32_t                     pad14;                                          // D74
+		TESFile*                          loadedMods[0xFF];                               // D78
 		RUNTIME_DATA_CONTENT
-		std::uint8_t          pad157B[5];         // 157B
-		TESRegionDataManager* regionDataManager;  // 1580
-		InventoryChanges*     merchantInventory;  // 1588
+		std::uint8_t                      pad157B[5];                                     // 157B
+		TESRegionDataManager*             regionDataManager;                              // 1580
+		InventoryChanges*                 merchantInventory;                              // 1588
 #endif
 	};
 

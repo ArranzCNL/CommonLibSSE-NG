@@ -11,7 +11,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraEnableStateChildren;
-		inline static auto           EXTRADATATYPE = ExtraDataType::kEnableStateChildren;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kEnableStateChildren;
 
 		~ExtraEnableStateChildren() override;  // 00
 

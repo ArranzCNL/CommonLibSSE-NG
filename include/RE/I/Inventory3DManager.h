@@ -44,16 +44,16 @@ namespace RE
 
 		struct RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT                                                                                                            \
-	BSTSmallArray<LoadedInventoryModel, 7>        loadedModels; /* 058, 060 */                                                          \
-	std::uint32_t                                 unk148;       /* 148, 150 */                                                          \
-	float                                         zoomProgress; /* 14C, 154 - 1 if zoomed in, 0 if not, in-between during transition */ \
-	BSTSmartPointer<NewInventoryMenuItemLoadTask> loadTask;     /* 150, 158 */                                                          \
-	std::uint8_t                                  unk158;       /* 158, 160 */                                                          \
-	std::uint8_t                                  unk159;       /* 159, 161 */                                                          \
-	std::uint8_t                                  unk15A;       /* 15A, 162 */                                                          \
-	std::uint8_t                                  pad15B;       /* 15B, 163 */                                                          \
-	std::uint32_t                                 pad15C;       /* 15C, 164 */
+#define RUNTIME_DATA_CONTENT                                                                                                                   \
+			BSTSmallArray<LoadedInventoryModel, 7>        loadedModels; /* 058, 060 */                                                          \
+			std::uint32_t                                 unk148;       /* 148, 150 */                                                          \
+			float                                         zoomProgress; /* 14C, 154 - 1 if zoomed in, 0 if not, in-between during transition */ \
+			BSTSmartPointer<NewInventoryMenuItemLoadTask> loadTask;     /* 150, 158 */                                                          \
+			std::uint8_t                                  unk158;       /* 158, 160 */                                                          \
+			std::uint8_t                                  unk159;       /* 159, 161 */                                                          \
+			std::uint8_t                                  unk15A;       /* 15A, 162 */                                                          \
+			std::uint8_t                                  pad15B;       /* 15B, 163 */                                                          \
+			std::uint32_t                                 pad15C;       /* 15C, 164 */
 
 			RUNTIME_DATA_CONTENT
 		};
@@ -70,15 +70,15 @@ namespace RE
 		}
 
 		// members
-		std::uint8_t                                  unk011;         // 011
-		std::uint16_t                                 unk012;         // 012
-		NiPoint3                                      itemPosCopy;    // 014
-		NiPoint3                                      itemPos;        // 020
-		float                                         itemScaleCopy;  // 02C
-		float                                         itemScale;      // 030
-		std::uint32_t                                 unk034;         // 034
-		TESObjectREFR*                                tempRef;        // 038
-		ExtraDataList                                 originalExtra;  // 040
+		std::uint8_t   unk011;         // 011
+		std::uint16_t  unk012;         // 012
+		NiPoint3       itemPosCopy;    // 014
+		NiPoint3       itemPos;        // 020
+		float          itemScaleCopy;  // 02C
+		float          itemScale;      // 030
+		std::uint32_t  unk034;         // 034
+		TESObjectREFR* tempRef;        // 038
+		ExtraDataList  originalExtra;  // 040
 
 #ifndef ENABLE_SKYRIM_AE
 		RUNTIME_DATA_CONTENT

@@ -8,14 +8,14 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_BSTriShape;
-		inline static auto           Ni_RTTI = NiRTTI_BSTriShape;
+		inline static constexpr auto Ni_RTTI = NiRTTI_BSTriShape;
 
 		struct TRISHAPE_RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT             \
-	std::uint16_t triangleCount; /* 0 */ \
-	std::uint16_t vertexCount;   /* 2 */ \
-	std::uint32_t pad15C;        /* 3 */
+#define RUNTIME_DATA_CONTENT                    \
+			std::uint16_t triangleCount; /* 0 */ \
+			std::uint16_t vertexCount;   /* 2 */ \
+			std::uint32_t pad15C;        /* 3 */
 
 			RUNTIME_DATA_CONTENT
 		};
@@ -35,17 +35,17 @@ namespace RE
 
 		[[nodiscard]] inline TRISHAPE_RUNTIME_DATA& GetTrishapeRuntimeData() noexcept
 		{
-			return REL::RelocateMember<TRISHAPE_RUNTIME_DATA>(this, 0x158, 0x1A0);
+			return REL::RelocateMember<TRISHAPE_RUNTIME_DATA>(this, 0x158, 0x198);
 		}
 
 		[[nodiscard]] inline const TRISHAPE_RUNTIME_DATA& GetTrishapeRuntimeData() const noexcept
 		{
-			return REL::RelocateMember<TRISHAPE_RUNTIME_DATA>(this, 0x158, 0x1A0);
+			return REL::RelocateMember<TRISHAPE_RUNTIME_DATA>(this, 0x158, 0x198);
 		}
 
 		// members
 #ifndef SKYRIM_CROSS_VR
-		RUNTIME_DATA_CONTENT  // 158, 1A0
+		RUNTIME_DATA_CONTENT  // 158, 198
 #endif
 	};
 #ifndef ENABLE_SKYRIM_VR

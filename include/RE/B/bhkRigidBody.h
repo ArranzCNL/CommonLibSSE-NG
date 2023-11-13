@@ -2,6 +2,8 @@
 
 #include "RE/B/BSTArray.h"
 #include "RE/B/bhkEntity.h"
+#include "RE/H/hkQuaternion.h"
+#include "RE/H/hkVector4.h"
 
 namespace RE
 {
@@ -14,7 +16,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_bhkRigidBody;
-		inline static auto           Ni_RTTI = NiRTTI_bhkRigidBody;
+		inline static constexpr auto Ni_RTTI = NiRTTI_bhkRigidBody;
 
 		~bhkRigidBody() override;  // 00
 
@@ -58,4 +60,15 @@ namespace RE
 		BSTArray<void*> unk28;  // 28 - array of smart ptrs to bhkConstraints
 	};
 	static_assert(sizeof(bhkRigidBody) == 0x40);
+
+	class bhkRigidBodyT : bhkRigidBody
+	{
+	public:
+		inline static constexpr auto RTTI = RTTI_bhkRigidBodyT;
+		inline static constexpr auto Ni_RTTI = NiRTTI_bhkRigidBodyT;
+
+		hkQuaternion rotation;     // 40
+		hkVector4    translation;  // 50
+	};
+	static_assert(sizeof(bhkRigidBodyT) == 0x60);
 }

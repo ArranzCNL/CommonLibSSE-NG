@@ -29,9 +29,9 @@ namespace RE
 
 		struct RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT       \
-	ImageData background; /* 00 */ \
-	ImageData details;    /* 18 */
+#define RUNTIME_DATA_CONTENT              \
+			ImageData background; /* 00 */ \
+			ImageData details;    /* 18 */
 
 			RUNTIME_DATA_CONTENT
 		};

@@ -38,14 +38,14 @@ namespace RE
 
 		struct RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT                                                                 \
-	BSTArray<HUDObject*> objects; /* 00 */                                                   \
-	ActorValueMeter*     health;  /* 18 */                                                   \
-	ActorValueMeter*     stamina; /* 20 */                                                   \
-	ActorValueMeter*     magicka; /* 28 */                                                   \
-	ShoutMeter*          shout;   /* 30 */                                                   \
-	GFxValue             root;    /* 38 - kDisplayObject - "_level0.HUDMovieBaseInstance" */ \
-	std::uint64_t        unk90;   /* 50 */
+#define RUNTIME_DATA_CONTENT                                                                        \
+			BSTArray<HUDObject*> objects; /* 00 */                                                   \
+			ActorValueMeter*     health;  /* 18 */                                                   \
+			ActorValueMeter*     stamina; /* 20 */                                                   \
+			ActorValueMeter*     magicka; /* 28 */                                                   \
+			ShoutMeter*          shout;   /* 30 */                                                   \
+			GFxValue             root;    /* 38 - kDisplayObject - "_level0.HUDMovieBaseInstance" */ \
+			std::uint64_t        unk90;   /* 50 */
 
 			RUNTIME_DATA_CONTENT
 		};

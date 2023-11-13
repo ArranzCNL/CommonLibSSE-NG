@@ -112,8 +112,9 @@ namespace RE
 			// add
 			virtual void Visit(GFxMovieDef* a_movieDef, GFxResource* a_resource, GFxResourceID a_id, const char* a_exportName) = 0;  // 01
 		};
+#ifndef __INTELLISENSE__
 		static_assert(sizeof(ResourceVisitor) == 0x8);
-
+#endif
 		// add
 		[[nodiscard]] virtual std::uint32_t          GetVersion() const = 0;                                                                                         // 04
 		[[nodiscard]] virtual std::uint32_t          GetLoadingFrame() const = 0;                                                                                    // 05
@@ -134,13 +135,15 @@ namespace RE
 		[[nodiscard]] virtual GFxResource*           GetMovieDataResource() const = 0;                                                                               // 14
 		[[nodiscard]] virtual const GFxExporterInfo* GetExporterInfo() const = 0;                                                                                    // 15
 		virtual MemoryContext*                       CreateMemoryContext(const char* a_heapName, const MemoryParams& a_memParams, bool a_debugHeap) = 0;             // 16
-		virtual GFxMovieView*                        CreateInstance(MemoryContext* a_memContext, bool a_initFirstFrame = true) = 0;                                  // 17
-		virtual GFxMovieView*                        CreateInstance(const MemoryParams& a_memParams, bool a_initFirstFrame = true) = 0;                              // 18
+		virtual GFxMovieView*                        CreateInstance(const MemoryParams& a_memParams, bool a_initFirstFrame = true) = 0;                              // 17
+		virtual GFxMovieView*                        CreateInstance(MemoryContext* a_memContext, bool a_initFirstFrame = true) = 0;                                  // 18
 		virtual void                                 VisitImportedMovies(ImportVisitor* a_visitor) = 0;                                                              // 19
 		virtual void                                 VisitResources(ResourceVisitor* a_visitor, VisitResourceMask a_visitMask = VisitResourceMask::kAllImages) = 0;  // 1A
 		virtual GFxResource*                         GetResource(const char* a_exportName) const = 0;                                                                // 1B
 
 		GFxMovieView* CreateInstance(bool a_initFirstFrame = true, UPInt a_memoryArena = 0);
 	};
+#ifndef __INTELLISENSE__
 	static_assert(sizeof(GFxMovieDef) == 0x20);
+#endif
 }

@@ -105,5 +105,7 @@ namespace RE
 		std::uint64_t unk100;    // 0D0
 		std::uint64_t unk118;    // 0D0
 	};
+#ifndef __INTELLISENSE__
 	static_assert(sizeof(GFxASCharacter) == 0x110);
+#endif
 }

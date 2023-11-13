@@ -29,12 +29,12 @@ namespace RE
 
 		struct RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT                           \
-	GFxValue              root;   /* 00 - "Menu_mc" */ \
-	volatile std::int32_t unk60;  /* 18 */             \
-	bool                  fadeIn; /* 1C */             \
-	std::uint8_t          pad65;  /* 1D */             \
-	std::uint16_t         pad66;  /* 1E */
+#define RUNTIME_DATA_CONTENT                                  \
+			GFxValue              root;   /* 00 - "Menu_mc" */ \
+			volatile std::int32_t unk60;  /* 18 */             \
+			bool                  fadeIn; /* 1C */             \
+			std::uint8_t          pad65;  /* 1D */             \
+			std::uint16_t         pad66;  /* 1E */
 
 			RUNTIME_DATA_CONTENT
 		};

@@ -25,7 +25,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraWaterData;
-		inline static auto           EXTRADATATYPE = ExtraDataType::kWaterData;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kWaterData;
 
 		~ExtraWaterData() override;  // 00
 

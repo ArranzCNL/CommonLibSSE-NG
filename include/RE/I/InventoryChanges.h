@@ -15,6 +15,32 @@ namespace RE
 	class InventoryChanges
 	{
 	public:
+		struct ARMOR_SLOTS
+		{
+		public:
+			enum class ArmorSlot : std::uint32_t
+			{
+				kHead = 30,
+				kHair = 31,
+				kBody = 32,
+				kHands = 33,
+				kForearms = 34,
+				kAmulet = 35,
+				kRing = 36,
+				kFeet = 37,
+				kCalves = 38,
+				kShield = 39,
+				kTail = 40,
+				kLongHair = 41,
+				kCirclet = 42,
+				kEars = 43,
+				kDecapitateHead = 50,
+				kDecapitate = 51,
+				kFX01 = 61
+			};
+		};
+		using ArmorSlot = ARMOR_SLOTS::ArmorSlot;
+
 		class IItemChangeVisitor
 		{
 		public:
@@ -39,7 +65,8 @@ namespace RE
 		~InventoryChanges();
 
 		void           AddEntryData(InventoryEntryData* a_entry);
-		TESObjectARMO* GetArmorInSlot(std::int32_t a_slot);
+		TESObjectARMO* GetArmorInSlot(ArmorSlot a_slot);
+		float          GetInventoryWeight();
 		std::uint16_t  GetNextUniqueID();
 		std::uint32_t  GetWornMask();
 		void           InitFromContainerExtra();
@@ -47,6 +74,7 @@ namespace RE
 		void           InitOutfitItems(BGSOutfit* a_outfit, std::uint16_t a_npcLevel);
 		void           InitScripts();
 		void           RemoveFavorite(InventoryEntryData* a_entry, ExtraDataList* a_itemList);
+		void           RemoveAllItems(TESObjectREFR* a_ref, TESObjectREFR* a_moveToRef, bool a_arg4, bool a_keepOwnership, bool a_arg6);
 		void           SendContainerChangedEvent(ExtraDataList* a_itemExtraList, TESObjectREFR* a_fromRefr, TESForm* a_item, std::int32_t a_count);
 		void           SetFavorite(InventoryEntryData* a_entry, ExtraDataList* a_itemList);
 		void           SetUniqueID(ExtraDataList* a_itemList, TESForm* a_oldForm, TESForm* a_newForm);

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "SKSE/Impl/PCH.h"
+#include "SKSE/Impl/PrecompiledHeader.h"
 
 #include "SKSE/API.h"
 #include "SKSE/Events.h"

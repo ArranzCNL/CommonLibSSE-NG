@@ -33,5 +33,5 @@ namespace RE
 		hkRefPtr<hkReferencedObject>     aiControlDriverInfo;           // 90
 		hkRefPtr<hkbCharacterStringData> stringData;                    // 98
 	};
-	static_assert(sizeof(hkbCharacterData) == 0xA0);  // B0?
+	static_assert(sizeof(hkbCharacterData) == 0xA0);
 }

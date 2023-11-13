@@ -10,7 +10,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraForcedLandingMarker;
-		inline static auto           EXTRADATATYPE = ExtraDataType::kForcedLandingMarker;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kForcedLandingMarker;
 
 		~ExtraForcedLandingMarker() override;  // 00
 

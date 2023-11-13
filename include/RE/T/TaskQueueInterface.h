@@ -26,5 +26,5 @@ namespace RE
 		void QueueActorDisarm(ActorHandle& a_target, ActorHandle& a_caster);                                             // 91
 		void QueueRemoveSpell(ActorHandle& a_actor, SpellItem* a_spellItem);                                             // 93
 	};
-	//static_assert(sizeof(TaskQueueInterface) == 0x);
+	static_assert(sizeof(TaskQueueInterface) == 0x1);
 }

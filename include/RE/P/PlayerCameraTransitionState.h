@@ -1,17 +1,11 @@
 #pragma once
 
-#include "RE/B/BSFixedString.h"
-#include "RE/N/NiPoint2.h"
-#include "RE/N/NiPoint3.h"
-#include "RE/N/NiQuaternion.h"
-#include "RE/P/PlayerInputHandler.h"
 #include "RE/T/TESCameraState.h"
 
 namespace RE
 {
-	class NiNode;
-
-	class PlayerCameraTransitionState : public TESCameraState
+	class PlayerCameraTransitionState :
+		public TESCameraState
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_PlayerCameraTransitionState;
@@ -21,9 +15,13 @@ namespace RE
 
 		// override (TESCameraState)
 		void Begin() override;                                               // 01
+		void End() override;                                                 // 02
 		void Update(BSTSmartPointer<TESCameraState>& a_nextState) override;  // 03
 		void GetRotation(NiQuaternion& a_rotation) override;                 // 04
 		void GetTranslation(NiPoint3& a_translation) override;               // 05
+		void SaveGame(BGSSaveFormBuffer* a_buf) override;                    // 06
+		void LoadGame(BGSLoadFormBuffer* a_buf) override;                    // 07
+		void Revert(BGSLoadFormBuffer* a_buf) override;                      // 08
 
 		// members
 		std::uint64_t   unk20;           // 20

@@ -36,10 +36,10 @@ namespace RE
 		{
 			using func_t = decltype(&TESActionData::Ctor);
 			REL::Relocation<func_t> func{ RELOCATION_ID(15916, 41558) };
-			TESActionData*          tesActionData = func(this);
+			TESActionData* tesActionData = func(this);
 			stl::emplace_vtable<TESActionData>(tesActionData);
 			return tesActionData;
 		}
 	};
-	static_assert(sizeof(TESActionData) == 0x60);
+	static_assert(sizeof(TESActionData) == 0x90);
 }

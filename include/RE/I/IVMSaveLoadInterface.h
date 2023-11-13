@@ -1,9 +1,11 @@
 #pragma once
+
 #include "RE/B/BSStorage.h"
 #include "RE/C/CodeTasklet.h"
 #include "RE/L/LoadStorageWrapper.h"
 #include "RE/O/Object.h"
 #include "RE/S/SaveFileHandleReaderWriter.h"
+
 namespace RE
 {
 	namespace BSScript

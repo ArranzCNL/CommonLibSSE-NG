@@ -10,16 +10,16 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_NiLight;
-		inline static auto           Ni_RTTI = NiRTTI_NiLight;
+		inline static constexpr auto Ni_RTTI = NiRTTI_NiLight;
 
 		struct LIGHT_RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT         \
-	NiColor       ambient; /* 00 */  \
-	NiColor       diffuse; /* 0C */  \
-	NiPoint3      radius;  /* 018 */ \
-	float         fade;    /* 024 */ \
-	std::uint32_t unk138;  /* 028 */
+#define RUNTIME_DATA_CONTENT                \
+			NiColor       ambient; /* 00 */  \
+			NiColor       diffuse; /* 0C */  \
+			NiPoint3      radius;  /* 018 */ \
+			float         fade;    /* 024 */ \
+			std::uint32_t unk138;  /* 028 */
 
 			RUNTIME_DATA_CONTENT
 		};

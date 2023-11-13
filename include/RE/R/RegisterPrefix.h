@@ -53,6 +53,5 @@ namespace RE
 			std::uint64_t unkE8;  // E8
 		};
 		static_assert(sizeof(Traverser) == 0xF0);
-		//}
 	}
 }

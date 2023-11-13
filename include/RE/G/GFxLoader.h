@@ -59,5 +59,7 @@ namespace RE
 		std::uint32_t        defLoadFlags;       // 18
 		std::uint32_t        pad1C;              // 1C
 	};
+#ifndef __INTELLISENSE__
 	static_assert(sizeof(GFxLoader) == 0x20);
+#endif
 }

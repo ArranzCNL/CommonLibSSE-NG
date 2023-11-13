@@ -37,7 +37,7 @@ namespace RE
 		// members
 		bool          swapBytes;  // 0C
 		bool          unk0D;      // 0D
-		uint16_t      unk0E;      // 0E
+		std::uint16_t unk0E;      // 0E
 		UnkData*      unk10;      // 10
 		std::uint64_t unk18;      // 18
 	};

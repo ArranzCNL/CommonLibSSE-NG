@@ -13,19 +13,19 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_NiObjectNET;
-		inline static auto           Ni_RTTI = NiRTTI_NiObjectNET;
+		inline static constexpr auto Ni_RTTI = NiRTTI_NiObjectNET;
 
 		~NiObjectNET() override;  // 00
 
 		// override (NiObject)
-		const NiRTTI* GetRTTI() const override;                            // 02
-		void          LoadBinary(NiStream& a_stream) override;             // 18
-		void          LinkObject(NiStream& a_stream) override;             // 19
-		bool          RegisterStreamables(NiStream& a_stream) override;    // 1A
-		void          SaveBinary(NiStream& a_stream) override;             // 1B
-		bool          IsEqual(NiObject* a_object) override;                // 1C
-		void          ProcessClone(NiCloningProcess& a_cloning) override;  // 1D
-		void          PostLinkObject(NiStream& a_stream) override;         // 1E
+		const NiRTTI*                   GetRTTI() const override;                            // 02
+		void                            LoadBinary(NiStream& a_stream) override;             // 18
+		void                            LinkObject(NiStream& a_stream) override;             // 19
+		bool                            RegisterStreamables(NiStream& a_stream) override;    // 1A
+		void                            SaveBinary(NiStream& a_stream) override;             // 1B
+		bool                            IsEqual(NiObject* a_object) override;                // 1C
+		void                            ProcessClone(NiCloningProcess& a_cloning) override;  // 1D
+		void                            PostLinkObject(NiStream& a_stream) override;         // 1E
 
 		bool                            AddExtraData(const BSFixedString& a_key, NiExtraData* a_extra);
 		bool                            AddExtraData(NiExtraData* a_extra);
@@ -34,20 +34,20 @@ namespace RE
 		NiTimeController*               GetController(const NiRTTI* a_rtti) const;
 
 		template <class T>
-		[[nodiscard]] T* GetController() const;
+		[[nodiscard]] T*                GetController() const;
 
-		[[nodiscard]] NiExtraData* GetExtraData(const BSFixedString& a_key) const;
+		[[nodiscard]] NiExtraData*      GetExtraData(const BSFixedString& a_key) const;
 		template <class T>
-		[[nodiscard]] T* GetExtraData(const BSFixedString& a_key) const;
+		[[nodiscard]] T*                GetExtraData(const BSFixedString& a_key) const;
 
-		[[nodiscard]] NiExtraData*  GetExtraDataAt(std::uint16_t a_extraDataIndex) const;
-		[[nodiscard]] std::uint16_t GetExtraDataSize() const;
-		[[nodiscard]] bool          HasExtraData(const BSFixedString& a_key) const;
-		bool                        InsertExtraData(NiExtraData* a_extra);
-		void                        RemoveAllExtraData();
-		bool                        RemoveExtraData(const BSFixedString& a_key);
-		bool                        RemoveExtraDataAt(std::uint16_t a_extraDataIndex);
-		bool                        SetExtraDataSize(std::uint16_t a_size);
+		[[nodiscard]] NiExtraData*      GetExtraDataAt(std::uint16_t a_extraDataIndex) const;
+		[[nodiscard]] std::uint16_t     GetExtraDataSize() const;
+		[[nodiscard]] bool              HasExtraData(const BSFixedString& a_key) const;
+		bool                            InsertExtraData(NiExtraData* a_extra);
+		void                            RemoveAllExtraData();
+		bool                            RemoveExtraData(const BSFixedString& a_key);
+		bool                            RemoveExtraDataAt(std::uint16_t a_extraDataIndex);
+		bool                            SetExtraDataSize(std::uint16_t a_size);
 
 		// members
 		BSFixedString               name;           // 10

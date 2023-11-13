@@ -20,7 +20,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraSayTopicInfoOnceADay;
-		inline static auto           EXTRADATATYPE = ExtraDataType::kSayTopicInfoOnceADay;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kSayTopicInfoOnceADay;
 
 		~ExtraSayTopicInfoOnceADay() override;  // 00
 

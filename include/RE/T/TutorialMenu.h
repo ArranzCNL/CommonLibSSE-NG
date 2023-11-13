@@ -5,7 +5,7 @@
 
 namespace RE
 {
-	// menuDepth = 10
+	// menuDepth = 10 
 	// flags = kPausesGame | kModal | kUpdateUsesCursor
 	// context = kMenuMode
 	class TutorialMenu : public IMenu

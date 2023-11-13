@@ -42,7 +42,7 @@ namespace RE
 #define GHEAP_AUTO_ALLOC(a_addr, a_count) RE::GMemory::AllocAutoHeap((a_addr), (a_count))
 #define GHEAP_FREE(a_heap, a_ptr) RE::GMemory::FreeInHeap((a_heap), (a_ptr))
 
-#define GFC_MEMORY_REDEFINE_NEW_IMPL(a_className, a_check_delete, a_statType)                                   \
+#define GFC_MEMORY_REDEFINE_NEW_IMPL(a_className, a_check_delete, a_statType)                                  \
 	void* operator new(std::size_t a_count) { return GALLOC(a_count); }                                         \
 	void* operator new[](std::size_t a_count) { return GALLOC(a_count); }                                       \
 	void* operator new([[maybe_unused]] std::size_t a_count, void* a_plcmnt) { return a_plcmnt; }               \

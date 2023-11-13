@@ -34,40 +34,40 @@ namespace RE
 
 		struct RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT                            \
-	void*                 lockpickShiv;        /* 00 */ \
-	void*                 lockpick;            /* 08 */ \
-	NiMatrix3             pickRotation;        /* 10 */ \
-	NiPoint3              lockRotCenter;       /* 34 */ \
-	NiControllerManager*  lockController;      /* 40 */ \
-	NiControllerSequence* lockIntro;           /* 48 */ \
-	NiControllerSequence* lockRotate;          /* 50 */ \
-	NiControllerManager*  pickController;      /* 58 */ \
-	NiControllerSequence* pickIntro;           /* 60 */ \
-	NiControllerSequence* pickDamage;          /* 68 */ \
-	NiControllerSequence* pickBreak;           /* 70 */ \
-	NiControllerSequence* currentPickSequence; /* 78 */ \
-	float                 pickKeyTime;         /* 80 */ \
-	std::uint32_t         unk0CC;              /* 84 */ \
-	NiControllerSequence* currentLockSequence; /* 88 */ \
-	float                 lockKeyTime;         /* 90 */ \
-	float                 pickAngle;           /* 94 */ \
-	float                 lockAngle;           /* 98 */ \
-	float                 damagePickAngle;     /* 9C */ \
-	float                 pickBreakSeconds;    /* A0 */ \
-	BSSoundHandle         pickTensionSound;    /* A4 */ \
-	float                 unk0F8;              /* B0 */ \
-	float                 sweetSpotAngle;      /* B4 */ \
-	float                 partialPickAngle;    /* B8 */ \
-	std::uint32_t         numBrokenPicks;      /* BC */ \
-	bool                  init3DElements;      /* C0 */ \
-    bool                  animating;           /* C1 */ \
-	bool                  unk10A;              /* C2 */ \
-	bool                  menuCleared;         /* C3 */ \
-	bool                  animationFinished;   /* C4 */ \
-	bool                  isLockpickingCrime;  /* C5 */ \
-	std::uint8_t          unk10E;              /* C6 */ \
-	std::uint8_t          pad10F;              /* C7 */
+#define RUNTIME_DATA_CONTENT                                   \
+			void*                 lockpickShiv;        /* 00 */ \
+			void*                 lockpick;            /* 08 */ \
+			NiMatrix3             pickRotation;        /* 10 */ \
+			NiPoint3              lockRotCenter;       /* 34 */ \
+			NiControllerManager*  lockController;      /* 40 */ \
+			NiControllerSequence* lockIntro;           /* 48 */ \
+			NiControllerSequence* lockRotate;          /* 50 */ \
+			NiControllerManager*  pickController;      /* 58 */ \
+			NiControllerSequence* pickIntro;           /* 60 */ \
+			NiControllerSequence* pickDamage;          /* 68 */ \
+			NiControllerSequence* pickBreak;           /* 70 */ \
+			NiControllerSequence* currentPickSequence; /* 78 */ \
+			float                 pickKeyTime;         /* 80 */ \
+			std::uint32_t         unk0CC;              /* 84 */ \
+			NiControllerSequence* currentLockSequence; /* 88 */ \
+			float                 lockKeyTime;         /* 90 */ \
+			float                 pickAngle;           /* 94 */ \
+			float                 lockAngle;           /* 98 */ \
+			float                 damagePickAngle;     /* 9C */ \
+			float                 pickBreakSeconds;    /* A0 */ \
+			BSSoundHandle         pickTensionSound;    /* A4 */ \
+			float                 unk0F8;              /* B0 */ \
+			float                 sweetSpotAngle;      /* B4 */ \
+			float                 partialPickAngle;    /* B8 */ \
+			std::uint32_t         numBrokenPicks;      /* BC */ \
+			bool                  init3DElements;      /* C0 */ \
+			bool                  animating;           /* C1 */ \
+			bool                  unk10A;              /* C2 */ \
+			bool                  menuCleared;         /* C3 */ \
+			bool                  animationFinished;   /* C4 */ \
+			bool                  isLockpickingCrime;  /* C5 */ \
+			std::uint8_t          unk10E;              /* C6 */ \
+			std::uint8_t          pad10F;              /* C7 */
 
 			RUNTIME_DATA_CONTENT
 		};

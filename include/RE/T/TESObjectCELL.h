@@ -8,6 +8,7 @@
 #include "RE/B/BSTArray.h"
 #include "RE/B/BSTHashMap.h"
 #include "RE/B/BSTList.h"
+#include "RE/B/BSTempEffectParticle.h"
 #include "RE/C/Color.h"
 #include "RE/E/ExtraDataList.h"
 #include "RE/F/FormTypes.h"
@@ -193,64 +194,50 @@ namespace RE
 		[[nodiscard]] bool IsParentForm() override;                                                              // 34 - { return true; }
 		[[nodiscard]] bool IsFormTypeChild(FormType a_type) override;                                            // 36
 
-		TESNPC* GetActorOwner();
-
-		inline bhkWorld* GetbhkWorld() const
-		{
-			using func_t = decltype(&TESObjectCELL::GetbhkWorld);
-			REL::Relocation<func_t> func{ RELOCATION_ID(18536, 18995) };
-			return func(this);
-		}
-
-		void                         ForEachReference(std::function<BSContainer::ForEachResult(TESObjectREFR&)> a_callback) const;
-		void                         ForEachReferenceInRange(const NiPoint3& a_origin, float a_radius, std::function<BSContainer::ForEachResult(TESObjectREFR&)> a_callback) const;
-		[[nodiscard]] EXTERIOR_DATA* GetCoordinates();
-		[[nodiscard]] TESFaction*    GetFactionOwner();
-		[[nodiscard]] INTERIOR_DATA* GetLighting();
-
-		[[nodiscard]] inline BGSLocation* GetLocation() const
-		{
-			using func_t = decltype(&TESObjectCELL::GetLocation);
-			REL::Relocation<func_t> func{ RELOCATION_ID(18474, 18905) };
-			return func(this);
-		}
-
-		[[nodiscard]] float          GetNorthRotation();
-		[[nodiscard]] TESForm*       GetOwner();
-		[[nodiscard]] float          GetExteriorWaterHeight() const;
-		[[nodiscard]] TESRegionList* GetRegionList(bool a_createIfMissing);
-		bool                         GetWaterHeight(const NiPoint3& a_pos, float& a_waterHeight);
-		[[nodiscard]] bool           IsAttached() const;
-		[[nodiscard]] bool           IsExteriorCell() const;
-		[[nodiscard]] bool           IsInteriorCell() const;
-		void                         SetActorOwner(TESNPC* a_owner);
-		void                         SetFactionOwner(TESFaction* a_owner);
-		void                         SetFogColor(Color a_near, Color a_far);
-		void                         SetFogPlanes(float a_near, float a_far);
-		void                         SetFogPower(float a_power);
-		void                         SetHandChanged(bool a_changed);
-		void                         SetOwner(TESForm* a_owner);
-		void                         SetPublic(bool a_public);
-		[[nodiscard]] bool           UsesSkyLighting() const;
+		void                                ForEachReference(std::function<BSContainer::ForEachResult(TESObjectREFR&)> a_callback) const;
+		void                                ForEachReferenceInRange(const NiPoint3& a_origin, float a_radius, std::function<BSContainer::ForEachResult(TESObjectREFR&)> a_callback) const;
+		[[nodiscard]] TESNPC*               GetActorOwner();
+		[[nodiscard]] bhkWorld*             GetbhkWorld() const;
+		[[nodiscard]] EXTERIOR_DATA*        GetCoordinates();
+		[[nodiscard]] TESFaction*           GetFactionOwner();
+		[[nodiscard]] INTERIOR_DATA*        GetLighting();
+		[[nodiscard]] BGSLocation*          GetLocation() const;
+		[[nodiscard]] float                 GetNorthRotation();
+		[[nodiscard]] TESForm*              GetOwner();
+		[[nodiscard]] float                 GetExteriorWaterHeight() const;
+		[[nodiscard]] TESRegionList*        GetRegionList(bool a_createIfMissing);
+		bool                                GetWaterHeight(const NiPoint3& a_pos, float& a_waterHeight);
+		[[nodiscard]] bool                  IsAttached() const;
+		[[nodiscard]] bool                  IsExteriorCell() const;
+		[[nodiscard]] bool                  IsInteriorCell() const;
+		void                                SetActorOwner(TESNPC* a_owner);
+		void                                SetFactionOwner(TESFaction* a_owner);
+		void                                SetFogColor(Color a_near, Color a_far);
+		void                                SetFogPlanes(float a_near, float a_far);
+		void                                SetFogPower(float a_power);
+		void                                SetHandChanged(bool a_changed);
+		void                                SetOwner(TESForm* a_owner);
+		void                                SetPublic(bool a_public);
+		[[nodiscard]] bool                  UsesSkyLighting() const;
 
 		struct RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT                                                                                                   \
-	CellData                                             cellData;         /* 060, 068 - XCLL if interior, XCLC if exterior */ \
-	TESObjectLAND*                                       cellLand;         /* 068, 070 */                                      \
-	float                                                waterHeight;      /* 070, 078 - XCLW */                               \
-	NavMeshArray*                                        navMeshes;        /* 078, 080 */                                      \
-	BSTSet<NiPointer<TESObjectREFR>>                     references;       /* 080, 088 */                                      \
-	TESForm*                                             unk0B0;           /* 0B0, 0B8 - REFR owner of cell? */                \
-	BSTArray<TESObjectREFR*>                             objectList;       /* 0B8, 0C0 - persistent */                         \
-	BSTArray<void*>                                      unk0D0;           /* 0D0, 0D8 */                                      \
-	BSTArray<BGSWaterCollisionManager::BGSWaterUpdateI*> waterObjects;     /* 0E8, 0F0 */                                      \
-	BSTArray<void*>                                      unk100;           /* 100, 108 */                                      \
-	mutable BSSpinLock                                   spinLock;         /* 118, 120 */                                      \
-	TESWorldSpace*                                       worldSpace;       /* 120, 128 */                                      \
-	LOADED_CELL_DATA*                                    loadedData;       /* 128, 130 */                                      \
-	BGSLightingTemplate*                                 lightingTemplate; /* 130, 138 - LTMP */                               \
-	std::uint64_t                                        unk138;           /* 138, 140 */
+#define RUNTIME_DATA_CONTENT                                                                                                          \
+			CellData                                             cellData;         /* 060, 068 - XCLL if interior, XCLC if exterior */ \
+			TESObjectLAND*                                       cellLand;         /* 068, 070 */                                      \
+			float                                                waterHeight;      /* 070, 078 - XCLW */                               \
+			NavMeshArray*                                        navMeshes;        /* 078, 080 */                                      \
+			BSTSet<NiPointer<TESObjectREFR>>                     references;       /* 080, 088 */                                      \
+			TESForm*                                             unk0B0;           /* 0B0, 0B8 - REFR owner of cell? */                \
+			BSTArray<TESObjectREFR*>                             objectList;       /* 0B8, 0C0 - persistent */                         \
+			BSTArray<void*>                                      unk0D0;           /* 0D0, 0D8 */                                      \
+			BSTArray<BGSWaterCollisionManager::BGSWaterUpdateI*> waterObjects;     /* 0E8, 0F0 */                                      \
+			BSTArray<void*>                                      unk100;           /* 100, 108 */                                      \
+			mutable BSSpinLock                                   spinLock;         /* 118, 120 */                                      \
+			TESWorldSpace*                                       worldSpace;       /* 120, 128 */                                      \
+			LOADED_CELL_DATA*                                    loadedData;       /* 128, 130 */                                      \
+			BGSLightingTemplate*                                 lightingTemplate; /* 130, 138 - LTMP */                               \
+			std::uint64_t                                        unk138;           /* 138, 140 */
 
 			RUNTIME_DATA_CONTENT
 		};
@@ -266,15 +253,15 @@ namespace RE
 		}
 
 		// members
-		mutable BSSpinLock                                   grassCreateLock;   // 030
-		mutable BSSpinLock                                   grassTaskLock;     // 038
-		stl::enumeration<Flag, std::uint16_t>                cellFlags;         // 040
-		std::uint16_t                                        cellGameFlags;     // 042
-		stl::enumeration<CellState, std::uint8_t>            cellState;         // 044
-		bool                                                 autoWaterLoaded;   // 045
-		bool                                                 cellDetached;      // 046
-		std::uint8_t                                         pad047;            // 047
-		ExtraDataList                                        extraList;         // 048
+		mutable BSSpinLock                        grassCreateLock;  // 030
+		mutable BSSpinLock                        grassTaskLock;    // 038
+		stl::enumeration<Flag, std::uint16_t>     cellFlags;        // 040
+		std::uint16_t                             cellGameFlags;    // 042
+		stl::enumeration<CellState, std::uint8_t> cellState;        // 044
+		bool                                      autoWaterLoaded;  // 045
+		bool                                      cellDetached;     // 046
+		std::uint8_t                              pad047;           // 047
+		ExtraDataList                             extraList;        // 048
 
 #ifndef ENABLE_SKYRIM_AE
 		RUNTIME_DATA_CONTENT

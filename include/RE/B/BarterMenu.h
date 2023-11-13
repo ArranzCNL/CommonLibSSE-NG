@@ -21,24 +21,24 @@ namespace RE
 
 		struct RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT                              \
-	ItemList*       itemList;        /* 00 */             \
-	ItemCard*       itemCard;        /* 08 */             \
-	BottomBar*      bottomBar;       /* 10 */             \
-	GFxValue        root;            /* 18 - "Menu_mc" */ \
-	std::uint64_t   unk60;           /* 30 */             \
-	std::uint64_t   unk68;           /* 38 */             \
-	std::uint64_t   unk70;           /* 40 */             \
-	std::uint8_t    unk78;           /* 48 */             \
-	std::uint8_t    pad79;           /* 49 */             \
-	std::uint16_t   pad7A;           /* 4A */             \
-	std::uint32_t   pad7C;           /* 4C */             \
-	BSTArray<void*> unk80;           /* 50 */             \
-	std::uint64_t   unk98;           /* 68 */             \
-	std::uint32_t   unkA0;           /* 70 */             \
-	bool            pcControlsReady; /* 74 */             \
-	std::uint8_t    padA5;           /* 75 */             \
-	std::uint16_t   padA6;           /* 76 */
+#define RUNTIME_DATA_CONTENT                                     \
+			ItemList*       itemList;        /* 00 */             \
+			ItemCard*       itemCard;        /* 08 */             \
+			BottomBar*      bottomBar;       /* 10 */             \
+			GFxValue        root;            /* 18 - "Menu_mc" */ \
+			std::uint64_t   unk60;           /* 30 */             \
+			std::uint64_t   unk68;           /* 38 */             \
+			std::uint64_t   unk70;           /* 40 */             \
+			std::uint8_t    unk78;           /* 48 */             \
+			std::uint8_t    pad79;           /* 49 */             \
+			std::uint16_t   pad7A;           /* 4A */             \
+			std::uint32_t   pad7C;           /* 4C */             \
+			BSTArray<void*> unk80;           /* 50 */             \
+			std::uint64_t   unk98;           /* 68 */             \
+			std::uint32_t   unkA0;           /* 70 */             \
+			bool            pcControlsReady; /* 74 */             \
+			std::uint8_t    padA5;           /* 75 */             \
+			std::uint16_t   padA6;           /* 76 */
 
 			RUNTIME_DATA_CONTENT
 		};

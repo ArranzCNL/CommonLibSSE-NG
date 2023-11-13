@@ -16,6 +16,7 @@ namespace RE
 	};
 
 	class ButtonEvent;
+	class CharEvent;
 	class IDEvent;
 
 	class InputEvent
@@ -28,14 +29,17 @@ namespace RE
 		[[nodiscard]] virtual bool                 HasIDCode() const;   // 01 - { return false; }
 		[[nodiscard]] virtual const BSFixedString& QUserEvent() const;  // 02 - { return ""; }
 
-		[[nodiscard]] constexpr INPUT_EVENT_TYPE GetEventType() const noexcept { return *eventType; }
-		[[nodiscard]] constexpr INPUT_DEVICE     GetDevice() const noexcept { return *device; }
+		[[nodiscard]] constexpr INPUT_EVENT_TYPE   GetEventType() const noexcept { return *eventType; }
+		[[nodiscard]] constexpr INPUT_DEVICE       GetDevice() const noexcept { return *device; }
 
-		[[nodiscard]] ButtonEvent*       AsButtonEvent();
-		[[nodiscard]] const ButtonEvent* AsButtonEvent() const;
+		[[nodiscard]] ButtonEvent*                 AsButtonEvent();
+		[[nodiscard]] const ButtonEvent*           AsButtonEvent() const;
 
-		[[nodiscard]] IDEvent*       AsIDEvent();
-		[[nodiscard]] const IDEvent* AsIDEvent() const;
+		[[nodiscard]] CharEvent*                   AsCharEvent();
+		[[nodiscard]] const CharEvent*             AsCharEvent() const;
+
+		[[nodiscard]] IDEvent*                     AsIDEvent();
+		[[nodiscard]] const IDEvent*               AsIDEvent() const;
 
 		// members
 		stl::enumeration<INPUT_DEVICE, std::uint32_t>     device;     // 08

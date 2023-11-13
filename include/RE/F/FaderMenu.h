@@ -15,12 +15,12 @@ namespace RE
 
 		struct RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT                  \
-	void*         unk30; /* 00 - smart ptr */ \
-	std::uint8_t  unk38; /* 08 */             \
-	std::uint8_t  unk39; /* 09 */             \
-	std::uint16_t pad3A; /* 0A */             \
-	std::uint32_t pad3C; /* 0C */
+#define RUNTIME_DATA_CONTENT                         \
+			void*         unk30; /* 00 - smart ptr */ \
+			std::uint8_t  unk38; /* 08 */             \
+			std::uint8_t  unk39; /* 09 */             \
+			std::uint16_t pad3A; /* 0A */             \
+			std::uint32_t pad3C; /* 0C */
 
 			RUNTIME_DATA_CONTENT
 		};

@@ -115,5 +115,7 @@ namespace RE
 		std::uint8_t        unk34B;        // 34B
 		std::uint32_t       unk34C;        // 34C
 	};
+#ifndef __INTELLISENSE__
 	static_assert(sizeof(GFxSprite) == 0x350);
+#endif
 }

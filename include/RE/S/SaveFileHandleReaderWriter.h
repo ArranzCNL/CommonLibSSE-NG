@@ -16,8 +16,8 @@ namespace RE::SkyrimScript
 		void Unk_08() override;
 		bool SaveHandle(SaveStorageWrapper* saveWrapper, VMHandle handle) override;
 		bool LoadHandle(BSMemStorage* loadWrapper, VMHandle* out) override;
-		bool SaveRefID(SaveStorageWrapper* saveWrapper, uint32_t handleLow) override;
-		bool ParseScriptInstance(BSMemStorage* loadWrapper, uint32_t* scriptInstanceValues) override;
+		bool SaveRefID(SaveStorageWrapper* saveWrapper, std::uint32_t handleLow) override;
+		bool ParseScriptInstance(BSMemStorage* loadWrapper, std::uint32_t* scriptInstanceValues) override;
 	};
 	static_assert(sizeof(SaveFileHandleReaderWriter) == 0x8);
 }

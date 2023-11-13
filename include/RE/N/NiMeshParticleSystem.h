@@ -33,8 +33,8 @@ namespace RE
 
 		struct MESH_PARTICLE_SYSTEM_RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT                                      \
-	float         time;               /* 198 */ \
+#define RUNTIME_DATA_CONTENT                           \
+			float         time;               /* 198 */ \
 			bool          updateControllers;  /* 19C */ \
 			std::uint8_t  pad19D;             /* 19D */ \
 			std::uint16_t pad19E;             /* 19E */

@@ -63,7 +63,7 @@ namespace RE
 			std::uint32_t unk5C;
 			std::uint32_t unk60;
 			std::uint32_t unk64;
-			MapData*      mapData;  // 68
+			MapData*      mapData;                      // 68
 		};
 		static_assert(sizeof(World) == 0x70);
 	}

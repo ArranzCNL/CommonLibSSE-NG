@@ -11,12 +11,12 @@ namespace RE
 	public:
 		// members
 		float                               deltaTime{ 0.0f };               // 00
-		uint32_t                            pad04;                           // 04
+		std::uint32_t                       pad04;                           // 04
 		void*                               unkFunctionPtr{ nullptr };       // 08
 		TESObjectREFR*                      refr{ nullptr };                 // 10
 		NiPoint3*                           optionalEyePosition{ nullptr };  // 18
 		IPostAnimationChannelUpdateFunctor* updateFunctor{ nullptr };        // 20
-		uint16_t                            flags;                           // 28
+		std::uint16_t                       flags;                           // 28
 		bool                                unk2A;                           // 2A
 		bool                                unk2B;                           // 2B
 		bool                                unk2C;                           // 2C

@@ -50,7 +50,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_NiAVObject;
-		inline static auto           Ni_RTTI = NiRTTI_NiAVObject;
+		inline static constexpr auto Ni_RTTI = NiRTTI_NiAVObject;
 
 		enum class Flag
 		{
@@ -99,10 +99,10 @@ namespace RE
 #if !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 		virtual void Unk_VRFunc(void);
 #endif
-		SKYRIM_REL_VR_VIRTUAL void PerformOp(PerformOpFunc& a_func);                                                                          // 26
-		SKYRIM_REL_VR_VIRTUAL void AttachProperty(NiAlphaProperty* a_property);                                                               // 27 - { return; }
-		SKYRIM_REL_VR_VIRTUAL void SetMaterialNeedsUpdate(bool a_needsUpdate);                                                                // 28 - { return; }
-		SKYRIM_REL_VR_VIRTUAL void SetDefaultMaterialNeedsUpdateFlag(bool a_flag);                                                            // 29 - { return; }
+		SKYRIM_REL_VR_VIRTUAL void        PerformOp(PerformOpFunc& a_func);                                                                   // 26
+		SKYRIM_REL_VR_VIRTUAL void        AttachProperty(NiAlphaProperty* a_property);                                                        // 27 - { return; }
+		SKYRIM_REL_VR_VIRTUAL void        SetMaterialNeedsUpdate(bool a_needsUpdate);                                                         // 28 - { return; }
+		SKYRIM_REL_VR_VIRTUAL void        SetDefaultMaterialNeedsUpdateFlag(bool a_flag);                                                     // 29 - { return; }
 		SKYRIM_REL_VR_VIRTUAL NiAVObject* GetObjectByName(const BSFixedString& a_name);                                                       // 2A
 		SKYRIM_REL_VR_VIRTUAL void        SetSelectiveUpdateFlags(bool& a_selectiveUpdate, bool a_selectiveUpdateTransforms, bool& a_rigid);  // 2B
 		SKYRIM_REL_VR_VIRTUAL void        UpdateDownwardPass(NiUpdateData& a_data, std::uint32_t a_arg2);                                     // 2C
@@ -150,14 +150,14 @@ namespace RE
 		}
 
 		// members
-		NiNode*                      parent;           // 030
-		std::uint32_t                parentIndex;      // 038
-		std::uint32_t                unk03C;           // 03C
-		NiPointer<NiCollisionObject> collisionObject;  // 040
-		NiTransform                  local;            // 048
-		NiTransform                  world;            // 07C
-		NiTransform                  previousWorld;    // 0B0
-		NiBound                      worldBound;       // 0E4
+		NiNode*                               parent;                   // 030
+		std::uint32_t                         parentIndex;              // 038
+		std::uint32_t                         unk03C;                   // 03C
+		NiPointer<NiCollisionObject>          collisionObject;          // 040
+		NiTransform                           local;                    // 048
+		NiTransform                           world;                    // 07C
+		NiTransform                           previousWorld;            // 0B0
+		NiBound                               worldBound;               // 0E4
 #ifndef ENABLE_SKYRIM_VR
 		stl::enumeration<Flag, std::uint32_t> flags;                    // 0F4
 		TESObjectREFR*                        userData;                 // 0F8
@@ -186,11 +186,11 @@ namespace RE
 	};
 	static_assert(sizeof(NiAVObject) == 0x138);
 #else
-		uint32_t      unkF4;                    // 0F4
-		uint64_t*     unkF8;                    // 0F8
-		float         fadeAmount;               // 100
-		std::uint32_t lastUpdatedFrameCounter;  // 104
-		uint64_t      unk104;                   // 108
+		std::uint32_t                         unkF4;                    // 0F4
+		std::uint64_t*                        unkF8;                    // 0F8
+		float                                 fadeAmount;               // 100
+		std::uint32_t                         lastUpdatedFrameCounter;  // 104
+		std::uint64_t                         unk104;                   // 108
 	};
 #endif
 }

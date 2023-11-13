@@ -20,7 +20,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraPackageStartLocation;
-		inline static auto           EXTRADATATYPE = ExtraDataType::kPackageStartLocation;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kPackageStartLocation;
 
 		~ExtraPackageStartLocation() override;  // 00
 

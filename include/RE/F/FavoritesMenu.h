@@ -34,13 +34,13 @@ namespace RE
 
 		struct RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT                              \
-	GFxValue        root;            /* 00 - "Menu_mc" */ \
-	BSTArray<Entry> favorites;       /* 18 */             \
-	std::uint16_t   unk70;           /* 30 */             \
-	bool            pcControlsReady; /* 32 */             \
-	bool            isVampire;       /* 33 */             \
-	std::uint32_t   pad74;           /* 34 */
+#define RUNTIME_DATA_CONTENT                                     \
+			GFxValue        root;            /* 00 - "Menu_mc" */ \
+			BSTArray<Entry> favorites;       /* 18 */             \
+			std::uint16_t   unk70;           /* 30 */             \
+			bool            pcControlsReady; /* 32 */             \
+			bool            isVampire;       /* 33 */             \
+			std::uint32_t   pad74;           /* 34 */
 
 			RUNTIME_DATA_CONTENT
 		};

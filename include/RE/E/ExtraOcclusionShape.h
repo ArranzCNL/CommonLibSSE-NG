@@ -12,7 +12,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraOcclusionShape;
-		inline static auto           EXTRADATATYPE = ExtraDataType::kOcclusionShape;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kOcclusionShape;
 
 		~ExtraOcclusionShape() override;  // 00
 

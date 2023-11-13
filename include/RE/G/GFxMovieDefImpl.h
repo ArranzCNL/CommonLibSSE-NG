@@ -78,5 +78,7 @@ namespace RE
 		GPtr<GFxMovieDefBindStates> movieBindStates;  // 30
 		GPtr<BindTaskData>          bindTaskData;     // 38
 	};
+#ifndef __INTELLISENSE__
 	static_assert(sizeof(GFxMovieDefImpl) == 0x40);
+#endif
 }

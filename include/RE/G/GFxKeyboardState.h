@@ -19,9 +19,9 @@ namespace RE
 			virtual ~IListener() = default;  // 00
 
 			// add
-			virtual void OnKeyDown(GASStringContext* a_sc, int a_code, std::uint8_t a_ascii, std::uint32_t a_charCode, std::uint8_t a_keyboardIndex) = 0;  // 01
-			virtual void OnKeyUp(GASStringContext* a_sc, int a_code, std::uint8_t a_ascii, std::uint32_t a_charCode, std::uint8_t a_keyboardIndex) = 0;    // 02
-			virtual void Update(int a_code, std::uint8_t a_ascii, std::uint32_t a_charCode, std::uint8_t a_keyboardIndex) = 0;                             // 03
+			virtual void OnKeyDown(GASStringContext* a_sc, std::int32_t a_code, std::uint8_t a_ascii, std::uint32_t a_charCode, std::uint8_t a_keyboardIndex) = 0;  // 01
+			virtual void OnKeyUp(GASStringContext* a_sc, std::int32_t a_code, std::uint8_t a_ascii, std::uint32_t a_charCode, std::uint8_t a_keyboardIndex) = 0;    // 02
+			virtual void Update(std::int32_t a_code, std::uint8_t a_ascii, std::uint32_t a_charCode, std::uint8_t a_keyboardIndex) = 0;                             // 03
 		};
 		static_assert(sizeof(IListener) == 0x8);
 

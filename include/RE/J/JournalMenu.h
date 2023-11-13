@@ -31,13 +31,13 @@ namespace RE
 
 		struct RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT              \
-	Journal_QuestsTab questsTab; /* 00 */ \
-	Journal_StatsTab  statsTab;  /* 38 */ \
-	Journal_SystemTab systemTab; /* 50 */ \
-	std::uint64_t     unkD0;     /* 88 */ \
-	std::uint64_t     unkD8;     /* 90 */ \
-	std::uint64_t     unkE0;     /* 98 */
+#define RUNTIME_DATA_CONTENT                     \
+			Journal_QuestsTab questsTab; /* 00 */ \
+			Journal_StatsTab  statsTab;  /* 38 */ \
+			Journal_SystemTab systemTab; /* 50 */ \
+			std::uint64_t     unkD0;     /* 88 */ \
+			std::uint64_t     unkD8;     /* 90 */ \
+			std::uint64_t     unkE0;     /* 98 */
 
 			RUNTIME_DATA_CONTENT
 		};

@@ -17,14 +17,14 @@ namespace RE
 
 		struct RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT                           \
-	std::uint32_t unk30; /* 00 */                      \
-	std::uint32_t pad34; /* 04 */                      \
-	GFxValue      root;  /* 08 - "SleepWaitMenu_mc" */ \
-	std::uint8_t  unk50; /* 20 */                      \
-	std::uint8_t  unk51; /* 21 */                      \
-	std::uint16_t pad52; /* 22 */                      \
-	std::uint32_t pad54; /* 24 */
+#define RUNTIME_DATA_CONTENT                                  \
+			std::uint32_t unk30; /* 00 */                      \
+			std::uint32_t pad34; /* 04 */                      \
+			GFxValue      root;  /* 08 - "SleepWaitMenu_mc" */ \
+			std::uint8_t  unk50; /* 20 */                      \
+			std::uint8_t  unk51; /* 21 */                      \
+			std::uint16_t pad52; /* 22 */                      \
+			std::uint32_t pad54; /* 24 */
 
 			RUNTIME_DATA_CONTENT
 		};
@@ -35,6 +35,8 @@ namespace RE
 		// override (IMenu)
 		void               Accept(CallbackProcessor* a_processor) override;  // 01
 		UI_MESSAGE_RESULTS ProcessMessage(UIMessage& a_message) override;    // 04
+
+		static void        OpenSleepWaitMenu(bool isSleep);
 
 		[[nodiscard]] inline RUNTIME_DATA& GetRuntimeData() noexcept
 		{

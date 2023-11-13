@@ -43,7 +43,7 @@ namespace RE
 
 		// add
 		virtual void               Save();                        // 3B - { return; }
-		[[nodiscard]] virtual bool SavesBefore(FORM* a_form);     // 3C - { return fa;se; }
+		[[nodiscard]] virtual bool SavesBefore(FORM* a_form);     // 3C - { return false; }
 		[[nodiscard]] virtual bool SavesBefore(TESForm* a_form);  // 3D - { return false; }
 		[[nodiscard]] virtual bool ProcessBeforeSave();           // 3E - { return false; }
 	};

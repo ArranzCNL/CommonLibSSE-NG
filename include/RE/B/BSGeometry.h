@@ -15,7 +15,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_BSGeometry;
-		inline static auto           Ni_RTTI = NiRTTI_BSGeometry;
+		inline static constexpr auto Ni_RTTI = NiRTTI_BSGeometry;
 
 		enum class Type
 		{
@@ -49,10 +49,10 @@ namespace RE
 		struct MODEL_DATA
 		{
 #if !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
-#	define MODEL_DATA_CONTENT        \
-		NiBound  modelBound; /* 0 */  \
-		NiPoint3 unk148;     /* 10 */ \
-		NiPoint3 unk154;     /* 2C */
+#define MODEL_DATA_CONTENT               \
+			NiBound  modelBound; /* 0 */  \
+			NiPoint3 unk148;     /* 10 */ \
+			NiPoint3 unk154;     /* 2C */
 #else
 #	define MODEL_DATA_CONTENT NiBound modelBound; /* 0 */
 #endif
@@ -66,12 +66,12 @@ namespace RE
 
 		struct GEOMETRY_RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT                                                   \
-	NiPointer<NiProperty>     properties[States::kTotal]; /* 00 */             \
-	NiPointer<NiSkinInstance> skinInstance;               /* 10 */             \
-	BSGraphics::TriShape*     rendererData;               /* 18 */             \
-	void*                     unk20;                      /* 20 - smart ptr */ \
-	BSGraphics::VertexDesc    vertexDesc;                 /* 28 */
+#define RUNTIME_DATA_CONTENT                                                          \
+			NiPointer<NiProperty>     properties[States::kTotal]; /* 00 */             \
+			NiPointer<NiSkinInstance> skinInstance;               /* 10 */             \
+			BSGraphics::TriShape*     rendererData;               /* 18 */             \
+			void*                     unk20;                      /* 20 - smart ptr */ \
+			BSGraphics::VertexDesc    vertexDesc;                 /* 28 */
 
 			RUNTIME_DATA_CONTENT
 		};
@@ -101,7 +101,7 @@ namespace RE
 #endif
 
 		// add
-		SKYRIM_REL_VR_VIRTUAL BSMultiIndexTriShape* AsMultiIndexTriShape();      // 35 - { return 0; }
+		SKYRIM_REL_VR_VIRTUAL BSMultiIndexTriShape*   AsMultiIndexTriShape();    // 35 - { return 0; }
 		SKYRIM_REL_VR_VIRTUAL BSSkinnedDecalTriShape* AsSkinnedDecalTriShape();  // 36 - { return 0; }
 		SKYRIM_REL_VR_VIRTUAL void                    Unk_37(void);              // 37 - { return 0; }
 

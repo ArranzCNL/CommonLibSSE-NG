@@ -1,5 +1,7 @@
 #pragma once
+
 #include "RE/M/MemoryPage.h"
+
 namespace RE
 {
 	namespace BSScript

@@ -20,7 +20,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ShaderReferenceEffect;
-		inline static auto           Ni_RTTI = NiRTTI_ShaderReferenceEffect;
+		inline static constexpr auto Ni_RTTI = NiRTTI_ShaderReferenceEffect;
 		inline static constexpr auto VTABLE = VTABLE_ShaderReferenceEffect;
 		inline static constexpr auto TYPE = TEMP_EFFECT_TYPE::kRefShader;
 

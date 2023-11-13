@@ -17,23 +17,23 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_BSMultiIndexTriShape;
-		inline static auto           Ni_RTTI = NiRTTI_BSMultiIndexTriShape;
+		inline static constexpr auto Ni_RTTI = NiRTTI_BSMultiIndexTriShape;
 
 		struct MULTI_INDEX_TRISHAPE_RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT                                       \
-	BSGraphics::IndexBuffer*    altIndexBuffer;           /* 00 */ \
-	std::uint32_t               altPrimCount;             /* 08 */ \
-	DirectX::XMFLOAT4X4         materialProjection;       /* 0C */ \
-	std::uint32_t               pad1AC;                   /* 4C */ \
-	NiPointer<BSShaderProperty> additionalShaderProperty; /* 50 */ \
-	std::uint8_t                useAdditionalTriList;     /* 58 */ \
-	std::uint8_t                pad1B9;                   /* 59 */ \
-	std::uint16_t               pad1BA;                   /* 5A */ \
-	NiColorA                    materialParams;           /* 5C */ \
-	float                       materialScale;            /* 6C */ \
-	float                       normalDampener;           /* 70 */ \
-	std::uint32_t               unk1D4;                   /* 74 */
+#define RUNTIME_DATA_CONTENT                                              \
+			BSGraphics::IndexBuffer*    altIndexBuffer;           /* 00 */ \
+			std::uint32_t               altPrimCount;             /* 08 */ \
+			ClibUtil::Matrix            materialProjection;       /* 0C */ \
+			std::uint32_t               pad1AC;                   /* 4C */ \
+			NiPointer<BSShaderProperty> additionalShaderProperty; /* 50 */ \
+			std::uint8_t                useAdditionalTriList;     /* 58 */ \
+			std::uint8_t                pad1B9;                   /* 59 */ \
+			std::uint16_t               pad1BA;                   /* 5A */ \
+			NiColorA                    materialParams;           /* 5C */ \
+			float                       materialScale;            /* 6C */ \
+			float                       normalDampener;           /* 70 */ \
+			std::uint32_t               unk1D4;                   /* 74 */
 
 			RUNTIME_DATA_CONTENT
 		};

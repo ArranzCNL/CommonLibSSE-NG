@@ -7,7 +7,7 @@ namespace RE
 {
 	class HudModeChangeEvent;
 
-	// menuDepth = 4
+	// menuDepth = 4 
 	// context = 22
 	class WorldSpaceMenu :
 #ifndef SKYRIM_CROSS_VR

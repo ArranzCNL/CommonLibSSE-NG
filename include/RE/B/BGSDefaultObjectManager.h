@@ -1066,13 +1066,13 @@ namespace RE
 
 		[[nodiscard]] static bool SupportsCurrentRuntime(DefaultObjectID a_object) noexcept;
 
-		// members
-		TESForm* objects[DEFAULT_OBJECTS::kTotal];  // 020 - DNAM
+		// members 
+		TESForm*      objects[DEFAULT_OBJECTS::kTotal];     // 020 - DNAM
 #ifndef SKYRIM_CROSS_VR
 		bool          objectInit[DEFAULT_OBJECTS::kTotal];  // B80
 		std::uint32_t padCEC;                               // CEC
 #else
-		std::uint8_t unk5D8[0x718];  // 5D8
+		std::uint8_t  unk5D8[0x718];                        // 5D8
 #endif
 	};
 #if !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)

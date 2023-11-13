@@ -19,8 +19,14 @@ namespace RE
 		virtual BGSActionData* Clone() const;  // 04
 		virtual bool           Process();      // 05 - { return false; }
 
-		// members
-		uint32_t flags;  // 58
+		// members 
+		BSFixedString AnimationEvent;  // 28
+		BSFixedString unk30;           // 30
+		std::uint64_t unk38;           // 38
+		std::uint64_t unk40;           // 40
+		std::uint64_t unk48;           // 48
+		TESIdleForm*  IdleForm;        // 50
+		std::uint64_t unk58;           // 58
 	};
-	static_assert(sizeof(BGSActionData) == 0x60);
+	static_assert(sizeof(BGSActionData) == 0x90);
 }

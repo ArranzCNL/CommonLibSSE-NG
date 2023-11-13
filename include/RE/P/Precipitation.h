@@ -19,7 +19,7 @@ namespace RE
 		{
 		public:
 			// members
-			alignas(0x10) DirectX::XMFLOAT4X4 projection;   // 00
+			alignas(0x10) ClibUtil::Matrix projection;      // 00
 			NiPointer<NiCamera>            camera;          // 40
 			NiPointer<BSShaderAccumulator> accumulator;     // 48
 			BSCullingProcess*              cullingProcess;  // 50

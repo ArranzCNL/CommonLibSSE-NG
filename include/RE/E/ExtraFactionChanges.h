@@ -13,7 +13,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraFactionChanges;
-		inline static auto           EXTRADATATYPE = ExtraDataType::kFactionChanges;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kFactionChanges;
 
 		~ExtraFactionChanges() override;  // 00
 

@@ -85,5 +85,7 @@ namespace RE
 		std::uint16_t     unk94;           // 94
 		std::uint16_t     unk96;           // 96
 	};
+#ifndef __INTELLISENSE__
 	static_assert(sizeof(GFxCharacter) == 0x98);
+#endif
 }

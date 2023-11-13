@@ -39,14 +39,14 @@ namespace RE
 			}
 
 			BSTSmartPointer<Array> array;
-			TypeInfo               typeInfo(GetRawType<typename U::value_type>{}());
+			TypeInfo typeInfo(GetRawType<typename U::value_type>{}());
 			if (!vm->CreateArray(typeInfo, static_cast<std::uint32_t>(a_src.size()), array) || !array) {
 				assert(false);
 				return;
 			}
 
-			auto          it = a_src.begin();
-			auto          end = a_src.end();
+			auto it = a_src.begin();
+			auto end = a_src.end();
 			std::uint32_t i = 0;
 			while (it != end) {
 				if constexpr (std::is_same_v<U, std::vector<bool>>) {

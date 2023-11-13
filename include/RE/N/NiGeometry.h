@@ -12,19 +12,19 @@ namespace RE
 	public:
 		struct RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT                               \
-	NiPointer<NiProperty>     m_spPropertyState; /* 110 */ \
-	NiPointer<NiProperty>     m_spEffectState;   /* 118 */ \
-	NiPointer<NiSkinInstance> m_spSkinInstance;  /* 120 */ \
-	NiPointer<NiGeometryData> m_spModelData;     /* 128 */ \
-	std::uint64_t             unk130;            /* 130 */
+#define RUNTIME_DATA_CONTENT                                      \
+			NiPointer<NiProperty>     m_spPropertyState; /* 110 */ \
+			NiPointer<NiProperty>     m_spEffectState;   /* 118 */ \
+			NiPointer<NiSkinInstance> m_spSkinInstance;  /* 120 */ \
+			NiPointer<NiGeometryData> m_spModelData;     /* 128 */ \
+			std::uint64_t             unk130;            /* 130 */
 
 			RUNTIME_DATA_CONTENT
 		};
 		static_assert(sizeof(RUNTIME_DATA) == 0x28);
 
 		// add
-		SKYRIM_REL_VR_VIRTUAL void  Unk_35(void);                           // 35, 36 - call controller vtbl+0xA0?
+		SKYRIM_REL_VR_VIRTUAL void  Unk_35(void);                           // 35, 36 - call controller vtbl+0xA0? 
 		SKYRIM_REL_VR_VIRTUAL void  Unk_36(void);                           // 36, 37 - ret 0
 		SKYRIM_REL_VR_VIRTUAL void  Unk_37(void);                           // 37, 38 - same as Unk_33
 		SKYRIM_REL_VR_VIRTUAL void* Unk_38(void);                           // 38, 39 - ret call m_spModelData vtbl+0x9C

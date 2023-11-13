@@ -28,12 +28,12 @@ namespace RE
 		{
 		public:
 			// members
-			alignas(0x10) const hkpShape* shape;       // 00
-			std::uint32_t        collisionFilterInfo;  // 08
-			mutable std::int32_t shapeSize;            // 0C
-			mutable std::int32_t numChildShapes;       // 10
-			std::uint32_t        pad14;                // 14
-			std::uint64_t        pad18;                // 18
+			alignas(0x10) const hkpShape* shape;                // 00
+			std::uint32_t                 collisionFilterInfo;  // 08
+			mutable std::int32_t          shapeSize;            // 0C
+			mutable std::int32_t          numChildShapes;       // 10
+			std::uint32_t                 pad14;                // 14
+			std::uint64_t                 pad18;                // 18
 		};
 		static_assert(sizeof(ChildInfo) == 0x20);
 

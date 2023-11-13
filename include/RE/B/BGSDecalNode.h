@@ -12,13 +12,13 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_BGSDecalNode;
-		inline static auto           Ni_RTTI = NiRTTI_BGSDecalNode;
+		inline static constexpr auto Ni_RTTI = NiRTTI_BGSDecalNode;
 
 		struct RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT                              \
-	BSTArray<NiPointer<BSTempEffect>> decals;    /* 00 */ \
-	bool                              isSkinned; /* 18 */
+#define RUNTIME_DATA_CONTENT                                     \
+			BSTArray<NiPointer<BSTempEffect>> decals;    /* 00 */ \
+			bool                              isSkinned; /* 18 */
 
 			RUNTIME_DATA_CONTENT
 		};

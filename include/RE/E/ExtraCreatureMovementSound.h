@@ -10,7 +10,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraCreatureMovementSound;
-		inline static auto           EXTRADATATYPE = ExtraDataType::kCreatureMovementSound;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kCreatureMovementSound;
 
 		~ExtraCreatureMovementSound() override;  // 00
 

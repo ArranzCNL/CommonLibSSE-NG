@@ -92,7 +92,7 @@ namespace RE
 		inline void GetPosition(hkVector4& a_pos, bool a_applyCenterOffset) const { return GetPositionImpl(a_pos, a_applyCenterOffset); }
 
 		// members
-		//std::uint64_t						pad068;						// 068
+		//std::uint64_t                                    pad068;                     // 068
 		hkVector4                                        forwardVec;                 // 070
 		hkStepInfo                                       stepInfo;                   // 080
 		hkVector4                                        outVelocity;                // 090

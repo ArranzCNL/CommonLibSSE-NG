@@ -70,7 +70,7 @@ namespace RE
 		std::uint32_t                pad3C;       // 3C
 		NiFormArray*                 childPaths;  // 40
 		BGSCameraPath*               parentPath;  // 48 - ANAM~
-		BGSCameraPath*               prevPath;    // 48 - ~ANAM
+		BGSCameraPath*               prevPath;    // 50 - ~ANAM
 	};
 	static_assert(sizeof(BGSCameraPath) == 0x58);
 }

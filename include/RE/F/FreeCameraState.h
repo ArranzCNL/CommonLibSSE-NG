@@ -1,14 +1,11 @@
 #pragma once
 
 #include "RE/B/BSTPoint.h"
-#include "RE/N/NiPoint3.h"
 #include "RE/P/PlayerInputHandler.h"
 #include "RE/T/TESCameraState.h"
 
 namespace RE
 {
-	class NiNode;
-
 	class FreeCameraState :
 		public TESCameraState,     // 00
 		public PlayerInputHandler  // 20
@@ -25,18 +22,21 @@ namespace RE
 		void Update(BSTSmartPointer<TESCameraState>& a_nextState) override;  // 03
 		void GetRotation(NiQuaternion& a_rotation) override;                 // 04
 		void GetTranslation(NiPoint3& a_translation) override;               // 05
+		void SaveGame(BGSSaveFormBuffer* a_buf) override;                    // 06
+		void LoadGame(BGSLoadFormBuffer* a_buf) override;                    // 07
+		void Revert(BGSLoadFormBuffer* a_buf) override;                      // 08
 
 		// override (PlayerInputHandler)
 		bool CanProcess(InputEvent* a_event) override;                                          // 01
 		void ProcessButton(ButtonEvent* a_event, PlayerControlsData* a_movementData) override;  // 04
 
 		// members
-		NiPoint3         translation;    // 30
-		BSTPoint2<float> rotationInput;  // 3C
-		BSTPoint2<float> unk44;          // 44
-		std::uint16_t    unk4C;          // 4C
-		bool             useRunSpeed;    // 4E
-		std::uint8_t     unk4F;          // 4F
+		NiPoint3         translation;        // 30
+		BSTPoint2<float> rotation;           // 3C
+		BSTPoint2<float> zUpDown;            // 44
+		std::int16_t     verticalDirection;  // 4C
+		bool             useRunSpeed;        // 4E
+		bool             lockToZPlane;       // 4F
 	};
 	static_assert(sizeof(FreeCameraState) == 0x50);
 }

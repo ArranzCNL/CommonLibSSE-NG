@@ -9,7 +9,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraFromAlias;
-		inline static auto           EXTRADATATYPE = ExtraDataType::kFromAlias;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kFromAlias;
 
 		~ExtraFromAlias() override;  // 00
 

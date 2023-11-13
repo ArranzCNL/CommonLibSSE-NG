@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/B/BGSDefaultObjectManager.h"
 #include "RE/B/BSFixedString.h"
 #include "RE/B/BSHandleRefObject.h"
 #include "RE/B/BSPointerHandle.h"
@@ -165,10 +166,10 @@ namespace RE
 			enum RecordFlag : std::uint32_t
 			{
 				kIsGroundPiece = 1 << 4,
-				kCollisionsDisabled = 1 << 4,  // ?
+				kCollisionsDisabled = 1 << 4,      // ?
 
 				kDeleted = 1 << 5,
-				kHiddenFromLocalMap = 1 << 6,  // TESObjectSTAT
+				kHiddenFromLocalMap = 1 << 6,      // TESObjectSTAT
 				kTurnOffFire = 1 << 7,
 
 				kInaccessible = 1 << 8,            // TESObjectDOOR
@@ -176,21 +177,21 @@ namespace RE
 				kStartsDead = 1 << 8,              // TESNPC
 				kDoesntLightWater = 1 << 8,
 
-				kMotionBlur = 1 << 9,  // TESObjectSTAT
+				kMotionBlur = 1 << 9,              // TESObjectSTAT
 				kPersistent = 1 << 10,
 				kInitiallyDisabled = 1 << 11,
 				kIgnored = 1 << 12,
 
-				kStartUnconscious = 1 << 13,  // TESNPC
+				kStartUnconscious = 1 << 13,       // TESNPC
 				kSkyMarker = 1 << 13,
-				kHarvested = 1 << 13,  // TESObjectTREE
+				kHarvested = 1 << 13,              // TESObjectTREE
 
-				kIsFullLOD = 1 << 16,   // Actor
-				kNeverFades = 1 << 16,  // TESObjectLIGH
+				kIsFullLOD = 1 << 16,              // Actor
+				kNeverFades = 1 << 16,             // TESObjectLIGH
 
 				kDoesntLightLandscape = 1 << 17,
 
-				kIgnoreFriendlyHits = 1 << 20,  // Actor
+				kIgnoreFriendlyHits = 1 << 20,     // Actor
 
 				kNoAIAcquire = 1 << 25,
 				kCollisionGeometry_Filter = 1 << 26,
@@ -322,11 +323,11 @@ namespace RE
 		[[nodiscard]] virtual const BSTSmartPointer<BipedAnim>& GetBiped2() const;                                                                                                                                                                                           // 7F
 		[[nodiscard]] virtual const BSTSmartPointer<BipedAnim>& GetCurrentBiped() const;                                                                                                                                                                                     // 80 - { return GetBiped2(); }
 		virtual void                                            SetBiped(const BSTSmartPointer<BipedAnim>& a_biped);                                                                                                                                                         // 81 - { return; }
-		virtual void                                            RemoveWeapon(BIPED_OBJECT equipIndex);                                                                                                                                                                                                // 82 - { return; }
+		virtual void                                            RemoveWeapon(BIPED_OBJECT equipIndex);                                                                                                                                                                       // 82 - { return; }
 		virtual void                                            Unk_83(void);                                                                                                                                                                                                // 83 - { return; }
-																																																																			 // Virtual functions defined in TESObjectREFR after the vtable structure becomes different in VR.
+		                                                                                                                                                                                                                                                                     // Virtual functions defined in TESObjectREFR after the vtable structure becomes different in VR.
 #if !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
-		virtual void Unk_84(void);  // 84 - sets flag 24 if the object has destructibles
+		virtual void Unk_84(void);
 #endif
 		SKYRIM_REL_VR_VIRTUAL void                         SetObjectReference(TESBoundObject* a_object);                                         // 84 - sets flag 24 if the object has destructibles
 		SKYRIM_REL_VR_VIRTUAL void                         MoveHavok(bool a_forceRec);                                                           // 85
@@ -359,17 +360,18 @@ namespace RE
 		SKYRIM_REL_VR_VIRTUAL bool                         Unk_A0(NiAVObject* a_node, float& a_angleX, float& a_angleZ, NiPoint3& a_pos);        // A0
 		SKYRIM_REL_VR_VIRTUAL void                         UnequipItem(std::uint64_t a_arg1, TESBoundObject* a_object);                          // A1 - { return; }
 
-		static NiPointer<TESObjectREFR> LookupByHandle(RefHandle a_refHandle);
-		static bool                     LookupByHandle(RefHandle a_refHandle, NiPointer<TESObjectREFR>& a_refrOut);
-		static TESObjectREFR*           FindReferenceFor3D(NiAVObject* a_object3D);
+		static NiPointer<TESObjectREFR>                 LookupByHandle(RefHandle a_refHandle);
+		static bool                                     LookupByHandle(RefHandle a_refHandle, NiPointer<TESObjectREFR>& a_refrOut);
+		static TESObjectREFR*                           FindReferenceFor3D(NiAVObject* a_object3D);
 
-		bool                                            ActivateRef(TESObjectREFR* a_activator, uint8_t a_arg2, TESBoundObject* a_object, int32_t a_count, bool a_defaultProcessingOnly);
+		bool                                            ActivateRef(TESObjectREFR* a_activator, std::uint8_t a_arg2, TESBoundObject* a_object, std::int32_t a_count, bool a_defaultProcessingOnly);
 		ModelReferenceEffect*                           ApplyArtObject(BGSArtObject* a_artObject, float a_duration = -1.0f, TESObjectREFR* a_facingRef = nullptr, bool a_faceTarget = false, bool a_attachToCamera = false, NiAVObject* a_attachNode = nullptr, bool a_interfaceEffect = false);
 		ShaderReferenceEffect*                          ApplyEffectShader(TESEffectShader* a_effectShader, float a_duration = -1.0f, TESObjectREFR* a_facingRef = nullptr, bool a_faceTarget = false, bool a_attachToCamera = false, NiAVObject* a_attachNode = nullptr, bool a_interfaceEffect = false);
 		[[nodiscard]] bool                              CanBeMoved();
 		ObjectRefHandle                                 CreateRefHandle();
 		void                                            DoTrap(TrapData& a_data);
 		void                                            DoTrap(TrapEntry* a_trap, TargetEntry* a_target);
+		[[nodiscard]] std::optional<RE::NiPoint3>       FindNearestVertex(const float a_minimum_offset = 0.f);
 		[[nodiscard]] NiAVObject*                       Get3D() const;
 		[[nodiscard]] NiAVObject*                       Get3D(bool a_firstPerson) const;
 		[[nodiscard]] TESNPC*                           GetActorOwner();
@@ -397,7 +399,7 @@ namespace RE
 		[[nodiscard]] float                             GetHeight() const;
 		[[nodiscard]] InventoryItemMap                  GetInventory();
 		[[nodiscard]] InventoryItemMap                  GetInventory(std::function<bool(TESBoundObject&)> a_filter, bool a_noInit = false);
-		[[nodiscard]] std::int32_t                      GetInventoryCount(bool no_init = false);
+		[[nodiscard]] std::int32_t                      GetInventoryCount(bool a_noInit = false);
 		[[nodiscard]] InventoryCountMap                 GetInventoryCounts();
 		[[nodiscard]] InventoryCountMap                 GetInventoryCounts(std::function<bool(TESBoundObject&)> a_filter, bool a_noInit = false);
 		[[nodiscard]] InventoryChanges*                 GetInventoryChanges(bool a_noInit = false);
@@ -426,29 +428,35 @@ namespace RE
 		[[nodiscard]] bool                              HasKeyword(const BGSKeyword* a_keyword) const;
 		[[nodiscard]] bool                              HasKeywordInArray(const std::vector<BGSKeyword*>& a_keywords, bool a_matchAll) const;
 		[[nodiscard]] bool                              HasKeywordInList(BGSListForm* a_keywordList, bool a_matchAll) const;
+		bool                                            HasKeywordWithType(DEFAULT_OBJECT keywordType) const;
+		bool                                            HasKeywordWithType(DefaultObjectID keywordType) const;
 		[[nodiscard]] bool                              HasQuestObject() const;
 		void                                            InitChildActivates(TESObjectREFR* a_actionRef);
 		bool                                            InitInventoryIfRequired(bool a_ignoreContainerExtraData = false);
-		ModelReferenceEffect*                           InstantiateHitArt(BGSArtObject* a_art, float a_dur, TESObjectREFR* a_facingRef, bool a_faceTarget, bool a_attachToCamera, NiAVObject* a_attachNode = nullptr, bool a_interfaceEffect = false);
-		ShaderReferenceEffect*                          InstantiateHitShader(TESEffectShader* a_shader, float a_dur, TESObjectREFR* a_facingRef = nullptr, bool a_faceTarget = false, bool a_attachToCamera = false, NiAVObject* a_attachNode = nullptr, bool a_interfaceEffect = false);
 		[[nodiscard]] bool                              Is3DLoaded() const;
 		[[nodiscard]] bool                              IsActivationBlocked() const;
+		bool                                            IsAnimal() const;
 		[[nodiscard]] bool                              IsAnOwner(const Actor* a_testOwner, bool a_useFaction, bool a_requiresOwner) const;
 		[[nodiscard]] bool                              IsCrimeToActivate();
 		[[nodiscard]] bool                              IsDisabled() const;
+		bool                                            IsDragon() const;
 		[[nodiscard]] bool                              IsEnchanted() const;
 		[[nodiscard]] bool                              IsHorse() const;
+		bool                                            IsHumanoid() const;
 		[[nodiscard]] bool                              IsInitiallyDisabled() const;
 		[[nodiscard]] bool                              IsInWater() const;
+		bool                                            IsJewelry() const;
 		[[nodiscard]] bool                              IsLocked() const;
 		[[nodiscard]] bool                              IsMarkedForDeletion() const;
 		[[nodiscard]] bool                              IsOffLimits();
 		[[nodiscard]] bool                              IsPersistent() const;
-        [[nodiscard]] float                             IsPointDeepUnderWater(float a_zPos, TESObjectCELL* a_cell) const;
-        [[nodiscard]] bool                              IsPointSubmergedMoreThan(const NiPoint3& a_pos, TESObjectCELL* a_cell, float a_waterLevel) const;
+		[[nodiscard]] float                             IsPointDeepUnderWater(float a_zPos, TESObjectCELL* a_cell) const;
+		[[nodiscard]] bool                              IsPointSubmergedMoreThan(const NiPoint3& a_pos, TESObjectCELL* a_cell, float a_waterLevel) const;
 		void                                            MoveTo(TESObjectREFR* a_target);
+		bool                                            MoveToNearestNavmesh(const float a_minimum_offset = 0.f);
 		bool                                            MoveToNode(TESObjectREFR* a_target, const BSFixedString& a_nodeName);
 		bool                                            MoveToNode(TESObjectREFR* a_target, NiAVObject* a_node);
+		bool                                            NameIncludes(std::string a_word);
 		NiPointer<TESObjectREFR>                        PlaceObjectAtMe(TESBoundObject* a_baseToPlace, bool a_forcePersist) const;
 		void                                            PlayAnimation(stl::zstring a_from, stl::zstring a_to);
 		void                                            PlayAnimation(NiControllerManager* a_manager, NiControllerSequence* a_toSeq, NiControllerSequence* a_fromSeq);
@@ -462,12 +470,12 @@ namespace RE
 
 		struct REFERENCE_RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT                 \
-	std::uint64_t unk88;        /* 88, 90 */ \
-	std::uint16_t refScale;     /* 90, 98 */ \
-	std::int8_t   modelState;   /* 92, 9A */ \
-	bool          preDestroyed; /* 93, 9B */ \
-	std::uint32_t pad94;        /* 94, 9C */
+#define RUNTIME_DATA_CONTENT                        \
+			std::uint64_t unk88;        /* 88, 90 */ \
+			std::uint16_t refScale;     /* 90, 98 */ \
+			std::int8_t   modelState;   /* 92, 9A */ \
+			bool          preDestroyed; /* 93, 9B */ \
+			std::uint32_t pad94;        /* 94, 9C */
 
 			RUNTIME_DATA_CONTENT
 		};
@@ -483,10 +491,10 @@ namespace RE
 		}
 
 		// members
-		OBJ_REFR         data;          // 40
-		TESObjectCELL*   parentCell;    // 60
-		LOADED_REF_DATA* loadedData;    // 68
-		ExtraDataList    extraList;     // 70
+		OBJ_REFR         data;        // 40
+		TESObjectCELL*   parentCell;  // 60
+		LOADED_REF_DATA* loadedData;  // 68
+		ExtraDataList    extraList;   // 70
 
 #ifndef ENABLE_SKYRIM_AE
 		RUNTIME_DATA_CONTENT

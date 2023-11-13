@@ -1,0 +1,16 @@
+[submodule "vendor/fmt"]
+	path = vendor/fmt
+	url = https://github.com/ArranzCNL/fmt
+	branch = v10.1.1
+[submodule "vendor/rapidcsv"]
+	path = vendor/rapidcsv
+	url = https://github.com/ArranzCNL/rapidcsv
+	branch = v8.80
+[submodule "vendor/spdlog"]
+	path = vendor/spdlog
+	url = https://github.com/ArranzCNL/spdlog
+	branch = v1.12.0
+[submodule "vendor/xbyak"]
+	path = vendor/xbyak
+	url = https://github.com/ArranzCNL/xbyak
+	branch = v6.73

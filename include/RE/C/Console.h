@@ -19,12 +19,12 @@ namespace RE
 
 		struct RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT       \
-	void*         opcode; /* 00 */ \
-	std::uint64_t unk38;  /* 08 */ \
-	std::uint64_t unk40;  /* 10 */ \
-	std::uint64_t unk48;  /* 18 */ \
-	std::uint64_t unk50;  /* 20 */
+#define RUNTIME_DATA_CONTENT              \
+			void*         opcode; /* 00 */ \
+			std::uint64_t unk38;  /* 08 */ \
+			std::uint64_t unk40;  /* 10 */ \
+			std::uint64_t unk48;  /* 18 */ \
+			std::uint64_t unk50;  /* 20 */
 
 			RUNTIME_DATA_CONTENT
 		};
@@ -58,9 +58,8 @@ namespace RE
 		RUNTIME_DATA_CONTENT  // 30, 40
 #endif
 
-			protected :
-			void
-			SetSelectedRef_Impl(ObjectRefHandle& a_handle);
+	protected:
+		void SetSelectedRef_Impl(ObjectRefHandle& a_handle);
 	};
 #ifndef ENABLE_SKYRIM_VR
 	static_assert(sizeof(Console) == 0x58);

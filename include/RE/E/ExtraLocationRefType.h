@@ -12,7 +12,7 @@ namespace RE
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraLocationRefType;
 		inline static constexpr auto VTABLE = VTABLE_ExtraLocationRefType;
-		inline static auto           EXTRADATATYPE = ExtraDataType::kLocationRefType;
+		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kLocationRefType;
 
 		~ExtraLocationRefType() override;  // 00
 

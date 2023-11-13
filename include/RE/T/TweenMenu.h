@@ -21,10 +21,10 @@ namespace RE
 
 		struct RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT              \
-	BSTArray<PerkData> perkData; /* 00 */ \
-	float              unk48;    /* 18 */ \
-	float              unk4C;    /* 1C */
+#define RUNTIME_DATA_CONTENT                     \
+			BSTArray<PerkData> perkData; /* 00 */ \
+			float              unk48;    /* 18 */ \
+			float              unk4C;    /* 1C */
 
 			RUNTIME_DATA_CONTENT
 		};
@@ -45,6 +45,13 @@ namespace RE
 		void               Accept(CallbackProcessor* a_processor) override;  // 01
 		UI_MESSAGE_RESULTS ProcessMessage(UIMessage& a_message) override;    // 04
 		void               PostDisplay() override;                           // 06
+
+		static void CloseTweenMenu()
+		{
+			using func_t = decltype(&CloseTweenMenu);
+			REL::Relocation<func_t> func{ RELOCATION_ID(51839, 52711) };
+			return func();
+		}
 
 		[[nodiscard]] inline RUNTIME_DATA& GetRuntimeData() noexcept
 		{

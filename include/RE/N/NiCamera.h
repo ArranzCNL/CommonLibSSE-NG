@@ -12,41 +12,45 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_NiCamera;
-		inline static auto           Ni_RTTI = NiRTTI_NiCamera;
+		inline static constexpr auto Ni_RTTI = NiRTTI_NiCamera;
 
 		struct RUNTIME_DATA
 		{
 #ifndef ENABLE_SKYRIM_VR
-#	define RUNTIME_DATA_CONTENT float worldToCam[4][4]; /* 0 */
+#define RUNTIME_DATA_CONTENT               \
+			float worldToCam[4][4]; /* 0 */
+
 			RUNTIME_DATA_CONTENT
 		};
 		static_assert(sizeof(RUNTIME_DATA) == 0x40);
 #elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
-#	define RUNTIME_DATA_CONTENT                   \
-		float           worldToCam[4][4]; /* 0 */  \
-		NiFrustum*      viewFrustumPtr;   /* 40 */ \
-		BSTArray<void*> unk180;           /* 48 */ \
-		BSTArray<void*> unk198;           /* 60 */ \
-		BSTArray<void*> unk1B0;           /* 78 */ \
-		std::uint32_t   unk1C8;           /* 90 */
+#define RUNTIME_DATA_CONTENT                          \
+			float           worldToCam[4][4]; /* 0 */  \
+			NiFrustum*      viewFrustumPtr;   /* 40 */ \
+			BSTArray<void*> unk180;           /* 48 */ \
+			BSTArray<void*> unk198;           /* 60 */ \
+			BSTArray<void*> unk1B0;           /* 78 */ \
+			std::uint32_t   unk1C8;           /* 90 */
 
 			RUNTIME_DATA_CONTENT
 		};
 		static_assert(sizeof(RUNTIME_DATA) == 0x98);
 #else
-#	define RUNTIME_DATA_CONTENT float worldToCam[4][4]; /* 0 */
+#define RUNTIME_DATA_CONTENT               \
+			float worldToCam[4][4]; /* 0 */
+
 			RUNTIME_DATA_CONTENT
 		};
 #endif
 
 		struct RUNTIME_DATA2
 		{
-#define RUNTIME_DATA2_CONTENT                \
-	NiFrustum     viewFrustum;      /* 00 */ \
-	float         minNearPlaneDist; /* 1C */ \
-	float         maxFarNearRatio;  /* 20 */ \
-	NiRect<float> port;             /* 24 */ \
-	float         lodAdjust;        /* 34 */
+#define RUNTIME_DATA2_CONTENT                       \
+			NiFrustum     viewFrustum;      /* 00 */ \
+			float         minNearPlaneDist; /* 1C */ \
+			float         maxFarNearRatio;  /* 20 */ \
+			NiRect<float> port;             /* 24 */ \
+			float         lodAdjust;        /* 34 */
 
 			RUNTIME_DATA2_CONTENT
 		};

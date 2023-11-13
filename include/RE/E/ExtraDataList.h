@@ -195,9 +195,9 @@ namespace RE
 		void                  SetOwner(TESForm* a_owner);
 
 	private:
-		[[nodiscard]] BSExtraData* GetByTypeImpl(ExtraDataType a_type) const;
-		void         MarkType(std::uint32_t a_type, bool a_cleared);
-		void         MarkType(ExtraDataType a_type, bool a_cleared);
+		[[nodiscard]] BSExtraData*     GetByTypeImpl(ExtraDataType a_type) const;
+		void                           MarkType(std::uint32_t a_type, bool a_cleared);
+		void                           MarkType(ExtraDataType a_type, bool a_cleared);
 		[[nodiscard]] BSReadWriteLock& GetLock() const noexcept;
 
 		// members

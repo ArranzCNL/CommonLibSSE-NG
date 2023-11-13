@@ -104,9 +104,11 @@ namespace RE
 				return;
 			}
 
-			auto      allocator = hkContainerHeapAllocator::GetSingleton();
+			auto allocator = hkContainerHeapAllocator::GetSingleton();
 			size_type newSize = a_newCap * sizeof(T);
-			T*        newMem = static_cast<T*>(allocator->BufAlloc(newSize));
+			T* newMem = static_cast<T*>(allocator->BufAlloc(newSize));
+			std::memset(newMem, 0, newSize);
+
 			if (_data) {
 				size_type oldSize = size() * sizeof(T);
 				std::memcpy(newMem, _data, oldSize);
@@ -128,14 +130,14 @@ namespace RE
 		void push_back(const T& a_value)
 		{
 			if (size() == capacity()) {
-				reserve(static_cast<size_type>(std::ceil(size() * GROWTH_FACTOR)));
+				reserve(size() == 0 ? 1 : static_cast<size_type>(std::ceil(size() * GROWTH_FACTOR)));
 			}
 			_data[_size++] = a_value;
 		}
 
 		void resize(size_type a_count)
 		{
-			assert(a_count > 0 && a_count <= kCapacityMask);
+			assert(a_count >= 0 && a_count <= kCapacityMask);
 			if (a_count == size()) {
 				return;
 			}
@@ -146,9 +148,9 @@ namespace RE
 				}
 			}
 
-			auto      allocator = hkContainerHeapAllocator::GetSingleton();
+			auto allocator = hkContainerHeapAllocator::GetSingleton();
 			size_type newSize = a_count * sizeof(T);
-			T*        newMem = static_cast<T*>(allocator->BufAlloc(newSize));
+			T* newMem = static_cast<T*>(allocator->BufAlloc(newSize));
 			if (_data) {
 				size_type oldSize = size() * sizeof(T);
 				std::memcpy(newMem, _data, (std::min)(oldSize, newSize));

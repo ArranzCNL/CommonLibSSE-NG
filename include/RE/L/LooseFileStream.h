@@ -44,6 +44,8 @@ namespace RE
 			LooseFileStream* Ctor(const BSFixedString& a_prefix, const BSFixedString& a_dirName, const BSFixedString& a_fileName, std::uint32_t a_fileSize, bool a_readOnly, Location* a_location);
 #endif
 		};
+#ifndef __INTELLISENSE__
 		static_assert(sizeof(LooseFileStream) == 0x50);
+#endif
 	}
 }

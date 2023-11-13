@@ -180,10 +180,10 @@ namespace RE
 			~EnchantConstructMenu() override;  // 00
 
 			// override (CraftingSubMenu)
-			void Accept(CallbackProcessor* a_cbReg) override;          // 01
+			void               Accept(CallbackProcessor* a_cbReg) override;          // 01
 			[[nodiscard]] bool HasItemPreview() override;                            // 04 - { return currentCategory != Enchantment || craftItemPreview; }
-			bool ProcessUserEvent(BSFixedString* a_control) override;  // 05
-			void SetItemCardInfo(ItemCard* a_itemCard) override;       // 07
+			bool               ProcessUserEvent(BSFixedString* a_control) override;  // 05
+			void               SetItemCardInfo(ItemCard* a_itemCard) override;       // 07
 
 			void RenameItem(const char* a_name);
 			void RenameItem_Impl(InventoryEntryData* a_entryData, ExtraDataList* a_extraList, const char* a_name);
@@ -198,8 +198,8 @@ namespace RE
 			std::uint32_t                                pad114;                  // 114
 			BSTArray<BSTSmartPointer<CategoryListEntry>> listEntries;             // 118
 			BSString                                     customName;              // 130
-			GFxValue                                     inventoryLists;          // 140
-			GFxValue                                     categories;              // 158
+			GFxValue                                     categories;              // 140
+			GFxValue                                     inventoryLists;          // 158
 			Selections                                   selected;                // 170
 			InventoryEntryData*                          craftItemPreview;        // 1A0
 			CreateEffectFunctor                          createEffectFunctor;     // 1A8

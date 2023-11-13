@@ -38,18 +38,18 @@ namespace RE
 		void        InitHavok() override;                               // 66
 		NiAVObject* Load3D(bool a_backgroundLoading) override;          // 6A
 #ifndef SKYRIM_CROSS_VR
-		bool        IsBarrierProjectile() override;                              // A7 - { return 1; }
-		void        UpdateImpl(float a_delta) override;                 // AB
-		bool        ProcessImpacts() override;                              // AC
-		bool        GetKillOnCollision() override;                              // B8 - { return 0; }
+		bool IsBarrierProjectile() override;      // A7 - { return 1; }
+		void UpdateImpl(float a_delta) override;  // AB
+		bool ProcessImpacts() override;           // AC
+		bool GetKillOnCollision() override;       // B8 - { return 0; }
 #endif
 
 		struct BARRIER_RUNTIME_DATA
 		{
-#define BARRIER_RUNTIME_DATA_CONTENT                      \
-	float                   width;         /* 1D8, 1E0 */ \
-	std::uint32_t           pad1DC;        /* 1DC */      \
-	BSTArray<CollisionData> collisionData; /* 1E0 */
+#define BARRIER_RUNTIME_DATA_CONTENT                             \
+			float                   width;         /* 1D8, 1E0 */ \
+			std::uint32_t           pad1DC;        /* 1DC */      \
+			BSTArray<CollisionData> collisionData; /* 1E0 */
 
 			BARRIER_RUNTIME_DATA_CONTENT
 		};

@@ -21,8 +21,9 @@ namespace RE
 			// members
 			GFxImagePacker* imagePacker;
 		};
+#ifndef __INTELLISENSE__
 		static_assert(sizeof(ImagePackVisitor) == 0x10);
-
+#endif
 		// members
 		std::uint64_t    unk20;           // 20
 		std::uint32_t    unk28;           // 28

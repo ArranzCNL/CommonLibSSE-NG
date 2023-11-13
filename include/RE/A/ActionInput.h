@@ -23,7 +23,7 @@ namespace RE
 		NiPointer<TESObjectREFR> source;  // 08
 		NiPointer<TESObjectREFR> target;  // 10
 		BGSAction*               action;  // 18
-		uint32_t                 unk20;   // 20
+		std::uint32_t            unk20;   // 20
 	};
 	static_assert(sizeof(ActionInput) == 0x28);
 }

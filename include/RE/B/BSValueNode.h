@@ -23,7 +23,7 @@ namespace RE
 		void          SaveBinary(NiStream& a_stream) override;            // 1B
 		bool          IsEqual(NiObject* a_object) override;               // 1C
 #ifndef SKYRIM_CROSS_VR
-		void UpdateWorldData(NiUpdateData* a_data) override;              // 30
+		void UpdateWorldData(NiUpdateData* a_data) override;  // 30
 #endif
 
 		// add
@@ -31,10 +31,10 @@ namespace RE
 
 		struct VALUE_NODE_RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT                                      \
-	std::uint8_t                      flags;            /* 128 */ \
-	std::uint32_t                     value;            /* 12C */ \
-	NiPointer<BSMasterParticleSystem> associatedObject; /* 130 */
+#define RUNTIME_DATA_CONTENT                                             \
+			std::uint8_t                      flags;            /* 128 */ \
+			std::uint32_t                     value;            /* 12C */ \
+			NiPointer<BSMasterParticleSystem> associatedObject; /* 130 */
 		};
 
 		[[nodiscard]] inline VALUE_NODE_RUNTIME_DATA& GetValueNodeRuntimeData() noexcept

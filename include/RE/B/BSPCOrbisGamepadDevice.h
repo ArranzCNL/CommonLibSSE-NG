@@ -16,27 +16,27 @@ namespace RE
 			enum Key : std::uint32_t
 			{
 				// Masks for buttonState
-				// Key hardware value.  Matches SCE_PAD_BUTTON_* enum values on ORBIS
-				KUp = 0x0010,
-				kDown = 0x0040,
-				kLeft = 0x0080,
-				kRight = 0x0020,
-				kPS3_Start = 0x0008,
-				kPS3_Back = 0x00100000,  // This is mapped to the touchpad on the PS4 controller
-				kPS3_L3 = 0x0002,
-				kPS3_R3 = 0x0004,
-				kPS3_LB = 0x0400,
-				kPS3_RB = 0x0800,
-				kPS3_A = 0x4000,
-				kPS3_B = 0x2000,
-				kPS3_X = 0x8000,
-				kPS3_Y = 0x1000,
+				// Key hardware value
+				kUp = ScePad::ScePadButton::SCE_PAD_BUTTON_UP,
+				kDown = ScePad::ScePadButton::SCE_PAD_BUTTON_DOWN,
+				kLeft = ScePad::ScePadButton::SCE_PAD_BUTTON_LEFT,
+				kRight = ScePad::ScePadButton::SCE_PAD_BUTTON_RIGHT,
+				kPS3_Start = ScePad::ScePadButton::SCE_PAD_BUTTON_OPTIONS,
+				kPS3_Back = ScePad::ScePadButton::SCE_PAD_BUTTON_TOUCH_PAD,  // This is mapped to the touchpad on the PS4 controller
+				kPS3_L3 = ScePad::ScePadButton::SCE_PAD_BUTTON_L3,
+				kPS3_R3 = ScePad::ScePadButton::SCE_PAD_BUTTON_R3,
+				kPS3_LB = ScePad::ScePadButton::SCE_PAD_BUTTON_L1,
+				kPS3_RB = ScePad::ScePadButton::SCE_PAD_BUTTON_R1,
+				kPS3_A = ScePad::ScePadButton::SCE_PAD_BUTTON_CROSS,
+				kPS3_B = ScePad::ScePadButton::SCE_PAD_BUTTON_CIRCLE,
+				kPS3_X = ScePad::ScePadButton::SCE_PAD_BUTTON_SQUARE,
+				kPS3_Y = ScePad::ScePadButton::SCE_PAD_BUTTON_TRIANGLE,
 
 				// Unused by Skyrim
-				kPS4_Share = 0x0001,   // Skyrim uses the touchpad for Back and leaves the Share button unused
-				kPS4_L2 = 0x0100,      // Skyrim uses trigger axis read instead of button press
-				kPS4_R2 = 0x0200,      // Skyrim uses trigger axis read instead of button press
-				kPS4_PSBtn = 0x10000,  // Playstation button
+				kPS4_Share = ScePad::ScePadButton::SCE_PAD_BUTTON_SHARE,        // Skyrim uses the touchpad for Back and leaves the Share button unused
+				kPS4_L2 = ScePad::ScePadButton::SCE_PAD_BUTTON_L2,              // Skyrim uses trigger axis read instead of button press
+				kPS4_R2 = ScePad::ScePadButton::SCE_PAD_BUTTON_R2,              // Skyrim uses trigger axis read instead of button press
+				kPS4_PSBtn = ScePad::ScePadButton::SCE_PAD_BUTTON_PLAYSTATION,  // Playstation button
 
 				// arbitrary values
 				// IDs meant to be used with ButtonEvent
@@ -148,25 +148,25 @@ namespace RE
 			std::byte           pad_4D[3];        // 4D
 			std::uint64_t       timestamp;        // 50
 			UnusedExtensionData unusedExtData;    // 58 -- unused
-			uint8_t             connectedCount;   // 68 -- Controller handle connected count
-			uint8_t             pad_69[2];        // 69 -- nice.
-			uint8_t             specialDataLen;   // 6B
-			uint8_t             specialData[12];  // 6C -- Device data for special controllers
+			std::uint8_t        connectedCount;   // 68 -- Controller handle connected count
+			std::uint8_t        pad_69[2];        // 69 -- nice.
+			std::uint8_t        specialDataLen;   // 6B
+			std::uint8_t        specialData[12];  // 6C -- Device data for special controllers
 		};
 		static_assert(sizeof(GamepadData) == 0x78);
 
 		~BSPCOrbisGamepadDevice() override;  // 00
 
 		// override (BSPCGamepadDeviceDelegate)
-		void Initialize() override;                                                                   // 01
-		void Process(float a_arg1) override;                                                          // 02
-		void Release() override;                                                                      // 03
-		void Reset() override;                                                                        // 08 - { memset(this+0xD8, 0, 0x120); }
-		void SetRumble(float lValue, float rValue) override;                                          // 09
-		void SetLEDColor(ColorParam* colorParam) override;                                            // 0A
-		void ResetLEDColor() override;                                                                // 0B
-		void ProcessRawInput(int32_t a_rawX, int32_t a_rawY, float& a_outX, float& a_outY) override;  // 0D
-		void Unk_0E(void) override;                                                                   // 0E - { return; }
+		void Initialize() override;                                                                             // 01
+		void Process(float a_arg1) override;                                                                    // 02
+		void Release() override;                                                                                // 03
+		void Reset() override;                                                                                  // 08 - { memset(this+0xD8, 0, 0x120); }
+		void SetRumble(float lValue, float rValue) override;                                                    // 09
+		void SetLEDColor(ColorParam* colorParam) override;                                                      // 0A
+		void ResetLEDColor() override;                                                                          // 0B
+		void ProcessRawInput(std::int32_t a_rawX, std::int32_t a_rawY, float& a_outX, float& a_outY) override;  // 0D
+		void Unk_0E(void) override;                                                                             // 0E - { return; }
 
 		ButtonState GetPreviousButtonState() const
 		{

@@ -97,7 +97,7 @@ namespace RE
 		void                     InitChunk() override;                                                  // 70
 
 		// override (BGSKeywordForm)
-		[[nodiscard]] BGSKeyword* GetDefaultKeyword() const override;  // 05
+		[[nodiscard]] BGSKeyword*    GetDefaultKeyword() const override;  // 05
 
 		[[nodiscard]] bool           IsHostile() const;
 		bool                         LearnEffect(std::uint32_t a_index);

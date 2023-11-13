@@ -19,13 +19,13 @@ namespace RE
 
 		struct SCENE_GRAPH_RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT        \
-	float         customNearDistance; /* 140 */ \
-	float         customFarDistance;  /* 144 */ \
-	bool          useCustomNear;      /* 148 */ \
-	bool          useCustomFar;       /* 149 */ \
-	std::uint16_t pad14A;             /* 14A */ \
-	std::uint32_t pad14C;             /* 14C */
+#define RUNTIME_DATA_CONTENT                            \
+			float         customNearDistance; /* 140 */  \
+			float         customFarDistance;  /* 144 */  \
+			bool          useCustomNear;      /* 148 */  \
+			bool          useCustomFar;       /* 149 */  \
+			std::uint16_t pad14A;             /* 14A */  \
+			std::uint32_t pad14C;             /* 14C */
 
 			RUNTIME_DATA_CONTENT
 		};

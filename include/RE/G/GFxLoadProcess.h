@@ -63,5 +63,7 @@ namespace RE
 		GArray<GASExecuteTag*> importActions;                           // 3D0
 		GFxStream*             streamEx;                                // 3E8
 	};
+#ifndef __INTELLISENSE__
 	static_assert(sizeof(GFxLoadProcess) == 0x3F0);
+#endif
 }

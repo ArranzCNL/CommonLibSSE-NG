@@ -80,22 +80,22 @@ namespace RE
 		{
 		public:
 			// members
-			alignas(0x40) GetSupportingVertexFunc* getSupportingVertexFunc;  // 00
-			ConvertVertexIdsToVerticesFunc* convertVertexIdsToVertices;      // 08
-			WeldContactPointFunc*           weldContactPointFunc;            // 10
-			GetCentreFunc*                  getCentreFunc;                   // 18
-			GetNumCollisionSpheresFunc*     getNumCollisionSpheresFunc;      // 20
-			GetCollisionSpheresFunc*        getCollisionSpheresFunc;         // 28
-			GetAabbFunc*                    getAabbFunc;                     // 30
-			CastRayFunc*                    castRay;                         // 38
-			CastRayWithCollectorFunc*       castRayWithCollector;            // 40
-			CastRayBundleFunc*              castRayBundle;                   // 48
-			GetChildShapeFunc*              getChildShapeFunc;               // 50
-			GetCollisionFilterInfoFunc*     getCollisionFilterInfoFunc;      // 58
-			std::uint64_t                   pad60;                           // 60
-			std::uint64_t                   pad68;                           // 68
-			std::uint64_t                   pad70;                           // 70
-			std::uint64_t                   pad78;                           // 78
+			alignas(0x40) GetSupportingVertexFunc* getSupportingVertexFunc;     // 00
+			ConvertVertexIdsToVerticesFunc*        convertVertexIdsToVertices;  // 08
+			WeldContactPointFunc*                  weldContactPointFunc;        // 10
+			GetCentreFunc*                         getCentreFunc;               // 18
+			GetNumCollisionSpheresFunc*            getNumCollisionSpheresFunc;  // 20
+			GetCollisionSpheresFunc*               getCollisionSpheresFunc;     // 28
+			GetAabbFunc*                           getAabbFunc;                 // 30
+			CastRayFunc*                           castRay;                     // 38
+			CastRayWithCollectorFunc*              castRayWithCollector;        // 40
+			CastRayBundleFunc*                     castRayBundle;               // 48
+			GetChildShapeFunc*                     getChildShapeFunc;           // 50
+			GetCollisionFilterInfoFunc*            getCollisionFilterInfoFunc;  // 58
+			std::uint64_t                          pad60;                       // 60
+			std::uint64_t                          pad68;                       // 68
+			std::uint64_t                          pad70;                       // 70
+			std::uint64_t                          pad78;                       // 78
 		};
 		static_assert(sizeof(ShapeFuncs2) == 0x80);
 

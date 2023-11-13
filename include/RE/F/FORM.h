@@ -1,5 +1,7 @@
 #pragma once
 
+#include "RE/B/BSCoreTypes.h"
+
 namespace RE
 {
 	struct FORM

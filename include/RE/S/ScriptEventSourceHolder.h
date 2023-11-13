@@ -118,7 +118,7 @@ namespace RE
 		public BSTEventSource<TESSwitchRaceCompleteEvent>,       // 11E0
 		public BSTEventSource<TESFastTravelEndEvent>             // 1238
 #else
-    public BSTEventSource<TESSwitchRaceCompleteEvent>       // 11E0
+		public BSTEventSource<TESSwitchRaceCompleteEvent>        // 11E0
 #endif
 	{
 	public:

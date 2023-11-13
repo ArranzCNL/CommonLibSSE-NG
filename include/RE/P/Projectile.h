@@ -170,21 +170,21 @@ namespace RE
 		~Projectile() override;  // 00
 
 		// override (TESObjectREFR)
-		bool         Load(TESFile* a_mod) override;                                     // 06 - { return TESObjectREFR::Load(a_mod); }
-		void         SaveGame(BGSSaveFormBuffer* a_buf) override;                       // 0E
-		void         LoadGame(BGSLoadFormBuffer* a_buf) override;                       // 0F
-		void         InitLoadGame(BGSLoadFormBuffer* a_buf) override;                   // 10
-		void         FinishLoadGame(BGSLoadFormBuffer* a_buf) override;                 // 11
-		void         Revert(BGSLoadFormBuffer* a_buf) override;                         // 12
-		bool         GetAllowPromoteToPersistent() const override;                      // 47 - { return false; }
-		bool         HasKeywordHelper(const BGSKeyword* a_keyword) const override;      // 48
-		void         SetActorCause(ActorCause* a_cause) override;                       // 50 - { actorCause = a_cause; }
-		ActorCause*  GetActorCause() const override;                                    // 51 - { return actorCause; }
-		MagicCaster* GetMagicCaster(MagicSystem::CastingSource a_source) override;      // 5C
-		bool         DetachHavok(NiAVObject* a_obj3D) override;                         // 65
-		void         InitHavok() override;                                              // 66
-		NiAVObject*  Load3D(bool a_backgroundLoading) override;                         // 6A
-		void         Set3D(NiAVObject* a_object, bool a_queue3DTasks = true) override;  // 6C
+		bool         Load(TESFile* a_mod) override;                                                      // 06 - { return TESObjectREFR::Load(a_mod); }
+		void         SaveGame(BGSSaveFormBuffer* a_buf) override;                                        // 0E
+		void         LoadGame(BGSLoadFormBuffer* a_buf) override;                                        // 0F
+		void         InitLoadGame(BGSLoadFormBuffer* a_buf) override;                                    // 10
+		void         FinishLoadGame(BGSLoadFormBuffer* a_buf) override;                                  // 11
+		void         Revert(BGSLoadFormBuffer* a_buf) override;                                          // 12
+		bool         GetAllowPromoteToPersistent() const override;                                       // 47 - { return false; }
+		bool         HasKeywordHelper(const BGSKeyword* a_keyword) const override;                       // 48
+		void         SetActorCause(ActorCause* a_cause) override;                                        // 50 - { actorCause = a_cause; }
+		ActorCause*  GetActorCause() const override;                                                     // 51 - { return actorCause; }
+		MagicCaster* GetMagicCaster(MagicSystem::CastingSource a_source) override;                       // 5C
+		bool         DetachHavok(NiAVObject* a_obj3D) override;                                          // 65
+		void         InitHavok() override;                                                               // 66
+		NiAVObject*  Load3D(bool a_backgroundLoading) override;                                          // 6A
+		void         Set3D(NiAVObject* a_object, bool a_queue3DTasks = true) override;                   // 6C
 #ifndef SKYRIM_CROSS_VR
 		// Override functions past where Skyrim VR breaks compatibility.
 		void                      MoveHavok(bool a_forceRec) override;                                   // 85 - { return; }
@@ -195,31 +195,31 @@ namespace RE
 #endif
 
 		// add
-		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bool  IsMissileProjectile();                                                                                                                                                     // A2 - { return 0; }
-		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bool  IsGrenadeProjectile();                                                                                                                                                     // A3 - { return 0; }
-		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bool  IsFlameProjectile();                                                                                                                                                       // A4 - { return 0; }
-		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bool  IsBeamProjectile();                                                                                                                                                        // A5 - { return 0; }
-		SKYRIM_REL_VR_VIRTUAL void                Unk_A6(void);                                                                                                                                                              // A6 - { return 0; }
-		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bool  IsBarrierProjectile();                                                                                                                                                     // A7 - { return 0; }
-		SKYRIM_REL_VR_VIRTUAL void                OnKill();                                                                                                                                                                  // A8 - { return; }
-		SKYRIM_REL_VR_VIRTUAL void                Process3D();                                                                                                                                                               // A9 - { return; }
-		SKYRIM_REL_VR_VIRTUAL void                PostLoad3D(NiAVObject* a_root);                                                                                                                                            // AA
-		SKYRIM_REL_VR_VIRTUAL void                UpdateImpl(float a_delta);                                                                                                                                                 // AB
-		SKYRIM_REL_VR_VIRTUAL bool                ProcessImpacts();                                                                                                                                                          // AC
-		SKYRIM_REL_VR_VIRTUAL void                Update3D();                                                                                                                                                                // AD
-		SKYRIM_REL_VR_VIRTUAL void                Unk_AE(void);                                                                                                                                                              // AE - { return 0; }
-		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL float GetPowerSpeedMult() const;                                                                                                                                                       // AF - { if (unk158) return 1.0; else return unk188; } - "float GetSpeed()"?
-		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL float GetWeaponSpeedMult() const;                                                                                                                                                      // B0 - { return 1.0; }
-		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bool  GetStopMainSoundAfterImpact();                                                                                                                                             // B1 - { return 0; }
-		SKYRIM_REL_VR_VIRTUAL void                ReportHavokDeactivation();                                                                                                                                                 // B2 - { return; }
-		SKYRIM_REL_VR_VIRTUAL bool                TurnOff(Actor* a_owner, bool a_noDeactivateSound);                                                                                                                         // B3
-		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bool  IsPermanent() const;                                                                                                                                                       // B4 - { return TESDataHandler::GetSingleton()->IsGeneratedFormID(formID) == 0; }
-		SKYRIM_REL_VR_VIRTUAL float               GetGravity();                                                                                                                                                              // B5 - { void* var = unk40; if ((var->unk80 >> 17) & 1) return 1.0; else return var->unk84; }
-		SKYRIM_REL_VR_VIRTUAL void                CleanUpPointersOnDisable();                                                                                                                                                // B6
-		SKYRIM_REL_VR_VIRTUAL bool                RunTargetPick();                                                                                                                                                           // B7
-		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bool  GetKillOnCollision();                                                                                                                                                      // B8 - { return 1; }
-		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bool  ShouldBeLimited();                                                                                                                                                         // B9 - { return 0; }
-		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bool  TargetsWholeBody();                                                                                                                                                        // BA - { return 0; }
+		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bool          IsMissileProjectile();                                                                                                                                             // A2 - { return 0; }
+		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bool          IsGrenadeProjectile();                                                                                                                                             // A3 - { return 0; }
+		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bool          IsFlameProjectile();                                                                                                                                               // A4 - { return 0; }
+		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bool          IsBeamProjectile();                                                                                                                                                // A5 - { return 0; }
+		SKYRIM_REL_VR_VIRTUAL void                        Unk_A6(void);                                                                                                                                                      // A6 - { return 0; }
+		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bool          IsBarrierProjectile();                                                                                                                                             // A7 - { return 0; }
+		SKYRIM_REL_VR_VIRTUAL void                        OnKill();                                                                                                                                                          // A8 - { return; }
+		SKYRIM_REL_VR_VIRTUAL void                        Process3D();                                                                                                                                                       // A9 - { return; }
+		SKYRIM_REL_VR_VIRTUAL void                        PostLoad3D(NiAVObject* a_root);                                                                                                                                    // AA
+		SKYRIM_REL_VR_VIRTUAL void                        UpdateImpl(float a_delta);                                                                                                                                         // AB
+		SKYRIM_REL_VR_VIRTUAL bool                        ProcessImpacts();                                                                                                                                                  // AC
+		SKYRIM_REL_VR_VIRTUAL void                        Update3D();                                                                                                                                                        // AD
+		SKYRIM_REL_VR_VIRTUAL void                        Unk_AE(void);                                                                                                                                                      // AE - { return 0; }
+		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL float         GetPowerSpeedMult() const;                                                                                                                                         // AF - { if (unk158) return 1.0; else return unk188; } - "float GetSpeed()"?
+		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL float         GetWeaponSpeedMult() const;                                                                                                                                        // B0 - { return 1.0; }
+		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bool          GetStopMainSoundAfterImpact();                                                                                                                                     // B1 - { return 0; }
+		SKYRIM_REL_VR_VIRTUAL void                        ReportHavokDeactivation();                                                                                                                                         // B2 - { return; }
+		SKYRIM_REL_VR_VIRTUAL bool                        TurnOff(Actor* a_owner, bool a_noDeactivateSound);                                                                                                                 // B3
+		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bool          IsPermanent() const;                                                                                                                                               // B4 - { return TESDataHandler::GetSingleton()->IsGeneratedFormID(formID) == 0; }
+		SKYRIM_REL_VR_VIRTUAL float                       GetGravity();                                                                                                                                                      // B5 - { void* var = unk40; if ((var->unk80 >> 17) & 1) return 1.0; else return var->unk84; }
+		SKYRIM_REL_VR_VIRTUAL void                        CleanUpPointersOnDisable();                                                                                                                                        // B6
+		SKYRIM_REL_VR_VIRTUAL bool                        RunTargetPick();                                                                                                                                                   // B7
+		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bool          GetKillOnCollision();                                                                                                                                              // B8 - { return 1; }
+		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bool          ShouldBeLimited();                                                                                                                                                 // B9 - { return 0; }
+		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bool          TargetsWholeBody();                                                                                                                                                // BA - { return 0; }
 		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL std::uint32_t GetCollisionGroup();                                                                                                                                               // BB
 		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bhkShape*     GetCollisionShape();                                                                                                                                               // BC
 		SKYRIM_REL_VR_VIRTUAL void                        AddImpact(TESObjectREFR* a_ref, const NiPoint3& a_targetLoc, const NiPoint3& a_velocity, hkpCollidable* a_collidable, std::int32_t a_arg6, std::uint32_t a_arg7);  // BD
@@ -240,50 +240,50 @@ namespace RE
 
 		struct PROJECTILE_RUNTIME_DATA
 		{
-#define PROJECTILE_RUNTIME_DATA_CONTENT                                                   \
-	BSSimpleList<ImpactData*>  impacts;           /* 098, 0A0 */                          \
-	NiTransform                unk0A8;            /* 0A8 */                               \
-	float                      unk0DC;            /* 0DC */                               \
-	bhkSimpleShapePhantom*     unk0E0;            /* 0E0 - smart ptr */                   \
-	mutable BSSpinLock         unk0E8;            /* 0E8 */                               \
-	NiPoint3                   velocity;          /* 0F0 */                               \
-	NiPoint3                   linearVelocity;    /* 0FC */                               \
-	NiPointer<BSLight>         light;             /* 108 - smart ptr */                   \
-	void*                      unk110;            /* 110 - smart ptr */                   \
-	NiPointer<ActorCause>      actorCause;        /* 118 */                               \
-	ObjectRefHandle            shooter;           /* 120 */                               \
-	ObjectRefHandle            desiredTarget;     /* 124 */                               \
-	BSSoundHandle              sndHandle;         /* 128 */                               \
-	BSSoundHandle              sndCountdown;      /* 134 */                               \
-	std::uint32_t*             unk140;            /* 140 */                               \
-	InventoryEntryData*        unk148;            /* 148 */                               \
-	BGSExplosion*              explosion;         /* 150 */                               \
-	MagicItem*                 spell;             /* 158 */                               \
-	MagicSystem::CastingSource castingSource;     /* 160 */                               \
-	std::uint32_t              pad164;            /* 164 */                               \
-	EffectSetting*             avEffect;          /* 168 */                               \
-	NiPointer<QueuedFile>      projectileDBFiles; /* 170 */                               \
-	std::uint64_t              unk178;            /* 178 */                               \
-	std::uint64_t              unk180;            /* 180 */                               \
-	float                      power;             /* 188 - 14074B774 */                   \
-	float                      speedMult;         /* 18C - 1407501B2 */                   \
-	float                      range;             /* 190 */                               \
-	float                      livingTime;        /* 194 */                               \
-	float                      weaponDamage;      /* 198 */                               \
-	float                      transparency;      /* 19C - for beam disappearing */       \
-	float                      explosionTimer;    /* 1A0 */                               \
-    std::uint32_t              unk1A4;            /* 1A4 */                               \
-	float                      unk1A8;            /* 1A8 */                               \
-	float                      unk1AC;            /* 1AC */                               \
-	TESObjectWEAP*             weaponSource;      /* 1B0 */                               \
-	TESAmmo*                   ammoSource;        /* 1B8 */                               \
-	float                      distanceMoved;     /* 1C0 */                               \
-	std::uint32_t              unk1C4;            /* 1C4 - pad? */                        \
-	float                      scale;             /* 1C8 - for double cast model scale */ \
-	std::uint32_t              flags;             /* 1CC */                               \
-	bool                       unk1D0;            /* 1D0 */                               \
-    bool                       unk1D1;            /* 1D1 */                               \
-    std::uint8_t               unk1D2[6];         /* 1D2 */
+#define PROJECTILE_RUNTIME_DATA_CONTENT                                                          \
+			BSSimpleList<ImpactData*>  impacts;           /* 098, 0A0 */                          \
+			NiTransform                unk0A8;            /* 0A8 */                               \
+			float                      unk0DC;            /* 0DC */                               \
+			bhkSimpleShapePhantom*     unk0E0;            /* 0E0 - smart ptr */                   \
+			mutable BSSpinLock         unk0E8;            /* 0E8 */                               \
+			NiPoint3                   velocity;          /* 0F0 */                               \
+			NiPoint3                   linearVelocity;    /* 0FC */                               \
+			NiPointer<BSLight>         light;             /* 108 - smart ptr */                   \
+			void*                      unk110;            /* 110 - smart ptr */                   \
+			NiPointer<ActorCause>      actorCause;        /* 118 */                               \
+			ObjectRefHandle            shooter;           /* 120 */                               \
+			ObjectRefHandle            desiredTarget;     /* 124 */                               \
+			BSSoundHandle              sndHandle;         /* 128 */                               \
+			BSSoundHandle              sndCountdown;      /* 134 */                               \
+			std::uint32_t*             unk140;            /* 140 */                               \
+			InventoryEntryData*        unk148;            /* 148 */                               \
+			BGSExplosion*              explosion;         /* 150 */                               \
+			MagicItem*                 spell;             /* 158 */                               \
+			MagicSystem::CastingSource castingSource;     /* 160 */                               \
+			std::uint32_t              pad164;            /* 164 */                               \
+			EffectSetting*             avEffect;          /* 168 */                               \
+			NiPointer<QueuedFile>      projectileDBFiles; /* 170 */                               \
+			std::uint64_t              unk178;            /* 178 */                               \
+			std::uint64_t              unk180;            /* 180 */                               \
+			float                      power;             /* 188 - 14074B774 */                   \
+			float                      speedMult;         /* 18C - 1407501B2 */                   \
+			float                      range;             /* 190 */                               \
+			float                      livingTime;        /* 194 */                               \
+			float                      weaponDamage;      /* 198 */                               \
+			float                      transparency;      /* 19C - for beam disappearing */       \
+			float                      explosionTimer;    /* 1A0 */                               \
+			std::uint32_t              unk1A4;            /* 1A4 */                               \
+			float                      unk1A8;            /* 1A8 */                               \
+			float                      unk1AC;            /* 1AC */                               \
+			TESObjectWEAP*             weaponSource;      /* 1B0 */                               \
+			TESAmmo*                   ammoSource;        /* 1B8 */                               \
+			float                      distanceMoved;     /* 1C0 */                               \
+			std::uint32_t              unk1C4;            /* 1C4 - pad? */                        \
+			float                      scale;             /* 1C8 - for double cast model scale */ \
+			std::uint32_t              flags;             /* 1CC */                               \
+			bool                       unk1D0;            /* 1D0 */                               \
+			bool                       unk1D1;            /* 1D1 */                               \
+			std::uint8_t               unk1D2[6];         /* 1D2 */
 
 			PROJECTILE_RUNTIME_DATA_CONTENT
 		};

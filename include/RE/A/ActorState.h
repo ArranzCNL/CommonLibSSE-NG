@@ -144,7 +144,7 @@ namespace RE
 		void  Unk_03(void) override;          // 03 - { return; }
 		void  Unk_04(void) override;          // 04 - { return; }
 		float DoGetMovementSpeed() override;  // 05 - { return 0.0; }
-		void  Unk_06(void) override;          // 06 - { return 0.0; }
+		float DoGetRotationSpeed() override;  // 06 - { return 0.0; }
 		void  Unk_07(void) override;          // 07 - { return; }
 		void  Unk_08(void) override;          // 08 - { return 0; }
 
@@ -181,11 +181,12 @@ namespace RE
 			}
 		}
 
+		[[nodiscard]] bool IsRunning() const noexcept { return static_cast<bool>(actorState1.running); }
 		[[nodiscard]] bool IsSneaking() const noexcept { return static_cast<bool>(actorState1.sneaking); }
 		[[nodiscard]] bool IsSprinting() const noexcept { return static_cast<bool>(actorState1.sprinting); }
 		[[nodiscard]] bool IsSwimming() const noexcept { return static_cast<bool>(actorState1.swimming); }
 		[[nodiscard]] bool IsUnconscious() const noexcept { return GetLifeState() == ACTOR_LIFE_STATE::kUnconcious; }
-		[[nodiscard]] bool IsWalking() const noexcept { return actorState1.walking; }
+		[[nodiscard]] bool IsWalking() const noexcept { return static_cast<bool>(actorState1.walking); }
 
 		[[nodiscard]] bool IsWeaponDrawn() const noexcept
 		{
