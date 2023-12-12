@@ -351,6 +351,7 @@ namespace RE
 		[[nodiscard]] bool IsPlayerRef() const noexcept { return GetFormID() == 0x00000014; }
 		[[nodiscard]] bool IsSoulGem() const noexcept { return Is(FormType::SoulGem); }
 		[[nodiscard]] bool IsWeapon() const noexcept { return Is(FormType::Weapon); }
+		void               SetPlayerKnows(bool a_known);
 
 		// members
 		TESFileContainer                                sourceFiles;      // 08
