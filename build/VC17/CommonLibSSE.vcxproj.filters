@@ -6048,9 +6048,6 @@
     <ClInclude Include="..\..\include\RE\F\FurnitureCameraState.h">
       <Filter>include\RE\F</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\RE\I\IronSightsState.h">
-      <Filter>include\RE\I</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\include\RE\T\TweenMenuCameraState.h">
       <Filter>include\RE\T</Filter>
     </ClInclude>

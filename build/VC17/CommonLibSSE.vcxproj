@@ -119,7 +119,6 @@
     <ClInclude Include="..\..\include\RE\B\BSImagespaceShaderISTemporalAA.h" />
     <ClInclude Include="..\..\include\RE\D\DragonCameraState.h" />
     <ClInclude Include="..\..\include\RE\F\FurnitureCameraState.h" />
-    <ClInclude Include="..\..\include\RE\I\IronSightsState.h" />
     <ClInclude Include="..\..\include\RE\N\NiAccumulator.h" />
     <ClInclude Include="..\..\include\RE\N\NiAlphaAccumulator.h" />
     <ClInclude Include="..\..\include\RE\N\NiBackToFrontAccumulator.h" />

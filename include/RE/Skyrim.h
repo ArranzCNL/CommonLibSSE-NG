@@ -1100,7 +1100,6 @@
 #include "RE/I/IPostAnimationChannelUpdateFunctor.h"
 #include "RE/I/IProcedureTreeItem.h"
 #include "RE/I/IProfilePolicy.h"
-#include "RE/I/IronSightsState.h"
 #include "RE/I/ISavePatcherInterface.h"
 #include "RE/I/IStackCallbackFunctor.h"
 #include "RE/I/IStackCallbackSaveInterface.h"
