@@ -2133,6 +2133,8 @@
     <ClCompile Include="..\..\source\SKSE\Translation.cpp" />
     <ClCompile Include="..\..\source\SKSE\Impl\PrecompiledHeader.cpp" />
     <ClCompile Include="..\..\source\SKSE\Impl\WinAPI.cpp" />
+    <ClInclude Include="..\..\vendor\rapidcsv\src\rapidcsv.h" />
+    <ClInclude Include="..\..\vendor\xbyak\xbyak\xbyak.h" />
     <None Include="..\..\README.md">
     </None>
     <None Include="..\..\.clang-format">

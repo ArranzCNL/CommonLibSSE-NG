@@ -6054,6 +6054,12 @@
     <ClInclude Include="..\..\include\RE\V\VATSCameraState.h">
       <Filter>include\RE\V</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\vendor\rapidcsv\src\rapidcsv.h">
+      <Filter>vendor\rapidcsv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendor\xbyak\xbyak\xbyak.h">
+      <Filter>vendor\xbyak</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Natvis Include="..\..\CommonLibSSE.natvis" />
@@ -6230,6 +6236,15 @@
     </Filter>
     <Filter Include="PCH">
       <UniqueIdentifier>{0D4B6F5F-CBE5-3E04-8665-C23DC57AC603}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor">
+      <UniqueIdentifier>{178c7626-2dc2-40c3-9934-4046ae3d4ae8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\rapidcsv">
+      <UniqueIdentifier>{434c4e4f-57ea-4545-b11b-152aaac9f1b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\xbyak">
+      <UniqueIdentifier>{7f306541-c501-4676-bc77-e5dfd32dfa3b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
