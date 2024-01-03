@@ -1,7 +1,3 @@
-[submodule "vendor/fmt"]
-	path = vendor/fmt
-	url = https://github.com/ArranzCNL/fmt
-	branch = v10.1.1
 [submodule "vendor/rapidcsv"]
 	path = vendor/rapidcsv
 	url = https://github.com/ArranzCNL/rapidcsv
