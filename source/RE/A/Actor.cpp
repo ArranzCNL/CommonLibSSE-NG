@@ -129,6 +129,13 @@ namespace RE
 		return func(this, a_actor);
 	}
 
+	bool Actor::CanFly() const
+	{
+		using func_t = decltype(&Actor::CanFly);
+		REL::Relocation<func_t> func{ RELOCATION_ID(36238, 37220) };
+		return func(this);
+	}
+
 	bool Actor::CanFlyHere() const
 	{
 		const auto* worldSpace = GetWorldspace();
@@ -260,6 +267,13 @@ namespace RE
 		using func_t = decltype(&Actor::EvaluatePackage);
 		REL::Relocation<func_t> func{ RELOCATION_ID(36407, 37401) };
 		return func(this, a_immediate, a_resetAI);
+	}
+
+	bool Actor::FightsInWater() const
+	{
+		using func_t = decltype(&Actor::FightsInWater);
+		REL::Relocation<func_t> func{ RELOCATION_ID(36236, 37218) };
+		return func(this);
 	}
 
 	TESNPC* Actor::GetActorBase()
@@ -583,6 +597,15 @@ namespace RE
 		return func(this);
 	}
 
+	float Actor::GetRegenDelay(ActorValue a_actorValue) const
+	{
+		auto* _currentProcess = GetActorRuntimeData().currentProcess;
+		if (_currentProcess) {
+			return _currentProcess->GetRegenDelay(a_actorValue);
+		}
+		return 0.0f;
+	}
+
 	bool Actor::GetRider(NiPointer<Actor>& a_outRider)
 	{
 		using func_t = decltype(&Actor::GetRider);
@@ -818,6 +841,13 @@ namespace RE
 		return GetActorRuntimeData().boolFlags.all(BOOL_FLAGS::kEssential);
 	}
 
+	bool Actor::IsEssentialDown() const
+	{
+		using func_t = decltype(&Actor::IsEssentialDown);
+		REL::Relocation<func_t> func{ RELOCATION_ID(48460, 49451) };
+		return func(this);
+	}
+
 	bool Actor::IsFactionInCrimeGroup(const TESFaction* a_faction) const
 	{
 		auto crimFac = GetCrimeFaction();
@@ -849,6 +879,13 @@ namespace RE
 		using func_t = decltype(&Actor::IsHostileToActor);
 		REL::Relocation<func_t> func{ Offset::Actor::GetHostileToActor };
 		return func(this, a_actor);
+	}
+
+	bool Actor::IsInBleedout() const
+	{
+		using func_t = decltype(&Actor::IsInBleedout);
+		REL::Relocation<func_t> func{ RELOCATION_ID(48461, 49452) };
+		return func(this);
 	}
 
 	bool Actor::IsInCastPowerList(SpellItem* a_power)
@@ -895,6 +932,13 @@ namespace RE
 	bool Actor::IsOnMount() const
 	{
 		return !IsAMount() && extraList.HasType(ExtraDataType::kInteraction);
+	}
+
+	bool Actor::IsOnWaterTriangle() const
+	{
+		using func_t = decltype(&Actor::IsOnWaterTriangle);
+		REL::Relocation<func_t> func{ RELOCATION_ID(36817, 37833) };
+		return func(this);
 	}
 
 	bool Actor::IsOverEncumbered() const
@@ -1193,6 +1237,14 @@ namespace RE
 		using func_t = decltype(&Actor::UpdateNavPos);
 		REL::Relocation<func_t> func{ RELOCATION_ID(46050, 47314) };
 		return func(this, a_pos, a_new_pos, a_speed, a_distance);
+	}
+
+	void Actor::UpdateRegenDelay(ActorValue a_actorValue, float a_regenDelay)
+	{
+		auto* _currentProcess = GetActorRuntimeData().currentProcess;
+		if (_currentProcess) {
+			_currentProcess->UpdateRegenDelay(a_actorValue, a_regenDelay);
+		}
 	}
 
 	void Actor::UpdateSkinColor()

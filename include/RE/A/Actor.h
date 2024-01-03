@@ -504,6 +504,7 @@ namespace RE
 		void                                    AllowPCDialogue(bool a_talk);
 		void                                    CastPermanentMagic(bool a_wornItemEnchantments, bool a_baseSpells, bool a_raceSpells, bool a_everyActorAbility);
 		[[nodiscard]] bool                      CanAttackActor(Actor* a_actor);
+		[[nodiscard]] bool                      CanFly() const;
 		[[nodiscard]] bool                      CanFlyHere() const;
 		[[nodiscard]] bool                      CanNavigateToPosition(const NiPoint3& a_pos, const NiPoint3& a_new_pos, float a_speed = 2.0f, float a_distance = 64.0f) const;
 		[[nodiscard]] bool                      CanOfferServices() const;
@@ -522,6 +523,7 @@ namespace RE
 		void                                    EnableAI(bool a_enable);
 		void                                    EndInterruptPackage(bool a_skipDialogue);
 		void                                    EvaluatePackage(bool a_immediate = false, bool a_resetAI = false);
+		[[nodiscard]] bool                      FightsInWater() const;
 		[[nodiscard]] TESNPC*                   GetActorBase();
 		[[nodiscard]] const TESNPC*             GetActorBase() const;
 		[[nodiscard]] float                     GetActorValueModifier(ACTOR_VALUE_MODIFIER a_modifier, ActorValue a_value) const;
@@ -559,6 +561,7 @@ namespace RE
 		[[nodiscard]] PROCESS_TYPE              GetProcessLevel() const;
 		[[nodiscard]] TESRace*                  GetRace() const;
 		[[nodiscard]] const float               GetReach() const;
+		[[nodiscard]] float                     GetRegenDelay(ActorValue a_actorValue) const;
 		[[nodiscard]] bool                      GetRider(NiPointer<Actor>& a_outRider);
 		[[nodiscard]] TESObjectARMO*            GetSkin() const;
 		[[nodiscard]] TESObjectARMO*            GetSkin(BGSBipedObjectForm::BipedObjectSlot a_slot, bool a_noInit = false);
@@ -590,11 +593,13 @@ namespace RE
 		[[nodiscard]] bool                      IsCommandedActor() const;
 		[[nodiscard]] bool                      IsCurrentShout(SpellItem* a_power);
 		[[nodiscard]] bool                      IsEssential() const;
+		[[nodiscard]] bool                      IsEssentialDown() const;
 		[[nodiscard]] bool                      IsFactionInCrimeGroup(const TESFaction* a_faction) const;
 		[[nodiscard]] bool                      IsGhost() const;
 		[[nodiscard]] bool                      IsGuard() const;
 		[[nodiscard]] bool                      IsHostileToActor(Actor* a_actor);
 		[[nodiscard]] bool                      IsLeveled() const;
+		[[nodiscard]] bool                      IsInBleedout() const;
 		[[nodiscard]] bool                      IsInCastPowerList(SpellItem* a_power);
 		[[nodiscard]] bool                      IsInJumpState() const;
 		[[nodiscard]] constexpr bool            IsInKillMove() const noexcept { return GetActorRuntimeData().boolFlags.all(BOOL_FLAGS::kIsInKillMove); }
@@ -603,6 +608,7 @@ namespace RE
 		[[nodiscard]] bool                      IsLimbGone(std::uint32_t a_limb);
 		[[nodiscard]] bool                      IsMoving() const;
 		[[nodiscard]] bool                      IsOnMount() const;
+		[[nodiscard]] bool                      IsOnWaterTriangle() const;
 		[[nodiscard]] bool                      IsOverEncumbered() const;
 		[[nodiscard]] bool                      IsPlayerTeammate() const;
 		[[nodiscard]] bool                      IsProtected() const;
@@ -641,6 +647,7 @@ namespace RE
 		void                                    Update3DModel();
 		void                                    UpdateHairColor();
 		[[nodiscard]] bool                      UpdateNavPos(const NiPoint3& a_pos, const NiPoint3& a_new_pos, float a_speed, float a_distance) const;
+		void                                    UpdateRegenDelay(ActorValue a_actorValue, float a_regenDelay);
 		void                                    UpdateSkinColor();
 		void                                    UpdateWeaponAbility(TESForm* a_weapon, ExtraDataList* a_extraData, bool a_leftHand);
 		void                                    VisitArmorAddon(TESObjectARMO* a_armor, TESObjectARMA* a_arma, std::function<void(bool a_firstPerson, NiAVObject& a_obj)> a_visitor);
