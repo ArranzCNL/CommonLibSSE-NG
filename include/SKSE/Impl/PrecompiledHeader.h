@@ -59,8 +59,6 @@ static_assert(
 	"wrap std::time_t instead");
 
 #pragma warning(push)
-#include <fmt/core.h>
-#include <fmt/format.h>
 #include <spdlog/spdlog.h>
 #pragma warning(pop)
 

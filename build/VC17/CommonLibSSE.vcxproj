@@ -2143,9 +2143,6 @@
     </Natvis>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\vendor\fmt\build\VC17\fmt.vcxproj">
-      <Project>{1c450275-5d3f-3f6e-bc18-44983b1186a9}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\..\vendor\spdlog\build\VC17\spdlog.vcxproj">
       <Project>{14f85606-5199-4084-8975-a1180c244f99}</Project>
     </ProjectReference>

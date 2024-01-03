@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencie
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "spdlog", "..\..\vendor\spdlog\build\VC17\spdlog.vcxproj", "{14F85606-5199-4084-8975-A1180C244F99}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fmt", "..\..\vendor\fmt\build\VC17\fmt.vcxproj", "{1C450275-5D3F-3F6E-BC18-44983B1186A9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -25,16 +23,11 @@ Global
 		{14F85606-5199-4084-8975-A1180C244F99}.Debug|x64.Build.0 = Debug|x64
 		{14F85606-5199-4084-8975-A1180C244F99}.Release|x64.ActiveCfg = Release|x64
 		{14F85606-5199-4084-8975-A1180C244F99}.Release|x64.Build.0 = Release|x64
-		{1C450275-5D3F-3F6E-BC18-44983B1186A9}.Debug|x64.ActiveCfg = Debug|x64
-		{1C450275-5D3F-3F6E-BC18-44983B1186A9}.Debug|x64.Build.0 = Debug|x64
-		{1C450275-5D3F-3F6E-BC18-44983B1186A9}.Release|x64.ActiveCfg = Release|x64
-		{1C450275-5D3F-3F6E-BC18-44983B1186A9}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{14F85606-5199-4084-8975-A1180C244F99} = {270D40C1-E50E-4B12-ABFA-9B8326366A34}
-		{1C450275-5D3F-3F6E-BC18-44983B1186A9} = {270D40C1-E50E-4B12-ABFA-9B8326366A34}
 	EndGlobalSection
 EndGlobal
