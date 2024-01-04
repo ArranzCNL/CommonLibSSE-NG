@@ -112,12 +112,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\RE\A\AutoVanityState.h" />
+    <ClInclude Include="..\..\include\RE\B\BGSEntryPointFunctionDataSpellItem.h" />
     <ClInclude Include="..\..\include\RE\B\BGSNumericIDIndex.h" />
     <ClInclude Include="..\..\include\RE\B\BGSSaveFormBuffer.h" />
     <ClInclude Include="..\..\include\RE\B\BGSSaveGameBuffer.h" />
     <ClInclude Include="..\..\include\RE\B\BGSSaveLoadGame.h" />
     <ClInclude Include="..\..\include\RE\B\BSImagespaceShaderISTemporalAA.h" />
     <ClInclude Include="..\..\include\RE\D\DragonCameraState.h" />
+    <ClInclude Include="..\..\include\RE\F\FindMaxMagnitudeVisitor.h" />
     <ClInclude Include="..\..\include\RE\F\FurnitureCameraState.h" />
     <ClInclude Include="..\..\include\RE\N\NiAccumulator.h" />
     <ClInclude Include="..\..\include\RE\N\NiAlphaAccumulator.h" />
@@ -1917,6 +1919,7 @@
     <ClCompile Include="..\..\source\RE\E\ExtraSoul.cpp" />
     <ClCompile Include="..\..\source\RE\E\ExtraTextDisplayData.cpp" />
     <ClCompile Include="..\..\source\RE\E\ExtraUniqueID.cpp" />
+    <ClCompile Include="..\..\source\RE\F\FindMaxMagnitudeVisitor.cpp" />
     <ClCompile Include="..\..\source\RE\F\FormTypes.cpp" />
     <ClCompile Include="..\..\source\RE\F\FxDelegate.cpp" />
     <ClCompile Include="..\..\source\RE\F\FxDelegateArgs.cpp" />

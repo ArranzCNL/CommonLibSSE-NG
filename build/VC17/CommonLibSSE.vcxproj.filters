@@ -406,6 +406,9 @@
     <ClCompile Include="..\..\source\RE\E\ExtraUniqueID.cpp">
       <Filter>source\RE\E</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\source\RE\F\FindMaxMagnitudeVisitor.cpp">
+      <Filter>source\RE\F</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\source\RE\F\FormTypes.cpp">
       <Filter>source\RE\F</Filter>
     </ClCompile>
@@ -1236,6 +1239,9 @@
     <ClInclude Include="..\..\include\RE\A\AutoRegisterFactory.h">
       <Filter>include\RE\A</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\RE\A\AutoVanityState.h">
+      <Filter>include\RE\A</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\RE\B\BanishEffect.h">
       <Filter>include\RE\B</Filter>
     </ClInclude>
@@ -1383,6 +1389,9 @@
     <ClInclude Include="..\..\include\RE\B\BGSEntryPointFunctionDataOneValue.h">
       <Filter>include\RE\B</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\RE\B\BGSEntryPointFunctionDataSpellItem.h">
+      <Filter>include\RE\B</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\RE\B\BGSEntryPointFunctionDataText.h">
       <Filter>include\RE\B</Filter>
     </ClInclude>
@@ -1527,6 +1536,9 @@
     <ClInclude Include="..\..\include\RE\B\BGSNote.h">
       <Filter>include\RE\B</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\RE\B\BGSNumericIDIndex.h">
+      <Filter>include\RE\B</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\RE\B\BGSOpenCloseForm.h">
       <Filter>include\RE\B</Filter>
     </ClInclude>
@@ -1588,6 +1600,15 @@
       <Filter>include\RE\B</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\RE\B\BGSReverbParameters.h">
+      <Filter>include\RE\B</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\RE\B\BGSSaveFormBuffer.h">
+      <Filter>include\RE\B</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\RE\B\BGSSaveGameBuffer.h">
+      <Filter>include\RE\B</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\RE\B\BGSSaveLoadGame.h">
       <Filter>include\RE\B</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\RE\B\BGSSaveLoadManager.h">
@@ -1933,6 +1954,9 @@
       <Filter>include\RE\B</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\RE\B\BSImagespaceShaderBlur3.h">
+      <Filter>include\RE\B</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\RE\B\BSImagespaceShaderISTemporalAA.h">
       <Filter>include\RE\B</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\RE\B\BSIMusicTrack.h">
@@ -2643,6 +2667,9 @@
     <ClInclude Include="..\..\include\RE\D\DoNothingUnhandledPolicy.h">
       <Filter>include\RE\D</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\RE\D\DragonCameraState.h">
+      <Filter>include\RE\D</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\RE\D\DragonSoulsGained.h">
       <Filter>include\RE\D</Filter>
     </ClInclude>
@@ -3204,6 +3231,9 @@
     <ClInclude Include="..\..\include\RE\F\FileID.h">
       <Filter>include\RE\F</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\RE\F\FindMaxMagnitudeVisitor.h">
+      <Filter>include\RE\F</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\RE\F\FirstPersonState.h">
       <Filter>include\RE\F</Filter>
     </ClInclude>
@@ -3241,6 +3271,9 @@
       <Filter>include\RE\F</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\RE\F\FunctionMessage.h">
+      <Filter>include\RE\F</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\RE\F\FurnitureCameraState.h">
       <Filter>include\RE\F</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\RE\F\FxDelegate.h">
@@ -4731,7 +4764,13 @@
     <ClInclude Include="..\..\include\RE\N\NavMeshInfoMap.h">
       <Filter>include\RE\N</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\RE\N\NiAccumulator.h">
+      <Filter>include\RE\N</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\RE\N\NiAllocator.h">
+      <Filter>include\RE\N</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\RE\N\NiAlphaAccumulator.h">
       <Filter>include\RE\N</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\RE\N\NiAlphaProperty.h">
@@ -4741,6 +4780,9 @@
       <Filter>include\RE\N</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\RE\N\NiAVObject.h">
+      <Filter>include\RE\N</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\RE\N\NiBackToFrontAccumulator.h">
       <Filter>include\RE\N</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\RE\N\NiBinaryStream.h">
@@ -4783,6 +4825,9 @@
       <Filter>include\RE\N</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\RE\N\NiCullingProcess.h">
+      <Filter>include\RE\N</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\RE\N\NiDirectionalLight.h">
       <Filter>include\RE\N</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\RE\N\NiExtraData.h">
@@ -5244,10 +5289,16 @@
     <ClInclude Include="..\..\include\RE\S\SFTypes.h">
       <Filter>include\RE\S</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\RE\S\ShaderAccumulator.h">
+      <Filter>include\RE\S</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\RE\S\ShaderReferenceEffect.h">
       <Filter>include\RE\S</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\RE\S\ShadowSceneNode.h">
+      <Filter>include\RE\S</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\RE\S\ShadowState.h">
       <Filter>include\RE\S</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\RE\S\ShoutAttack.h">
@@ -5853,6 +5904,9 @@
     <ClInclude Include="..\..\include\RE\T\TypeTraits.h">
       <Filter>include\RE\T</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\RE\T\TweenMenuCameraState.h">
+      <Filter>include\RE\T</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\RE\U\UI.h">
       <Filter>include\RE\U</Filter>
     </ClInclude>
@@ -5898,6 +5952,9 @@
     <ClInclude Include="..\..\include\RE\V\VATS.h">
       <Filter>include\RE\V</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\RE\V\VATSCameraState.h">
+      <Filter>include\RE\V</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\RE\V\VDescTable.h">
       <Filter>include\RE\V</Filter>
     </ClInclude>
@@ -5908,6 +5965,15 @@
       <Filter>include\RE\V</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\RE\V\VoiceSpellFireHandler.h">
+      <Filter>include\RE\V</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\RE\V\VrWandTouchpadPositionEvent.h">
+      <Filter>include\RE\V</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\RE\V\VrWandTouchpadSwipeEvent.h">
+      <Filter>include\RE\V</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\RE\V\VrWandEvent.h">
       <Filter>include\RE\V</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\RE\W\WeaponAnimationGraphManagerHolder.h">
@@ -5982,6 +6048,9 @@
     <ClInclude Include="..\..\include\SKSE\Impl\RegistrationTraits.h">
       <Filter>include\SKSE\Impl</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\SKSE\Impl\ScePadAPI.h">
+      <Filter>include\SKSE\Impl</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\SKSE\Impl\Stubs.h">
       <Filter>include\SKSE\Impl</Filter>
     </ClInclude>
@@ -5991,74 +6060,14 @@
     <ClInclude Include="..\..\include\SKSE\Impl\XInputAPI.h">
       <Filter>include\SKSE\Impl</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\PCH\PCH.h">
-      <Filter>PCH</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\RE\B\BGSNumericIDIndex.h">
-      <Filter>include\RE\B</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\RE\B\BGSSaveFormBuffer.h">
-      <Filter>include\RE\B</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\RE\B\BGSSaveGameBuffer.h">
-      <Filter>include\RE\B</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\RE\B\BGSSaveLoadGame.h">
-      <Filter>include\RE\B</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\RE\V\VrWandTouchpadPositionEvent.h">
-      <Filter>include\RE\V</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\RE\V\VrWandTouchpadSwipeEvent.h">
-      <Filter>include\RE\V</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\RE\V\VrWandEvent.h">
-      <Filter>include\RE\V</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\RE\B\BSImagespaceShaderISTemporalAA.h">
-      <Filter>include\RE\B</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\RE\N\NiAccumulator.h">
-      <Filter>include\RE\N</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\RE\N\NiAlphaAccumulator.h">
-      <Filter>include\RE\N</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\RE\N\NiBackToFrontAccumulator.h">
-      <Filter>include\RE\N</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\RE\N\NiDirectionalLight.h">
-      <Filter>include\RE\N</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\SKSE\Impl\ScePadAPI.h">
-      <Filter>include\SKSE\Impl</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\RE\S\ShaderAccumulator.h">
-      <Filter>include\RE\S</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\RE\S\ShadowState.h">
-      <Filter>include\RE\S</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\RE\A\AutoVanityState.h">
-      <Filter>include\RE\A</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\RE\D\DragonCameraState.h">
-      <Filter>include\RE\D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\RE\F\FurnitureCameraState.h">
-      <Filter>include\RE\F</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\RE\T\TweenMenuCameraState.h">
-      <Filter>include\RE\T</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\RE\V\VATSCameraState.h">
-      <Filter>include\RE\V</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\vendor\rapidcsv\src\rapidcsv.h">
       <Filter>vendor\rapidcsv</Filter>
     </ClInclude>
     <ClInclude Include="..\..\vendor\xbyak\xbyak\xbyak.h">
       <Filter>vendor\xbyak</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PCH\PCH.h">
+      <Filter>PCH</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
