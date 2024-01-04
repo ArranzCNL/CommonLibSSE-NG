@@ -1680,6 +1680,9 @@
     <ClInclude Include="..\..\include\RE\B\BGSTalkingActivator.h">
       <Filter>include\RE\B</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\RE\B\BGSTerrainManager.h">
+      <Filter>include\RE\B</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\RE\B\BGSTextureModel.h">
       <Filter>include\RE\B</Filter>
     </ClInclude>

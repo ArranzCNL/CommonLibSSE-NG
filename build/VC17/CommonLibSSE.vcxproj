@@ -111,20 +111,6 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\RE\A\AutoVanityState.h" />
-    <ClInclude Include="..\..\include\RE\B\BGSEntryPointFunctionDataSpellItem.h" />
-    <ClInclude Include="..\..\include\RE\B\BGSNumericIDIndex.h" />
-    <ClInclude Include="..\..\include\RE\B\BGSSaveFormBuffer.h" />
-    <ClInclude Include="..\..\include\RE\B\BGSSaveGameBuffer.h" />
-    <ClInclude Include="..\..\include\RE\B\BGSSaveLoadGame.h" />
-    <ClInclude Include="..\..\include\RE\B\BSImagespaceShaderISTemporalAA.h" />
-    <ClInclude Include="..\..\include\RE\D\DragonCameraState.h" />
-    <ClInclude Include="..\..\include\RE\F\FindMaxMagnitudeVisitor.h" />
-    <ClInclude Include="..\..\include\RE\F\FurnitureCameraState.h" />
-    <ClInclude Include="..\..\include\RE\N\NiAccumulator.h" />
-    <ClInclude Include="..\..\include\RE\N\NiAlphaAccumulator.h" />
-    <ClInclude Include="..\..\include\RE\N\NiBackToFrontAccumulator.h" />
-    <ClInclude Include="..\..\include\RE\N\NiDirectionalLight.h" />
     <ClInclude Include="..\..\include\RE\Offsets.h" />
     <ClInclude Include="..\..\include\RE\Offsets_NiRTTI.h" />
     <ClInclude Include="..\..\include\RE\Offsets_RTTI.h" />
@@ -184,6 +170,7 @@
     <ClInclude Include="..\..\include\RE\A\AutoMoveHandler.h" />
     <ClInclude Include="..\..\include\RE\A\AutoRegisterCreator.h" />
     <ClInclude Include="..\..\include\RE\A\AutoRegisterFactory.h" />
+    <ClInclude Include="..\..\include\RE\A\AutoVanityState.h" />
     <ClInclude Include="..\..\include\RE\B\BanishEffect.h" />
     <ClInclude Include="..\..\include\RE\B\BarrierProjectile.h" />
     <ClInclude Include="..\..\include\RE\B\BarterMenu.h" />
@@ -233,6 +220,7 @@
     <ClInclude Include="..\..\include\RE\B\BGSEntryPointFunctionData.h" />
     <ClInclude Include="..\..\include\RE\B\BGSEntryPointFunctionDataActivateChoice.h" />
     <ClInclude Include="..\..\include\RE\B\BGSEntryPointFunctionDataOneValue.h" />
+    <ClInclude Include="..\..\include\RE\B\BGSEntryPointFunctionDataSpellItem.h" />
     <ClInclude Include="..\..\include\RE\B\BGSEntryPointFunctionDataText.h" />
     <ClInclude Include="..\..\include\RE\B\BGSEntryPointPerkEntry.h" />
     <ClInclude Include="..\..\include\RE\B\BGSEquipSlot.h" />
@@ -281,6 +269,7 @@
     <ClInclude Include="..\..\include\RE\B\BGSMusicType.h" />
     <ClInclude Include="..\..\include\RE\B\BGSNamedPackageData.h" />
     <ClInclude Include="..\..\include\RE\B\BGSNote.h" />
+    <ClInclude Include="..\..\include\RE\B\BGSNumericIDIndex.h" />
     <ClInclude Include="..\..\include\RE\B\BGSOpenCloseForm.h" />
     <ClInclude Include="..\..\include\RE\B\BGSOutfit.h" />
     <ClInclude Include="..\..\include\RE\B\BGSOverridePackCollection.h" />
@@ -302,6 +291,9 @@
     <ClInclude Include="..\..\include\RE\B\BGSReferenceEffect.h" />
     <ClInclude Include="..\..\include\RE\B\BGSRelationship.h" />
     <ClInclude Include="..\..\include\RE\B\BGSReverbParameters.h" />
+    <ClInclude Include="..\..\include\RE\B\BGSSaveFormBuffer.h" />
+    <ClInclude Include="..\..\include\RE\B\BGSSaveGameBuffer.h" />
+    <ClInclude Include="..\..\include\RE\B\BGSSaveLoadGame.h" />
     <ClInclude Include="..\..\include\RE\B\BGSSaveLoadManager.h" />
     <ClInclude Include="..\..\include\RE\B\BGSScene.h" />
     <ClInclude Include="..\..\include\RE\B\BGSSceneAction.h" />
@@ -325,6 +317,7 @@
     <ClInclude Include="..\..\include\RE\B\BGSStoryManagerTreeForm.h" />
     <ClInclude Include="..\..\include\RE\B\BGSStoryTeller.h" />
     <ClInclude Include="..\..\include\RE\B\BGSTalkingActivator.h" />
+    <ClInclude Include="..\..\include\RE\B\BGSTerrainManager.h" />
     <ClInclude Include="..\..\include\RE\B\BGSTextureModel.h" />
     <ClInclude Include="..\..\include\RE\B\BGSTextureSet.h" />
     <ClInclude Include="..\..\include\RE\B\BGSTypedItem.h" />
@@ -417,6 +410,7 @@
     <ClInclude Include="..\..\include\RE\B\BSIInputDevice.h" />
     <ClInclude Include="..\..\include\RE\B\BSImagespaceShader.h" />
     <ClInclude Include="..\..\include\RE\B\BSImagespaceShaderBlur3.h" />
+    <ClInclude Include="..\..\include\RE\B\BSImagespaceShaderISTemporalAA.h" />
     <ClInclude Include="..\..\include\RE\B\BSIMusicTrack.h" />
     <ClInclude Include="..\..\include\RE\B\BSIMusicType.h" />
     <ClInclude Include="..\..\include\RE\B\BSInputDevice.h" />
@@ -653,6 +647,7 @@
     <ClInclude Include="..\..\include\RE\D\DisguiseEffect.h" />
     <ClInclude Include="..\..\include\RE\D\DispelEffect.h" />
     <ClInclude Include="..\..\include\RE\D\DoNothingUnhandledPolicy.h" />
+    <ClInclude Include="..\..\include\RE\D\DragonCameraState.h" />
     <ClInclude Include="..\..\include\RE\D\DragonSoulsGained.h" />
     <ClInclude Include="..\..\include\RE\D\DropObjectFunctor.h" />
     <ClInclude Include="..\..\include\RE\D\DualValueModifierEffect.h" />
@@ -840,6 +835,7 @@
     <ClInclude Include="..\..\include\RE\F\FavoritesMenu.h" />
     <ClInclude Include="..\..\include\RE\F\FightReactions.h" />
     <ClInclude Include="..\..\include\RE\F\FileID.h" />
+    <ClInclude Include="..\..\include\RE\F\FindMaxMagnitudeVisitor.h" />
     <ClInclude Include="..\..\include\RE\F\FirstPersonState.h" />
     <ClInclude Include="..\..\include\RE\F\FixedStrings.h" />
     <ClInclude Include="..\..\include\RE\F\FlameProjectile.h" />
@@ -853,6 +849,7 @@
     <ClInclude Include="..\..\include\RE\F\FrenzyEffect.h" />
     <ClInclude Include="..\..\include\RE\F\FunctionArguments.h" />
     <ClInclude Include="..\..\include\RE\F\FunctionMessage.h" />
+    <ClInclude Include="..\..\include\RE\F\FurnitureCameraState.h" />
     <ClInclude Include="..\..\include\RE\F\FxDelegate.h" />
     <ClInclude Include="..\..\include\RE\F\FxDelegateArgs.h" />
     <ClInclude Include="..\..\include\RE\F\FxDelegateHandler.h" />
@@ -1349,10 +1346,13 @@
     <ClInclude Include="..\..\include\RE\N\NativeLatentFunction.h" />
     <ClInclude Include="..\..\include\RE\N\NavMesh.h" />
     <ClInclude Include="..\..\include\RE\N\NavMeshInfoMap.h" />
+    <ClInclude Include="..\..\include\RE\N\NiAccumulator.h" />
     <ClInclude Include="..\..\include\RE\N\NiAllocator.h" />
+    <ClInclude Include="..\..\include\RE\N\NiAlphaAccumulator.h" />
     <ClInclude Include="..\..\include\RE\N\NiAlphaProperty.h" />
     <ClInclude Include="..\..\include\RE\N\NiAnimationKey.h" />
     <ClInclude Include="..\..\include\RE\N\NiAVObject.h" />
+    <ClInclude Include="..\..\include\RE\N\NiBackToFrontAccumulator.h" />
     <ClInclude Include="..\..\include\RE\N\NiBinaryStream.h" />
     <ClInclude Include="..\..\include\RE\N\NiBoneMatrixSetterI.h" />
     <ClInclude Include="..\..\include\RE\N\NiBooleanExtraData.h" />
@@ -1367,6 +1367,7 @@
     <ClInclude Include="..\..\include\RE\N\NiControllerManager.h" />
     <ClInclude Include="..\..\include\RE\N\NiControllerSequence.h" />
     <ClInclude Include="..\..\include\RE\N\NiCullingProcess.h" />
+    <ClInclude Include="..\..\include\RE\N\NiDirectionalLight.h" />
     <ClInclude Include="..\..\include\RE\N\NiExtraData.h" />
     <ClInclude Include="..\..\include\RE\N\NiFile.h" />
     <ClInclude Include="..\..\include\RE\N\NiFloatData.h" />
