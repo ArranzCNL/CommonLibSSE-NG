@@ -276,6 +276,7 @@ namespace RE::Offset
 		namespace ObjectInterface
 		{
 			constexpr auto AttachMovie = RELOCATION_ID(80197, 82219);
+			constexpr auto CreateEmptyMovieClip = RELOCATION_ID(80201, 82224);
 			constexpr auto DeleteMember = RELOCATION_ID(80207, 82230);
 			constexpr auto GetArraySize = RELOCATION_ID(80214, 82237);
 			constexpr auto GetCxform = RELOCATION_ID(80215, 82238);

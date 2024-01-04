@@ -3,6 +3,7 @@
 #include "RE/M/MagicTarget.h"
 
 #include "RE/A/ActiveEffect.h"
+#include "RE/A/Actor.h"
 #include "RE/B/BSTList.h"
 #include "RE/E/EffectSetting.h"
 
@@ -33,6 +34,14 @@ namespace RE
 		for (const auto& effect : queued) {
 			effect->Dispel(a_force);
 		}
+	}
+
+	Actor* MagicTarget::GetTargetAsActor()
+	{
+		if (MagicTargetIsActor()) {
+			return reinterpret_cast<Actor*>(this);
+		}
+		return nullptr;
 	}
 
 	bool MagicTarget::HasEffectWithArchetype(Archetype a_type)

@@ -66,6 +66,20 @@ namespace RE
 		BSEventNotifyControl ProcessEvent(const BSRemoteGamepadEvent* a_event, BSTEventSource<BSRemoteGamepadEvent>* a_eventSource) override;  // 01
 #endif
 
+		static void FlashMeter(ActorValue a_actorValue)
+		{
+			using func_t = decltype(&HUDMenu::FlashMeter);
+			REL::Relocation<func_t> func{ RELOCATION_ID(51907, 52845) };
+			return func(a_actorValue);
+		}
+
+		static void UpdateCrosshairMagicTarget(bool a_valid)
+		{
+			using func_t = decltype(&HUDMenu::UpdateCrosshairMagicTarget);
+			REL::Relocation<func_t> func{ RELOCATION_ID(50738, 51633) };
+			return func(a_valid);
+		}
+
 		[[nodiscard]] WorldSpaceMenu* AsWorldSpaceMenu() noexcept
 		{
 			if SKYRIM_REL_CONSTEXPR (!REL::Module::IsVR()) {
@@ -107,13 +121,6 @@ namespace RE
 		[[nodiscard]] inline const RUNTIME_DATA& GetRuntimeData() const noexcept
 		{
 			return REL::RelocateMember<RUNTIME_DATA>(this, 0x40, 0x70);
-		}
-
-		static void UpdateCrosshairMagicTarget(bool a_valid)
-		{
-			using func_t = decltype(&HUDMenu::UpdateCrosshairMagicTarget);
-			REL::Relocation<func_t> func{ RELOCATION_ID(50738, 51633) };
-			return func(a_valid);
 		}
 
 		// members

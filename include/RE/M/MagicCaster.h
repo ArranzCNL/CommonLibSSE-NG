@@ -29,15 +29,15 @@ namespace RE
 		enum class State
 		{
 			kNone = 0,
-			kUnk01,  // Start?
-			kUnk02,  // StartCharge?
+			kUnk01,     // Start?
+			kUnk02,     // StartCharge?
 			kReady,
-			kUnk04,  // PreStart?
+			kUnk04,     // PreStart?
 			kCharging,
 			kCasting,
-			kUnk07,  // Unknown
-			kUnk08,  // Interrupt
-			kUnk09,  // Interrupt/Deselect
+			kUnk07,     // Unknown
+			kUnk08,     // Interrupt
+			kUnk09,     // Interrupt/Deselect
 		};
 
 		virtual ~MagicCaster();  // 00
@@ -78,6 +78,7 @@ namespace RE
 		float        GetCurrentSpellCost();
 		void         InterruptCast(bool a_refund);
 		void         PlayReleaseSound(MagicItem* a_item);
+		void         SetCurrentSpell(MagicItem* a_item);
 		bool         TestProjectilePlacement(const Effect& a_effect, const bhkPickData& a_pickData);
 		void         UpdateImpl(float a_delta);
 

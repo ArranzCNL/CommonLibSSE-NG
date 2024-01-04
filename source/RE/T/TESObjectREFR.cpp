@@ -94,6 +94,13 @@ namespace RE
 		return DoTrap2(a_trap, a_target);
 	}
 
+	void TESObjectREFR::Enable(bool a_resetInventory)
+	{
+		using func_t = decltype(&TESObjectREFR::Enable);
+		REL::Relocation<func_t> func{ RELOCATION_ID(19373, 19800) };
+		return func(this, a_resetInventory);
+	}
+
 	std::optional<RE::NiPoint3> TESObjectREFR::FindNearestVertex(const float a_minimum_offset)
 	{
 		auto cell = this->GetParentCell();
