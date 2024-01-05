@@ -948,6 +948,13 @@ namespace RE
 		return func(this);
 	}
 
+	bool Actor::IsPathing() const
+	{
+		using func_t = decltype(&Actor::IsPathing);
+		REL::Relocation<func_t> func{ RELOCATION_ID(36812, 37828) };
+		return func(this);
+	}
+
 	bool Actor::IsPlayerTeammate() const
 	{
 		return GetActorRuntimeData().boolBits.all(BOOL_BITS::kPlayerTeammate);
