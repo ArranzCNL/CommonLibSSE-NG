@@ -502,6 +502,7 @@
     <ClInclude Include="..\..\include\RE\B\BSStream.h" />
     <ClInclude Include="..\..\include\RE\B\BSString.h" />
     <ClInclude Include="..\..\include\RE\B\BSStringPool.h" />
+    <ClInclude Include="..\..\include\RE\B\BSSynchronizedClipGenerator.h" />
     <ClInclude Include="..\..\include\RE\B\BSSystemFile.h" />
     <ClInclude Include="..\..\include\RE\B\BSSystemFileStorage.h" />
     <ClInclude Include="..\..\include\RE\B\BSTAnimationGraphDataChannel.h" />
@@ -1333,6 +1334,7 @@
     <ClInclude Include="..\..\include\RE\M\ModelReferenceEffect.h" />
     <ClInclude Include="..\..\include\RE\M\ModManagerMenu.h" />
     <ClInclude Include="..\..\include\RE\M\Moon.h" />
+    <ClInclude Include="..\..\include\RE\M\MotionDataContainer.h" />
     <ClInclude Include="..\..\include\RE\M\MouseMoveEvent.h" />
     <ClInclude Include="..\..\include\RE\M\Movement.h" />
     <ClInclude Include="..\..\include\RE\M\MovementControllerAI.h" />

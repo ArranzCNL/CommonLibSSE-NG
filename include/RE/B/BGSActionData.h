@@ -20,13 +20,7 @@ namespace RE
 		virtual bool           Process();      // 05 - { return false; }
 
 		// members 
-		BSFixedString AnimationEvent;  // 28
-		BSFixedString unk30;           // 30
-		std::uint64_t unk38;           // 38
-		std::uint64_t unk40;           // 40
-		std::uint64_t unk48;           // 48
-		TESIdleForm*  IdleForm;        // 50
-		std::uint64_t unk58;           // 58
+		std::uint32_t flags;  // 58
 	};
-	static_assert(sizeof(BGSActionData) == 0x90);
+	static_assert(sizeof(BGSActionData) == 0x60);
 }

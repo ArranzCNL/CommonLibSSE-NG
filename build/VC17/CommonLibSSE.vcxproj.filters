@@ -2235,6 +2235,9 @@
     <ClInclude Include="..\..\include\RE\B\BSStringPool.h">
       <Filter>include\RE\B</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\RE\B\BSSynchronizedClipGenerator.h">
+      <Filter>include\RE\B</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\RE\B\BSSystemFile.h">
       <Filter>include\RE\B</Filter>
     </ClInclude>
@@ -4726,6 +4729,9 @@
       <Filter>include\RE\M</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\RE\M\Moon.h">
+      <Filter>include\RE\M</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\RE\M\MotionDataContainer.h">
       <Filter>include\RE\M</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\RE\M\MouseMoveEvent.h">
