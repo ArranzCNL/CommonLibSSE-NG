@@ -35,6 +35,8 @@ namespace RE
 			std::uint8_t                      flags;            /* 128 */ \
 			std::uint32_t                     value;            /* 12C */ \
 			NiPointer<BSMasterParticleSystem> associatedObject; /* 130 */
+
+			RUNTIME_DATA_CONTENT
 		};
 
 		[[nodiscard]] inline VALUE_NODE_RUNTIME_DATA& GetValueNodeRuntimeData() noexcept

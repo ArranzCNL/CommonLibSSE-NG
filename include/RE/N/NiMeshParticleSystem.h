@@ -38,6 +38,8 @@ namespace RE
 			bool          updateControllers;  /* 19C */ \
 			std::uint8_t  pad19D;             /* 19D */ \
 			std::uint16_t pad19E;             /* 19E */
+
+			RUNTIME_DATA_CONTENT
 		};
 
 		[[nodiscard]] inline MESH_PARTICLE_SYSTEM_RUNTIME_DATA& GetMeshParticleSystemRuntimeData() noexcept

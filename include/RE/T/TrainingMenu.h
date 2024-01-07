@@ -85,5 +85,4 @@ namespace RE
 	static_assert(sizeof(TrainingMenu) == 0x100);
 #endif
 }
-
 #undef RUNTIME_DATA_CONTENT

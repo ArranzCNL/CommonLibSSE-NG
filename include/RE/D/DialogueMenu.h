@@ -32,7 +32,9 @@ namespace RE
 
 		struct RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT BSTArray<Data> unk38; /* 00 */
+#define RUNTIME_DATA_CONTENT              \
+			BSTArray<Data> unk38; /* 00 */
+			
 			RUNTIME_DATA_CONTENT
 		};
 

@@ -125,9 +125,9 @@ namespace RE
 
 		// members
 #ifndef SKYRIM_CROSS_VR
-#	if !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
+	#if !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 		std::uint64_t pad68;  // 68
-#	endif
+	#endif
 		RUNTIME_DATA_CONTENT  // 40, 70
 #endif
 	};

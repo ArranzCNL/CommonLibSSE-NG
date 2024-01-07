@@ -16,7 +16,7 @@ namespace RE
 		bool Generate(bool a_arg1, NiPoint3& a_arg2, NiPoint3& a_arg3) override;  // 03 - { return false; }
 
 		// members
-		alignas(0x10) ClibUtil::Matrix occlusionProjection;  // ED0
+		alignas(0x10) ClibUtil::Matrix occlusionProjection;    // ED0
 		NiPoint3                       cameraOffsetVector;     // F10
 		NiPoint3                       offsetVector;           // F1C
 		NiPoint3                       compositeOffsetVector;  // F28

@@ -79,13 +79,13 @@ namespace RE
 		std::uint32_t   pad5C;                           // 5C
 		BSIInputDevice* devices[INPUT_DEVICES::kTotal];  // 60
 #ifndef SKYRIM_CROSS_VR
-#	if !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
+	#if !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 		BSTrackedControllerDevice* unkDevice;     // 80
 		BSTrackedControllerDevice* vrDevices[2];  // 88
 		RUNTIME_DATA_CONTENT                      // 98
-#	elif !defined(ENABLE_SKYRIM_VR)
+	#elif !defined(ENABLE_SKYRIM_VR)
 		RUNTIME_DATA_CONTENT  // 80
-#	endif
+	#endif
 #endif
 	};
 #ifndef ENABLE_SKYRIM_VR

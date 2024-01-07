@@ -216,3 +216,4 @@ namespace RE
 		return reinterpret_cast<BSTArray<T*>&>(GetFormArray(T::FORMTYPE));
 	}
 }
+#undef RUNTIME_DATA_CONTENT

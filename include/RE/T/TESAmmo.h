@@ -75,9 +75,9 @@ namespace RE
 
 		struct RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT                 \
-	AMMO_DATA     data;      /* 00 - DATA */ \
-	BSFixedString shortDesc; /* 10 - ONAM */
+#define RUNTIME_DATA_CONTENT                         \
+			AMMO_DATA     data;       /* 00 - DATA */ \
+			BSFixedString shortDesc;  /* 10 - ONAM */
 
 			RUNTIME_DATA_CONTENT
 		};
@@ -162,3 +162,4 @@ namespace RE
 	static_assert(sizeof(TESAmmo) == 0x118);
 #endif
 }
+#undef RUNTIME_DATA_CONTENT

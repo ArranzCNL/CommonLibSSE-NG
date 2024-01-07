@@ -204,6 +204,5 @@ namespace RE
 	static_assert(sizeof(MapMenu) == 0x30640);
 #endif
 }
-
 #undef RUNTIME_DATA_CONTENT
 #undef RUNTIME_DATA2_CONTENT

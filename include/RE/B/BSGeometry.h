@@ -139,17 +139,17 @@ namespace RE
 #ifndef SKYRIM_CROSS_VR
 		MODEL_DATA_CONTENT;    // 110, 138
 		RUNTIME_DATA_CONTENT;  // 120, 160
-#	ifndef ENABLE_SKYRIM_VR
+	#ifndef ENABLE_SKYRIM_VR
 		stl::enumeration<Type, std::uint8_t> type;   // 150
 		std::uint8_t                         pad31;  // 151
 		std::uint16_t                        pad32;  // 152
 		std::uint32_t                        pad34;  // 154
-#	elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
+	#elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 		stl::enumeration<Type, std::uint32_t> type;   // 190
 		std::uint8_t                          pad31;  // 194
 		std::uint16_t                         pad32;  // 195
 		std::uint32_t                         pad34;  // 197
-#	endif
+	#endif
 #endif
 	};
 #ifndef ENABLE_SKYRIM_VR

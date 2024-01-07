@@ -18,10 +18,10 @@ namespace RE
 
 		struct RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT                                  \
-	NiPointer<BSMultiBound>           multiBound;    /* 00 */ \
-	BSCullingProcess::BSCPCullingType cullingMode;   /* 08 */ \
-	float                             lastAccumTime; /* 0C */
+#define RUNTIME_DATA_CONTENT                                         \
+			NiPointer<BSMultiBound>           multiBound;    /* 00 */ \
+			BSCullingProcess::BSCPCullingType cullingMode;   /* 08 */ \
+			float                             lastAccumTime; /* 0C */
 
 			RUNTIME_DATA_CONTENT
 		};

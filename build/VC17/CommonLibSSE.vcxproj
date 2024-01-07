@@ -69,7 +69,7 @@
       <TreatWarningAsError>true</TreatWarningAsError>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level4</WarningLevel>
-      <PreprocessorDefinitions>_DEBUG;WINVER=0x0601;_WIN32_WINNT=0x0601;ENABLE_SKYRIM_SE=1;ENABLE_SKYRIM_AE=1;SKSE_SUPPORT_XBYAK=1;_SILENCE_CXX23_DENORM_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;WINVER=0x0601;_WIN32_WINNT=0x0601;ENABLE_SKYRIM_SE=1;ENABLE_SKYRIM_AE=1;SKSE_SUPPORT_XBYAK=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <FloatingPointModel>Fast</FloatingPointModel>
@@ -99,7 +99,7 @@
       <TreatWarningAsError>true</TreatWarningAsError>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level4</WarningLevel>
-      <PreprocessorDefinitions>NDEBUG;WINVER=0x0601;_WIN32_WINNT=0x0601;ENABLE_SKYRIM_SE=1;ENABLE_SKYRIM_AE=1;SKSE_SUPPORT_XBYAK=1;_SILENCE_CXX23_DENORM_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;WINVER=0x0601;_WIN32_WINNT=0x0601;ENABLE_SKYRIM_SE=1;ENABLE_SKYRIM_AE=1;SKSE_SUPPORT_XBYAK=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <LanguageStandard_C>stdc17</LanguageStandard_C>

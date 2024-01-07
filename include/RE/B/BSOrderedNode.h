@@ -12,10 +12,10 @@ namespace RE
 
 		struct RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT               \
-	NiBound       orderedBound;   /* 00 */ \
-	bool          useStaticBound; /* 10 */ \
-	std::uint32_t pad13C;         /* 11 */
+#define RUNTIME_DATA_CONTENT                      \
+			NiBound       orderedBound;   /* 00 */ \
+			bool          useStaticBound; /* 10 */ \
+			std::uint32_t pad13C;         /* 11 */
 
 			RUNTIME_DATA_CONTENT
 		};

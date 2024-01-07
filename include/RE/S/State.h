@@ -213,15 +213,15 @@ namespace RE
 		static_assert(offsetof(State, letterbox) == 0x51);
 		static_assert(offsetof(State, defaultTextureBlack) == 0x58);
 		static_assert(offsetof(State, defaultTextureWhite) == 0x60);
-		static_assert(offsetof(State, cameraDataCacheA) == 0xa0);
-		static_assert(offsetof(State, dynamicResolutionCurrentWidthScale) == 0x0fc);
-#elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)  // VR
+		static_assert(offsetof(State, cameraDataCacheA) == 0xA0);
+		static_assert(offsetof(State, dynamicResolutionCurrentWidthScale) == 0x0FC);
+#elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)       // VR
 		static_assert(offsetof(State, screenWidth) == 0x24);
 		static_assert(offsetof(State, frameBufferViewport) == 0x2C);
 		static_assert(offsetof(State, letterbox) == 0x51);
 		static_assert(offsetof(State, defaultTextureBlack) == 0x60);
 		static_assert(offsetof(State, defaultTextureWhite) == 0x68);
-		static_assert(offsetof(State, cameraDataCacheA) == 0xa8);
+		static_assert(offsetof(State, cameraDataCacheA) == 0xA8);
 		static_assert(offsetof(State, dynamicResolutionCurrentWidthScale) == 0x104);
 #else
 		static_assert(offsetof(State, screenWidth) == 0x24);
@@ -229,8 +229,9 @@ namespace RE
 		static_assert(offsetof(State, letterbox) == 0x51);
 		static_assert(offsetof(State, defaultTextureBlack) == 0x58);
 		static_assert(offsetof(State, defaultTextureWhite) == 0x60);
-		static_assert(offsetof(State, cameraDataCacheA) == 0xa0);
-		static_assert(offsetof(State, dynamicResolutionCurrentWidthScale) == 0x0fc);
+		static_assert(offsetof(State, cameraDataCacheA) == 0xA0);
+		static_assert(offsetof(State, dynamicResolutionCurrentWidthScale) == 0x0FC);
 #endif
 	}
 }
+#undef RUNTIME_DATA_CONTENT
