@@ -124,8 +124,8 @@ namespace RE
 	public:
 		// members
 		std::uintptr_t translationDataPtr;   // 00
-		unsigned int   translationSegCount;  // 08
+		std::uint32_t  translationSegCount;  // 08
 		std::uintptr_t rotationDataPtr;      // 10
-		unsigned int   rotationSegCount;     // 18
+		std::uint32_t  rotationSegCount;     // 18
 	};
 }
