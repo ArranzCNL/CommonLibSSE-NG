@@ -43,7 +43,7 @@ namespace RE
 		// members
 		BSTArray<ObjectDamageImpactData> damageImpacts;  // 10
 	};
-#ifndef __INTELLISENSE__
+#if !defined(__INTELLISENSE__)
 	static_assert(sizeof(FOCollisionListener) == 0x28);
 #endif
 }

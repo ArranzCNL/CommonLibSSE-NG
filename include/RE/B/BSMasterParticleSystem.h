@@ -15,17 +15,17 @@ namespace RE
 		~BSMasterParticleSystem() override;  // 00
 
 		// override (NiNode)
-		const NiRTTI* GetRTTI() const override;                          // 02
-		void          LoadBinary(NiStream& a_stream) override;           // 18
-		void          LinkObject(NiStream& a_stream) override;           // 19
-		bool          RegisterStreamables(NiStream& a_stream) override;  // 1A
-		void          SaveBinary(NiStream& a_stream) override;           // 1B
-		void          PostLinkObject(NiStream& a_stream) override;       // 1E
-		bool          IsEqual(NiObject* a_object) override;              // 1C
-#ifndef SKYRIM_CROSS_VR
-		void UpdateDownwardPass(NiUpdateData& a_data, std::uint32_t a_arg2) override;          // 2C
-		void UpdateSelectedDownwardPass(NiUpdateData& a_data, std::uint32_t a_arg2) override;  // 2D
-		void UpdateRigidDownwardPass(NiUpdateData& a_data, std::uint32_t a_arg2) override;     // 2E
+		const NiRTTI* GetRTTI() const override;                                                         // 02
+		void          LoadBinary(NiStream& a_stream) override;                                          // 18
+		void          LinkObject(NiStream& a_stream) override;                                          // 19
+		bool          RegisterStreamables(NiStream& a_stream) override;                                 // 1A
+		void          SaveBinary(NiStream& a_stream) override;                                          // 1B
+		void          PostLinkObject(NiStream& a_stream) override;                                      // 1E
+		bool          IsEqual(NiObject* a_object) override;                                             // 1C
+#if !defined(SKYRIM_CROSS_VR)
+		void          UpdateDownwardPass(NiUpdateData& a_data, std::uint32_t a_arg2) override;          // 2C
+		void          UpdateSelectedDownwardPass(NiUpdateData& a_data, std::uint32_t a_arg2) override;  // 2D
+		void          UpdateRigidDownwardPass(NiUpdateData& a_data, std::uint32_t a_arg2) override;     // 2E
 #endif
 
 		struct MASTER_PARTICLE_SYSTEM_RUNTIME_DATA
@@ -55,7 +55,7 @@ namespace RE
 		}
 
 		// members
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		RUNTIME_DATA_CONTENT  // 128, 150
 #endif
 	};

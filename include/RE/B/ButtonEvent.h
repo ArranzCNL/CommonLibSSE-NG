@@ -55,7 +55,7 @@ namespace RE
 		};
 		static_assert(sizeof(RUNTIME_DATA) == 0x8);
 		//members
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		RUNTIME_DATA_CONTENT;  // 28, 30
 #endif
 		[[nodiscard]] inline RUNTIME_DATA& GetRuntimeData() noexcept
@@ -81,7 +81,7 @@ namespace RE
 			return const_cast<ButtonEvent*>(this)->AsVRWandEvent();
 		}
 	};
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 	static_assert(sizeof(ButtonEvent) == 0x30);
 #elif !defined(ENABLE_SKYRIM_SE) && !defined(ENABLE_SKYRIM_AE)
 	static_assert(sizeof(ButtonEvent) == 0x38);

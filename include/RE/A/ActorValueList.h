@@ -32,7 +32,7 @@ namespace std
 		return info ? info->enumName : "None";
 	}
 
-#ifdef __cpp_lib_format
+#if defined(__cpp_lib_format)
 	template <class CharT>
 	struct formatter<RE::ActorValue, CharT> : formatter<std::string_view, CharT>
 	{
@@ -46,7 +46,7 @@ namespace std
 #endif
 }
 
-#ifdef FMT_VERSION
+#if defined(FMT_VERSION)
 namespace fmt
 {
 	template <>

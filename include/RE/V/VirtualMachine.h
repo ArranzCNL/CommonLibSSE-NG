@@ -102,13 +102,13 @@ namespace RE
 #if !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 				void New_1B(void) override;
 #endif
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 				void ForEachBoundObject(VMHandle a_handle, IForEachScriptObjectFunctor* a_functor) override;                                                         // 1B, 1C
 #endif
 #if !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 				void New_1D(void) override;
 #endif
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 				bool                       FindBoundObject(VMHandle a_handle, const char* a_className, BSTSmartPointer<Object>& a_result) const override;                                                                                   // 1C
 				void                       MoveBoundObjects(VMHandle a_from, VMHandle a_to) override;                                                                                                                                       // 1D
 				void                       ResetAllBoundObjects(VMHandle a_handle) override;                                                                                                                                                // 1E

@@ -28,11 +28,11 @@ namespace RE
 	// kUsesCursor if gamepad disabled
 	// context = kStats
 	class StatsMenu :
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		public IMenu,            // 000
 		public MenuEventHandler  // 030, 040
 #else
-		public IMenu  // 000
+		public IMenu             // 000
 #endif
 	{
 	public:
@@ -150,7 +150,7 @@ namespace RE
 		void               PostDisplay() override;                           // 06
 
 		// override (MenuEventHandler)
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		bool CanProcess(InputEvent* a_event) override;              // 01
 		bool ProcessThumbstick(ThumbstickEvent* a_event) override;  // 03
 		bool ProcessButton(ButtonEvent* a_event) override;          // 05
@@ -177,11 +177,11 @@ namespace RE
 		}
 
 		// members
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		RUNTIME_DATA_CONTENT  // 40, 50
 #endif
 	};
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 	static_assert(sizeof(StatsMenu) == 0x328);
 #elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 	static_assert(sizeof(StatsMenu) == 0x338);

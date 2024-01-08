@@ -193,7 +193,7 @@ namespace RE
 			kKeywordFurnitureForces1stPerson = 180,
 			kKeywordFurnitureForces3rdPerson = 181,
 			kKeywordActivatorFurnitureNoPlayer = 182,
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 			kTelekinesisGrabSound = 183,
 			kTelekinesisThrowSound = 184,
 			kWorldMapWeather = 185,
@@ -1068,7 +1068,7 @@ namespace RE
 
 		// members 
 		TESForm*      objects[DEFAULT_OBJECTS::kTotal];     // 020 - DNAM
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		bool          objectInit[DEFAULT_OBJECTS::kTotal];  // B80
 		std::uint32_t padCEC;                               // CEC
 #else

@@ -117,7 +117,7 @@ namespace RE
 		std::uint64_t                                  unk38{ 0 };
 #endif
 	};
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 	static_assert(sizeof(IMenu) == 0x30);
 #elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 	static_assert(sizeof(IMenu) == 0x40);

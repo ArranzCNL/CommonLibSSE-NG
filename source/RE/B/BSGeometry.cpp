@@ -6,7 +6,7 @@
 
 namespace RE
 {
-#ifdef SKYRIM_CROSS_VR
+#if defined(SKYRIM_CROSS_VR)
 	BSMultiIndexTriShape* BSGeometry::AsMultiIndexTriShape()
 	{
 		return REL::RelocateVirtual<decltype(&BSGeometry::AsMultiIndexTriShape)>(0x35, 0x36, this);

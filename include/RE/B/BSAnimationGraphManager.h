@@ -118,11 +118,11 @@ namespace RE
 		BSTArray<BSAnimationGraphManagerPtr>                subManagers;     // 58
 		BSAnimationGraphVariableCache                       variableCache;   // 70
 
-#ifndef ENABLE_SKYRIM_AE
+#if !defined(ENABLE_SKYRIM_AE)
 		RUNTIME_DATA_CONTENT
 #endif
 	};
-#ifndef ENABLE_SKYRIM_AE
+#if !defined(ENABLE_SKYRIM_AE)
 	static_assert(sizeof(BSAnimationGraphManager) == 0xB0);
 #endif
 }

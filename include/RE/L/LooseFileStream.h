@@ -30,8 +30,8 @@ namespace RE
 			ErrorCode DoSetEndOfStream() override;                                                                      // 09
 			bool      DoGetName(BSFixedString& a_dst) const override;                                                   // 0A
 			ErrorCode DoCreateAsync(BSTSmartPointer<AsyncStream>& a_streamOut) const override;                          // 0B
-#ifndef ENABLE_SKYRIM_AE
-			static LooseFileStream* Create(BSFixedString a_prefix, BSFixedString a_dirName, BSFixedString a_fileName, std::uint32_t a_fileSize, bool a_readOnly, Location* a_location);
+#if !defined(ENABLE_SKYRIM_AE)
+			static    LooseFileStream* Create(BSFixedString a_prefix, BSFixedString a_dirName, BSFixedString a_fileName, std::uint32_t a_fileSize, bool a_readOnly, Location* a_location);
 #endif
 
 			// members
@@ -40,11 +40,11 @@ namespace RE
 			void*         buffer;    // 48
 
 		private:
-#ifndef ENABLE_SKYRIM_AE
+#if !defined(ENABLE_SKYRIM_AE)
 			LooseFileStream* Ctor(const BSFixedString& a_prefix, const BSFixedString& a_dirName, const BSFixedString& a_fileName, std::uint32_t a_fileSize, bool a_readOnly, Location* a_location);
 #endif
 		};
-#ifndef __INTELLISENSE__
+#if !defined(__INTELLISENSE__)
 		static_assert(sizeof(LooseFileStream) == 0x50);
 #endif
 	}

@@ -6,7 +6,7 @@ using namespace REL;
 
 namespace RE
 {
-#ifdef SKYRIM_CROSS_VR
+#if defined(SKYRIM_CROSS_VR)
 	std::uint8_t BGSDecalNode::Unk_3E()
 	{
 		return RelocateVirtual<decltype(&BGSDecalNode::Unk_3E)>(0x3E, 0x3F, this);

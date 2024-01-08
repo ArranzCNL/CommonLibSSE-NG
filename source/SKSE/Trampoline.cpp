@@ -48,13 +48,13 @@
 
 #include <Windows.h>
 
-#ifdef SKSE_SUPPORT_XBYAK
-#	include <xbyak/xbyak.h>
+#if defined(SKSE_SUPPORT_XBYAK)
+	#include <xbyak/xbyak.h>
 #endif
 
 namespace SKSE
 {
-#ifdef SKSE_SUPPORT_XBYAK
+#if defined(SKSE_SUPPORT_XBYAK)
 	void* Trampoline::allocate(Xbyak::CodeGenerator& a_code)
 	{
 		auto result = do_allocate(a_code.getSize());

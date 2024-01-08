@@ -16,16 +16,16 @@ namespace RE
 
 		struct RUNTIME_DATA
 		{
-#ifndef ENABLE_SKYRIM_VR
-#define RUNTIME_DATA_CONTENT               \
-			float worldToCam[4][4]; /* 0 */
+#if !defined(ENABLE_SKYRIM_VR)
+#define RUNTIME_DATA_CONTENT                         \
+			float           worldToCam[4][4]; /* 0 */
 
 			RUNTIME_DATA_CONTENT
 		};
 		static_assert(sizeof(RUNTIME_DATA) == 0x40);
 #elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 #define RUNTIME_DATA_CONTENT                          \
-			float           worldToCam[4][4]; /* 0 */  \
+			float           worldToCam[4][4]; /* 00 */ \
 			NiFrustum*      viewFrustumPtr;   /* 40 */ \
 			BSTArray<void*> unk180;           /* 48 */ \
 			BSTArray<void*> unk198;           /* 60 */ \
@@ -99,12 +99,12 @@ namespace RE
 		}
 
 		// members
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		RUNTIME_DATA_CONTENT;   // 110, 138
 		RUNTIME_DATA2_CONTENT;  // 150, 1CC
 #endif
 	};
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 	static_assert(sizeof(NiCamera) == 0x188);
 #elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 	static_assert(sizeof(NiCamera) == 0x208);

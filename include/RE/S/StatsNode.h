@@ -35,7 +35,7 @@ namespace RE
 		BSTSmartPointer<BSIntrusiveRefCounted>           unk58;  // 58
 		std::uint64_t                                    unk60;  // 60
 	};
-#ifndef __INTELLISENSE__
+#if !defined(__INTELLISENSE__)
 	static_assert(sizeof(StatsNode) == 0x68);
 #endif
 }

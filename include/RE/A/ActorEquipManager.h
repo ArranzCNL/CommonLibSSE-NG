@@ -24,7 +24,7 @@ namespace RE
 		// members
 		bool unk01;  // 01
 	};
-#ifndef __INTELLISENSE__
+#if !defined(__INTELLISENSE__)
 	static_assert(sizeof(ActorEquipManager) == 0x2);
 #endif
 }

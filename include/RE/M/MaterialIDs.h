@@ -106,7 +106,7 @@ namespace std
 	}
 }
 
-#ifdef FMT_VERSION
+#if defined(FMT_VERSION)
 namespace fmt
 {
 	template <>
@@ -127,7 +127,7 @@ namespace fmt
 }
 #endif
 
-#ifdef __cpp_lib_format
+#if defined(__cpp_lib_format)
 namespace std
 {
 	template <class CharT>

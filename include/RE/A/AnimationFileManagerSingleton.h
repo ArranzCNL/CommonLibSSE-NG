@@ -66,7 +66,7 @@ namespace RE
 		std::uint64_t             unk80;             // 80
 		BSTArray<void*>           unk88;             // 88
 	};
-#ifndef __INTELLISENSE__
+#if !defined(__INTELLISENSE__)
 	static_assert(sizeof(AnimationFileManagerSingleton) == 0xA0);
 #endif
 }

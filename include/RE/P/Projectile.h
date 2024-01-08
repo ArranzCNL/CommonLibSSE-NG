@@ -170,22 +170,22 @@ namespace RE
 		~Projectile() override;  // 00
 
 		// override (TESObjectREFR)
-		bool         Load(TESFile* a_mod) override;                                                      // 06 - { return TESObjectREFR::Load(a_mod); }
-		void         SaveGame(BGSSaveFormBuffer* a_buf) override;                                        // 0E
-		void         LoadGame(BGSLoadFormBuffer* a_buf) override;                                        // 0F
-		void         InitLoadGame(BGSLoadFormBuffer* a_buf) override;                                    // 10
-		void         FinishLoadGame(BGSLoadFormBuffer* a_buf) override;                                  // 11
-		void         Revert(BGSLoadFormBuffer* a_buf) override;                                          // 12
-		bool         GetAllowPromoteToPersistent() const override;                                       // 47 - { return false; }
-		bool         HasKeywordHelper(const BGSKeyword* a_keyword) const override;                       // 48
-		void         SetActorCause(ActorCause* a_cause) override;                                        // 50 - { actorCause = a_cause; }
-		ActorCause*  GetActorCause() const override;                                                     // 51 - { return actorCause; }
-		MagicCaster* GetMagicCaster(MagicSystem::CastingSource a_source) override;                       // 5C
-		bool         DetachHavok(NiAVObject* a_obj3D) override;                                          // 65
-		void         InitHavok() override;                                                               // 66
-		NiAVObject*  Load3D(bool a_backgroundLoading) override;                                          // 6A
-		void         Set3D(NiAVObject* a_object, bool a_queue3DTasks = true) override;                   // 6C
-#ifndef SKYRIM_CROSS_VR
+		bool                      Load(TESFile* a_mod) override;                                         // 06 - { return TESObjectREFR::Load(a_mod); }
+		void                      SaveGame(BGSSaveFormBuffer* a_buf) override;                           // 0E
+		void                      LoadGame(BGSLoadFormBuffer* a_buf) override;                           // 0F
+		void                      InitLoadGame(BGSLoadFormBuffer* a_buf) override;                       // 10
+		void                      FinishLoadGame(BGSLoadFormBuffer* a_buf) override;                     // 11
+		void                      Revert(BGSLoadFormBuffer* a_buf) override;                             // 12
+		bool                      GetAllowPromoteToPersistent() const override;                          // 47 - { return false; }
+		bool                      HasKeywordHelper(const BGSKeyword* a_keyword) const override;          // 48
+		void                      SetActorCause(ActorCause* a_cause) override;                           // 50 - { actorCause = a_cause; }
+		ActorCause*               GetActorCause() const override;                                        // 51 - { return actorCause; }
+		MagicCaster*              GetMagicCaster(MagicSystem::CastingSource a_source) override;          // 5C
+		bool                      DetachHavok(NiAVObject* a_obj3D) override;                             // 65
+		void                      InitHavok() override;                                                  // 66
+		NiAVObject*               Load3D(bool a_backgroundLoading) override;                             // 6A
+		void                      Set3D(NiAVObject* a_object, bool a_queue3DTasks = true) override;      // 6C
+#if !defined(SKYRIM_CROSS_VR)
 		// Override functions past where Skyrim VR breaks compatibility.
 		void                      MoveHavok(bool a_forceRec) override;                                   // 85 - { return; }
 		void                      GetLinearVelocity(NiPoint3& a_velocity) const override;                // 86
@@ -299,11 +299,11 @@ namespace RE
 		}
 
 		// members
-#ifndef ENABLE_SKYRIM_AE
+#if !defined(ENABLE_SKYRIM_AE)
 		PROJECTILE_RUNTIME_DATA_CONTENT
 #endif
 	};
-#ifndef ENABLE_SKYRIM_AE
+#if !defined(ENABLE_SKYRIM_AE)
 	static_assert(sizeof(Projectile) == 0x1D8);
 #endif
 }

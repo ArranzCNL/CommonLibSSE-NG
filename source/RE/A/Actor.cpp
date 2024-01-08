@@ -1400,7 +1400,7 @@ namespace RE
 		return func(this, a_outfit);
 	}
 
-#ifdef SKYRIM_CROSS_VR
+#if defined(SKYRIM_CROSS_VR)
 	void Actor::Unk_A2()
 	{
 		RelocateVirtual<decltype(&Actor::Unk_A2)>(0x0A2, 0x0A3, this);

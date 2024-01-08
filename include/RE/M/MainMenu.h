@@ -14,13 +14,13 @@ namespace RE
 	// flags = kPausesGame | kDisablePauseMenu | kRequiresUpdate | kUpdateUsesCursor | kApplicationMenu
 	// context = kMenuMode
 	class MainMenu :
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		public IMenu,                          // 00
 		public BSTEventSink<BSSystemEvent>,    // 30
 		public BSTEventSink<BSSaveDataEvent>,  // 38
 		public GFxFunctionHandler              // 40
 #else
-		public IMenu  // 00
+		public IMenu                           // 00
 #endif
 	{
 	public:
@@ -48,7 +48,7 @@ namespace RE
 		UI_MESSAGE_RESULTS ProcessMessage(UIMessage& a_message) override;                         // 04
 		void               AdvanceMovie(float a_interval, std::uint32_t a_currentTime) override;  // 05
 
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		// override (BSTEventSink<BSSystemEvent>)
 		BSEventNotifyControl ProcessEvent(const BSSystemEvent* a_event, BSTEventSource<BSSystemEvent>* a_eventSource) override;  // 01
 
@@ -100,11 +100,11 @@ namespace RE
 		}
 
 		// members
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		RUNTIME_DATA_CONTENT  // 50, 60
 #endif
 	};
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 	static_assert(sizeof(MainMenu) == 0x70);
 #elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 	static_assert(sizeof(MainMenu) == 0x80);

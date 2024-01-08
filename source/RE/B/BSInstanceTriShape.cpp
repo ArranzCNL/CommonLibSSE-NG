@@ -6,7 +6,7 @@ using namespace REL;
 
 namespace RE
 {
-#ifdef SKYRIM_CROSS_VR
+#if defined(SKYRIM_CROSS_VR)
 	void BSInstanceTriShape::BeginAddingInstances(std::uint32_t a_numFloatsPerInstance)
 	{
 		RelocateVirtual<decltype(&BSInstanceTriShape::BeginAddingInstances)>(0x38, 0x39, this, a_numFloatsPerInstance);

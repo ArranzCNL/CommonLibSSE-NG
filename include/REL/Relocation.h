@@ -62,7 +62,7 @@
 /**
  * Defined to indicate that this build supports both VR and non-VR runtimes.
  */
-#	define SKYRIM_CROSS_VR
+#define SKYRIM_CROSS_VR
 #endif
 
 #if !defined(ENABLE_SKYRIM_AE) || (!defined(ENABLE_SKYRIM_SE) && !defined(ENABLE_SKYRIM_VR))
@@ -73,7 +73,7 @@
  * Currently defined as <code>constexpr</code> since this build only targets one family of Address Library.
  * </p>
  */
-#	define SKYRIM_ADDR constexpr
+#define SKYRIM_ADDR constexpr
 #else
 /**
  * A macro which defines a modifier for expressions that vary by Skyrim address library IDs.
@@ -82,7 +82,7 @@
  * Currently defined as <code>inline</code> to support multiple Address Library ID families dynamically.
  * </p>
  */
-#	define SKYRIM_ADDR inline
+#define SKYRIM_ADDR inline
 #endif
 
 #if (!defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_VR)) || (!defined(ENABLE_SKYRIM_SE) && !defined(ENABLE_SKYRIM_VR)) || (!defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE))
@@ -93,7 +93,7 @@
  * Currently defined as <code>constexpr</code> since this build is for only a single runtime.
  * </p>
  */
-#	define SKYRIM_REL constexpr
+#define SKYRIM_REL constexpr
 
 /**
  * A macro which defines a modifier for expressions which may be <code>constexpr</code> when using selective targeting.
@@ -102,7 +102,7 @@
  * Currently defined as <code>constexpr</code> since this build is for only a single runtime.
  * </p>
  */
-#	define SKYRIM_REL_CONSTEXPR constexpr
+#define SKYRIM_REL_CONSTEXPR constexpr
 #else
 /**
  * A macro which defines a modifier for expressions that vary by the specific Skyrim runtime.
@@ -111,7 +111,7 @@
  * Currently defined as <code>inline</code> to support multiple runtimes dynamically.
  * </p>
  */
-#	define SKYRIM_REL inline
+#define SKYRIM_REL inline
 
 /**
  * A macro which defines a modifier for expressions which may be <code>constexpr</code> when using selective targeting.
@@ -120,10 +120,10 @@
  * Currently defined as empty to support multiple runtimes.
  * </p>
  */
-#	define SKYRIM_REL_CONSTEXPR
+#define SKYRIM_REL_CONSTEXPR
 #endif
 
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 /**
  * A macro which defines a modifier for expressions that vary between Skyrim SE/AE and Skyrim VR.
  *
@@ -131,7 +131,7 @@
  * Currently defined as <code>constexpr</code> since this build is only for VR or non-VR.
  * </p>
  */
-#	define SKYRIM_REL_VR constexpr
+#define SKYRIM_REL_VR constexpr
 
 /**
  * A macro which defines a modifier for expressions which may be <code>constexpr</code> when using selectively VR or non-VR.
@@ -140,7 +140,7 @@
  * Currently defined as <code>constexpr</code> since this build is only for VR or non-VR.
  * </p>
  */
-#	define SKYRIM_REL_VR_CONSTEXPR constexpr
+#define SKYRIM_REL_VR_CONSTEXPR constexpr
 
 /**
  * A macro which defines a modifier for functions which may be <code>virtual</code> when using selectively VR or non-VR.
@@ -149,7 +149,7 @@
  * Currently defined as <code>virtual</code> since this build is only for VR or non-VR.
  * </p>
  */
-#	define SKYRIM_REL_VR_VIRTUAL virtual
+#define SKYRIM_REL_VR_VIRTUAL virtual
 #else
 /**
  * A macro which defines a modifier for expressions that vary between Skyrim SE/AE and Skyrim VR.
@@ -158,7 +158,7 @@
  * Currently defined as <code>inline</code> since this build is for both VR and non-VR.
  * </p>
  */
-#	define SKYRIM_REL_VR inline
+#define SKYRIM_REL_VR inline
 
 /**
  * A macro which defines a modifier for expressions which may be <code>constexpr</code> when using selectively VR or non-VR.
@@ -167,7 +167,7 @@
  * Currently defined as empty since this build is for both VR and non-VR.
  * </p>
  */
-#	define SKYRIM_REL_VR_CONSTEXPR
+#define SKYRIM_REL_VR_CONSTEXPR
 
 /**
  * A macro which defines a modifier for functions which may be <code>virtual</code> when using selectively VR or non-VR.
@@ -176,7 +176,7 @@
  * Currently defined as empty since this build is for both VR and non-VR.
  * </p>
  */
-#	define SKYRIM_REL_VR_VIRTUAL
+#define SKYRIM_REL_VR_VIRTUAL
 #endif
 
 namespace REL {
@@ -665,7 +665,7 @@ namespace REL {
             return _instance;
         }
 
-#ifdef ENABLE_COMMONLIBSSE_TESTING
+#if defined(ENABLE_COMMONLIBSSE_TESTING)
         /**
          * Forcibly set the singleton <code>Module</code> instance to a specific executable file.
          *
@@ -820,7 +820,7 @@ namespace REL {
          * Returns whether the current Skyrim runtime is a Skyrim VR release.
          */
         [[nodiscard]] static SKYRIM_REL_VR bool IsVR() noexcept {
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
             return false;
 #elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
             return true;
@@ -1041,7 +1041,7 @@ namespace REL {
             return _instance;
         }
 
-#ifdef ENABLE_COMMONLIBSSE_TESTING
+#if defined(ENABLE_COMMONLIBSSE_TESTING)
         [[nodiscard]] static bool inject(std::wstring_view a_filePath, Format a_format) {
             return inject(a_filePath, a_format, Module::get().version());
         }
@@ -1428,13 +1428,13 @@ namespace REL {
         explicit constexpr VariantOffset([[maybe_unused]] std::size_t a_seOffset,
                                          [[maybe_unused]] std::size_t a_aeOffset,
                                          [[maybe_unused]] std::size_t a_vrOffset) noexcept {
-#ifdef ENABLE_SKYRIM_SE
+#if defined(ENABLE_SKYRIM_SE)
             _seOffset = a_seOffset;
 #endif
-#ifdef ENABLE_SKYRIM_AE
+#if defined(ENABLE_SKYRIM_AE)
             _aeOffset = a_aeOffset;
 #endif
-#ifdef ENABLE_SKYRIM_VR
+#if defined(ENABLE_SKYRIM_VR)
             _vrOffset = a_vrOffset;
 #endif
         }
@@ -1446,15 +1446,15 @@ namespace REL {
 
         [[nodiscard]] SKYRIM_REL std::size_t offset() const noexcept {
             switch (Module::GetRuntime()) {
-#ifdef ENABLE_SKYRIM_AE
+#if defined(ENABLE_SKYRIM_AE)
                 case Module::Runtime::AE:
                     return _aeOffset;
 #endif
-#ifdef ENABLE_SKYRIM_SE
+#if defined(ENABLE_SKYRIM_SE)
                 case Module::Runtime::SE:
                     return _seOffset;
 #endif
-#ifdef ENABLE_SKYRIM_VR
+#if defined(ENABLE_SKYRIM_VR)
                 case Module::Runtime::VR:
                     return _vrOffset;
 #endif
@@ -1468,13 +1468,13 @@ namespace REL {
     private:
         [[nodiscard]] static std::uintptr_t base() { return Module::get().base(); }
 
-#ifdef ENABLE_SKYRIM_SE
+#if defined(ENABLE_SKYRIM_SE)
         std::size_t _seOffset{0};
 #endif
-#ifdef ENABLE_SKYRIM_AE
+#if defined(ENABLE_SKYRIM_AE)
         std::size_t _aeOffset{0};
 #endif
-#ifdef ENABLE_SKYRIM_VR
+#if defined(ENABLE_SKYRIM_VR)
         std::size_t _vrOffset{0};
 #endif
     };
@@ -1509,26 +1509,26 @@ namespace REL {
 
         explicit constexpr RelocationID([[maybe_unused]] std::uint64_t a_seID,
                                         [[maybe_unused]] std::uint64_t a_aeID) noexcept {
-#ifdef ENABLE_SKYRIM_SE
+#if defined(ENABLE_SKYRIM_SE)
             _seID = a_seID;
 #endif
-#ifdef ENABLE_SKYRIM_AE
+#if defined(ENABLE_SKYRIM_AE)
             _aeID = a_aeID;
 #endif
-#ifdef ENABLE_SKYRIM_VR
+#if defined(ENABLE_SKYRIM_VR)
             _vrID = a_seID;
 #endif
         }
 
         explicit constexpr RelocationID([[maybe_unused]] std::uint64_t a_seID, [[maybe_unused]] std::uint64_t a_aeID,
                                         [[maybe_unused]] std::uint64_t a_vrID) noexcept {
-#ifdef ENABLE_SKYRIM_SE
+#if defined(ENABLE_SKYRIM_SE)
             _seID = a_seID;
 #endif
-#ifdef ENABLE_SKYRIM_AE
+#if defined(ENABLE_SKYRIM_AE)
             _aeID = a_aeID;
 #endif
-#ifdef ENABLE_SKYRIM_VR
+#if defined(ENABLE_SKYRIM_VR)
             _vrID = a_vrID;
 #endif
         }
@@ -1545,15 +1545,15 @@ namespace REL {
 
         [[nodiscard]] SKYRIM_REL std::uint64_t id() const noexcept {
             switch (Module::GetRuntime()) {
-#ifdef ENABLE_SKYRIM_AE
+#if defined(ENABLE_SKYRIM_AE)
                 case Module::Runtime::AE:
                     return _aeID;
 #endif
-#ifdef ENABLE_SKYRIM_SE
+#if defined(ENABLE_SKYRIM_SE)
                 case Module::Runtime::SE:
                     return _seID;
 #endif
-#ifdef ENABLE_SKYRIM_VR
+#if defined(ENABLE_SKYRIM_VR)
                 case Module::Runtime::VR:
                     return _vrID;
 #endif
@@ -1569,13 +1569,13 @@ namespace REL {
     private:
         [[nodiscard]] static std::uintptr_t base() { return Module::get().base(); }
 
-#ifdef ENABLE_SKYRIM_SE
+#if defined(ENABLE_SKYRIM_SE)
         std::uint64_t _seID{0};
 #endif
-#ifdef ENABLE_SKYRIM_AE
+#if defined(ENABLE_SKYRIM_AE)
         std::uint64_t _aeID{0};
 #endif
-#ifdef ENABLE_SKYRIM_VR
+#if defined(ENABLE_SKYRIM_VR)
         std::uint64_t _vrID{0};
 #endif
     };
@@ -1586,13 +1586,13 @@ namespace REL {
 
         explicit constexpr VariantID([[maybe_unused]] std::uint64_t a_seID, [[maybe_unused]] std::uint64_t a_aeID,
                                      [[maybe_unused]] std::uint64_t a_vrOffset) noexcept {
-#ifdef ENABLE_SKYRIM_SE
+#if defined(ENABLE_SKYRIM_SE)
             _seID = a_seID;
 #endif
-#ifdef ENABLE_SKYRIM_AE
+#if defined(ENABLE_SKYRIM_AE)
             _aeID = a_aeID;
 #endif
-#ifdef ENABLE_SKYRIM_VR
+#if defined(ENABLE_SKYRIM_VR)
             _vrOffset = a_vrOffset;
 #endif
         }
@@ -1604,15 +1604,15 @@ namespace REL {
 
         [[nodiscard]] std::size_t offset() const {
             switch (Module::GetRuntime()) {
-#ifdef ENABLE_SKYRIM_AE
+#if defined(ENABLE_SKYRIM_AE)
                 case Module::Runtime::AE:
                     return _aeID ? IDDatabase::get().id2offset(_aeID) : 0;
 #endif
-#ifdef ENABLE_SKYRIM_SE
+#if defined(ENABLE_SKYRIM_SE)
                 case Module::Runtime::SE:
                     return _seID ? IDDatabase::get().id2offset(_seID) : 0;
 #endif
-#ifdef ENABLE_SKYRIM_VR
+#if defined(ENABLE_SKYRIM_VR)
                 case Module::Runtime::VR:
                     return _vrOffset;
 #endif
@@ -1624,13 +1624,13 @@ namespace REL {
     private:
         [[nodiscard]] static std::uintptr_t base() { return Module::get().base(); }
 
-#ifdef ENABLE_SKYRIM_SE
+#if defined(ENABLE_SKYRIM_SE)
         std::uint64_t _seID{0};
 #endif
-#ifdef ENABLE_SKYRIM_AE
+#if defined(ENABLE_SKYRIM_AE)
         std::uint64_t _aeID{0};
 #endif
-#ifdef ENABLE_SKYRIM_VR
+#if defined(ENABLE_SKYRIM_VR)
         std::uint64_t _vrOffset{0};
 #endif
     };
@@ -1963,7 +1963,7 @@ namespace REL {
      */
     template<class T>
     [[nodiscard]] SKYRIM_ADDR T Relocate([[maybe_unused]] T &&a_seAndVR, [[maybe_unused]] T &&a_ae) noexcept {
-#ifndef ENABLE_SKYRIM_AE
+#if !defined(ENABLE_SKYRIM_AE)
         return a_seAndVR;
 #elif !defined(ENABLE_SKYRIM_SE) && !defined(ENABLE_SKYRIM_VR)
         return a_ae;
@@ -2085,16 +2085,16 @@ namespace REL {
             typename detail::RelocateVirtualHelper<Fn>::this_type *a_self, Args &&... a_args) {
         return (*reinterpret_cast<typename detail::RelocateVirtualHelper<Fn>::function_type **>(
                 *reinterpret_cast<const uintptr_t *>(reinterpret_cast<uintptr_t>(a_self) +
-                                                     #ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
                                                      a_seAndAEVtableOffset) +
 			a_seAndAEVtableIndex
-                                                     #elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
+#elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
                                                      a_vrVtableOffset) +
 			a_vrVtableIndex
-                                                     #else
+#else
                                                      (Module::IsVR() ? a_vrVtableOffset : a_seAndAEVtableOffset)) +
                 (Module::IsVR() ? a_vrVtableIndex : a_seAndAEVtableIndex)
-                #endif
+#endif
                 * sizeof(uintptr_t)))(a_self, std::forward<Args>(a_args)...);
     }
 
@@ -2173,7 +2173,7 @@ namespace std {
         return a_version.string("."sv);
     }
 
-#ifdef __cpp_lib_format
+#if defined(__cpp_lib_format)
 
     template<class CharT>
     struct formatter<REL::Version, CharT> : formatter<std::string, CharT> {

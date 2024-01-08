@@ -35,7 +35,7 @@ namespace RE
 		// members
 		char data[1];  // 08 - This buffer is sized according to the tag length in the SWF file
 	};
-#ifndef __INTELLISENSE__
+#if !defined(__INTELLISENSE__)
 	static_assert(sizeof(GFxPlaceObject2) == 0x10);
 #endif
 }

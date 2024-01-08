@@ -35,14 +35,14 @@ namespace RE
 		~Explosion() override;  // 00
 
 		// override (TESObjectREFR)
-		void         SaveGame(BGSSaveFormBuffer* a_buf) override;                   // 0E
-		void         Revert(BGSLoadFormBuffer* a_buf) override;                     // 12
-		void         SetActorCause(ActorCause* a_cause) override;                   // 50 - { actorCause = a_cause; }
-		ActorCause*  GetActorCause() const override;                                // 51 - { return actorCause; }
-		MagicCaster* GetMagicCaster(MagicSystem::CastingSource a_source) override;  // 5C
-		void         InitHavok() override;                                          // 66
-		void         Release3DRelatedData() override;                               // 6B
-#ifndef SKYRIM_CROSS_VR
+		void                     SaveGame(BGSSaveFormBuffer* a_buf) override;                           // 0E
+		void                     Revert(BGSLoadFormBuffer* a_buf) override;                             // 12
+		void                     SetActorCause(ActorCause* a_cause) override;                           // 50 - { actorCause = a_cause; }
+		ActorCause*              GetActorCause() const override;                                        // 51 - { return actorCause; }
+		MagicCaster*             GetMagicCaster(MagicSystem::CastingSource a_source) override;          // 5C
+		void                     InitHavok() override;                                                  // 66
+		void                     Release3DRelatedData() override;                                       // 6B
+#if !defined(SKYRIM_CROSS_VR)
 		// This is where in the TESObjectREFR vtable compatibility with SkyrimVR breaks.
 		[[nodiscard]] Explosion* AsExplosion() override;                                                // 8E
 		bool                     OnAddCellPerformQueueReference(TESObjectCELL& a_cell) const override;  // 90 - { return false; }
@@ -124,7 +124,7 @@ namespace RE
 		float                                  unk138;            // 138
 		stl::enumeration<Flags, std::uint32_t> flags;             // 13C
 	};
-#ifndef ENABLE_SKYRIM_AE
+#if !defined(ENABLE_SKYRIM_AE)
 	static_assert(sizeof(Explosion) == 0x140);
 #endif
 }

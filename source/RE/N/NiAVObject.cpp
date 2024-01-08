@@ -324,7 +324,7 @@ namespace RE
 		return func(this, a_enable, a_arg2, a_arg3);
 	}
 
-#ifdef SKYRIM_CROSS_VR
+#if defined(SKYRIM_CROSS_VR)
 	void NiAVObject::PerformOp(PerformOpFunc& a_func)
 	{
 		REL::RelocateVirtual<decltype(&NiAVObject::PerformOp)>(0x26, 0x27, this, a_func);

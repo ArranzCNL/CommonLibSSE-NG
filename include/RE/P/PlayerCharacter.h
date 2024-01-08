@@ -227,7 +227,7 @@ namespace RE
 	static_assert(sizeof(PlayerActionObject) == 0xC);
 
 	class PlayerCharacter :
-#ifndef ENABLE_SKYRIM_AE
+#if !defined(ENABLE_SKYRIM_AE)
 		public Character,                            // 000
 		public BSTEventSource<BGSActorCellEvent>,    // 2D0
 		public BSTEventSource<BGSActorDeathEvent>,   // 328
@@ -237,7 +237,7 @@ namespace RE
 		public BSTEventSink<UserEventEnabledEvent>,  // 2C0
 		public BSTEventSink<TESTrackedStatsEvent>    // 2C8
 #else
-		public Character // 000
+		public Character                             // 000
 #endif
 	{
 	public:
@@ -549,7 +549,7 @@ namespace RE
 		bool                                   CenterOnCell(TESObjectCELL* a_cell);
 		bool                                   CheckCast(MagicItem* a_spell, Effect* a_effect, MagicSystem::CannotCastReason& a_reason);
 		void                                   DestroyMouseSprings();
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 		void                                   EndGrabObject();
 #endif
 		[[nodiscard]] NiPointer<Actor>         GetActorDoingPlayerCommand() const;
@@ -629,7 +629,7 @@ namespace RE
 
 		struct PLAYER_RUNTIME_DATA
 		{
-#ifndef ENABLE_SKYRIM_VR                                                                                      // Non-VR
+#if !defined(ENABLE_SKYRIM_VR)                                                                                 // Non-VR
 #define PLAYER_RUNTIME_DATA_CONTENT                                                                                                  \
 			mutable BSSpinLock questTargetsLock;                                                               /* 3D8, 3E0 */         \
 			CRIME_VALUE_CONTENT;                                                                               /* 3E0 */              \

@@ -36,7 +36,7 @@ namespace RE
 			return ptr;
 		}
 	};
-#ifndef __INTELLISENSE__
+#if !defined(__INTELLISENSE__)
 	static_assert(sizeof(GFxStateBag) == 0x8);
 #endif
 }

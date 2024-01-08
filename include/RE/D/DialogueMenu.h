@@ -12,7 +12,7 @@ namespace RE
 	// flags = kUpdateUsesCursor | kDontHideCursorWhenTopmost
 	// context = kMenuMode
 	class DialogueMenu :
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		public IMenu,                            // 00
 		public BSTEventSink<MenuOpenCloseEvent>  // 30
 #else
@@ -44,7 +44,7 @@ namespace RE
 		void               Accept(CallbackProcessor* a_processor) override;  // 01
 		UI_MESSAGE_RESULTS ProcessMessage(UIMessage& a_message) override;    // 04
 
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		// override (BSTEventSink<MenuOpenCloseEvent>)
 		BSEventNotifyControl ProcessEvent(const MenuOpenCloseEvent* a_event, BSTEventSource<MenuOpenCloseEvent>* a_eventSource) override;  // 01
 #endif
@@ -70,11 +70,11 @@ namespace RE
 		}
 
 		// members
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		RUNTIME_DATA_CONTENT  // 38, 48
 #endif
 	};
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 	static_assert(sizeof(DialogueMenu) == 0x50);
 #elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 	static_assert(sizeof(DialogueMenu) == 0x60);

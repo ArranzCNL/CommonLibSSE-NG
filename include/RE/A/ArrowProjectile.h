@@ -25,9 +25,9 @@ namespace RE
 		~ArrowProjectile() override;                                                                                                                                                      // 00
 
 		// override (MissileProjectile)
-		void SaveGame(BGSSaveFormBuffer* a_buf) override;                                                                                                                                 // 0E
-		void LoadGame(BGSLoadFormBuffer* a_buf) override;                                                                                                                                 // 0F
-#ifndef SKYRIM_CROSS_VR
+		void  SaveGame(BGSSaveFormBuffer* a_buf) override;                                                                                                                                 // 0E
+		void  LoadGame(BGSLoadFormBuffer* a_buf) override;                                                                                                                                 // 0F
+#if !defined(SKYRIM_CROSS_VR)
 		void  PostLoad3D(NiAVObject* a_root) override;                                                                                                                                    // AA
 		void  UpdateImpl(float a_delta) override;                                                                                                                                         // AB
 		bool  ProcessImpacts() override;                                                                                                                                                  // AC
@@ -63,11 +63,11 @@ namespace RE
 		}
 
 		// members
-#ifndef ENABLE_SKYRIM_AE
+#if !defined(ENABLE_SKYRIM_AE)
 		ARROW_RUNTIME_DATA_CONTENT
 #endif
 	};
-#ifndef ENABLE_SKYRIM_AE
+#if !defined(ENABLE_SKYRIM_AE)
 	static_assert(sizeof(ArrowProjectile) == 0x1F0);
 #endif
 }

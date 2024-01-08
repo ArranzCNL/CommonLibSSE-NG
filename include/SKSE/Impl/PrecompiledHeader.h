@@ -598,7 +598,7 @@ namespace SKSE
 			return out;
 		}
 
-#ifndef __clang__
+#if !defined(__clang__)
 		using source_location = std::source_location;
 #else
 		/**
@@ -710,7 +710,7 @@ namespace SKSE
 				a_msg);
 
 			if (a_fail) {
-#ifdef ENABLE_COMMONLIBSSE_TESTING
+#if defined(ENABLE_COMMONLIBSSE_TESTING)
 				throw std::runtime_error(utf16_to_utf8(caption.empty() ? body.c_str() : caption.c_str())->c_str());
 #else
 				MessageBox(nullptr, body.c_str(), (caption.empty() ? nullptr : caption.c_str()), 0);

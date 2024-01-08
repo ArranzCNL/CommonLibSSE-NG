@@ -1,4 +1,4 @@
 #pragma system_header
-#ifdef __cplusplus
+#if defined(__cplusplus)
 #include "../include/SKSE/Impl/PrecompiledHeader.h"
 #endif

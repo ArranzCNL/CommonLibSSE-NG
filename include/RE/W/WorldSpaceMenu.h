@@ -10,11 +10,11 @@ namespace RE
 	// menuDepth = 4 
 	// context = 22
 	class WorldSpaceMenu :
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		public IMenu,                            // 00
 		public BSTEventSink<HudModeChangeEvent>  // 40
 #else
-		public IMenu  // 00
+		public IMenu                             // 00
 #endif
 	{
 	public:

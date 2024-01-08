@@ -48,7 +48,7 @@ namespace RE
 		std::uint8_t      pad0F9[7];      // 0F9
 		std::uint64_t     pad100[20];     // 0A0
 	};
-#ifndef __INTELLISENSE__
+#if !defined(__INTELLISENSE__)
 	static_assert(sizeof(GASEnvironment) == 0x1A0);
 #endif
 }

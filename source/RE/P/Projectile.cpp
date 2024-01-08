@@ -11,7 +11,7 @@ using namespace REL;
 
 namespace RE
 {
-#ifdef SKYRIM_CROSS_VR
+#if defined(SKYRIM_CROSS_VR)
 	bool Projectile::IsMissileProjectile()
 	{
 		return RelocateVirtual<bool(Projectile*)>(0xA2, 0xA3, this);

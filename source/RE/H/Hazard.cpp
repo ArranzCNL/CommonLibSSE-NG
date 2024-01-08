@@ -6,7 +6,7 @@ using namespace REL;
 
 namespace RE
 {
-#ifdef SKYRIM_CROSS_VR
+#if defined(SKYRIM_CROSS_VR)
 	void Hazard::Initialize()
 	{
 		RelocateVirtual<decltype(&Hazard::Initialize)>(0xA2, 0xA3, this);

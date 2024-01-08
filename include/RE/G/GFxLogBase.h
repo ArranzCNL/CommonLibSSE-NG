@@ -13,7 +13,7 @@ namespace RE
 		// add
 		[[nodiscard]] virtual bool IsVerboseActionErrors() const { return true; }  // 01
 	};
-#ifndef __INTELLISENSE__
+#if !defined(__INTELLISENSE__)
 	static_assert(sizeof(GFxLogBase<void*>) == 0x8);
 #endif
 }

@@ -158,7 +158,7 @@ namespace RE
 		NiTransform                           world;                    // 07C
 		NiTransform                           previousWorld;            // 0B0
 		NiBound                               worldBound;               // 0E4
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 		stl::enumeration<Flag, std::uint32_t> flags;                    // 0F4
 		TESObjectREFR*                        userData;                 // 0F8
 		float                                 fadeAmount;               // 100

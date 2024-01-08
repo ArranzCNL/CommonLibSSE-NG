@@ -53,7 +53,7 @@ namespace RE
 			Data                           unk301F8;         // 301F8
 			std::uint64_t                  unk30240;         // 30240
 			std::uint64_t                  unk30248;         // 30248
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 			std::uint64_t                  unk30250;         // 30250
 			std::uint64_t                  unk30258;         // 30258
 			LocalMapCamera                 camera;           // 30260
@@ -85,7 +85,7 @@ namespace RE
 			std::uint8_t                   unk30260[0x100];  // 30260
 #endif
 		};
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 		static_assert(sizeof(LocalMapCullingProcess) == 0x30360);
 #elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 		static_assert(sizeof(LocalMapCullingProcess) == 0x303D8);
@@ -144,7 +144,7 @@ namespace RE
 		std::uint32_t          pad3047C;             // 3047C
 #endif
 	};
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 	static_assert(sizeof(LocalMapMenu) == 0x30400);
 #elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 	static_assert(sizeof(LocalMapMenu) == 0x30480);

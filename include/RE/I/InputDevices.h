@@ -11,7 +11,7 @@ namespace RE
 			kMouse,
 			kGamepad,
 			kVirtualKeyboard,
-#ifdef ENABLE_SKYRIM_VR
+#if defined(ENABLE_SKYRIM_VR)
 			kVRRight = 5,
 			kVRLeft = 6,
 #endif

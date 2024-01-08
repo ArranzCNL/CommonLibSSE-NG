@@ -130,7 +130,7 @@ namespace RE
 		float              baseAmount;  // 98
 		float              modAmount;   // 9C
 	};
-#ifndef __INTELLISENSE__
+#if !defined(__INTELLISENSE__)
 	static_assert(sizeof(ImageSpaceData) == 0xA0);
 #endif
 }

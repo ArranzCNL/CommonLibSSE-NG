@@ -44,7 +44,7 @@ namespace RE
 		std::uint32_t                                                                padA4;                     // A4
 		BSTHashMap<std::uint32_t, BSTArray<BSTTuple<std::uint32_t, std::uint32_t>>*> questStageWaitMap;         // A8
 	};
-#ifndef __INTELLISENSE__
+#if !defined(__INTELLISENSE__)
 	static_assert(sizeof(BGSStoryTeller) == 0xD8);
 #endif
 }

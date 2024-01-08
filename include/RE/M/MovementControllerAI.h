@@ -58,7 +58,7 @@ namespace RE
 		std::uint64_t unk110;  // 110
 		std::uint64_t unk118;  // 118
 	};
-#ifndef __INTELLISENSE__
+#if !defined(__INTELLISENSE__)
 	static_assert(sizeof(MovementControllerAI) == 0x120);
 #endif
 }

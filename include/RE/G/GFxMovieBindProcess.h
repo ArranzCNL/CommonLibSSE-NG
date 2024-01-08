@@ -21,7 +21,7 @@ namespace RE
 			// members
 			GFxImagePacker* imagePacker;
 		};
-#ifndef __INTELLISENSE__
+#if !defined(__INTELLISENSE__)
 		static_assert(sizeof(ImagePackVisitor) == 0x10);
 #endif
 		// members

@@ -497,7 +497,7 @@ namespace RE
 		LOADED_REF_DATA* loadedData;  // 68
 		ExtraDataList    extraList;   // 70
 
-#ifndef ENABLE_SKYRIM_AE
+#if !defined(ENABLE_SKYRIM_AE)
 		RUNTIME_DATA_CONTENT
 #endif
 
@@ -507,7 +507,7 @@ namespace RE
 		void              MoveTo_Impl(const ObjectRefHandle& a_targetHandle, TESObjectCELL* a_targetCell, TESWorldSpace* a_selfWorldSpace, const NiPoint3& a_position, const NiPoint3& a_rotation);
 		void              PlayAnimation_Impl(NiControllerManager* a_manager, NiControllerSequence* a_toSeq, NiControllerSequence* a_fromSeq, bool a_arg4 = false);
 	};
-#ifndef ENABLE_SKYRIM_AE
+#if !defined(ENABLE_SKYRIM_AE)
 	static_assert(sizeof(TESObjectREFR) == 0x98);
 #endif
 }

@@ -169,7 +169,7 @@ namespace RE
 		std::uint32_t                     padD54;                                         // D54
 		TESFile*                          activeFile;                                     // D58
 		BSSimpleList<TESFile*>            files;                                          // D60
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 		TESFileCollection                 compiledFileCollection;                         // D70
 		RUNTIME_DATA_CONTENT
 		std::uint8_t                      unkDAA;                                         // DAA

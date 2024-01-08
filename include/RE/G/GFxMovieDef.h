@@ -112,7 +112,7 @@ namespace RE
 			// add
 			virtual void Visit(GFxMovieDef* a_movieDef, GFxResource* a_resource, GFxResourceID a_id, const char* a_exportName) = 0;  // 01
 		};
-#ifndef __INTELLISENSE__
+#if !defined(__INTELLISENSE__)
 		static_assert(sizeof(ResourceVisitor) == 0x8);
 #endif
 		// add
@@ -143,7 +143,7 @@ namespace RE
 
 		GFxMovieView* CreateInstance(bool a_initFirstFrame = true, UPInt a_memoryArena = 0);
 	};
-#ifndef __INTELLISENSE__
+#if !defined(__INTELLISENSE__)
 	static_assert(sizeof(GFxMovieDef) == 0x20);
 #endif
 }

@@ -41,7 +41,7 @@ namespace RE
 
 	BSTrackedControllerDevice* BSInputDeviceManager::GetVRControllerRight()
 	{
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 		return nullptr;
 #else
 		if SKYRIM_REL_VR_CONSTEXPR (!REL::Module::IsVR()) {
@@ -53,7 +53,7 @@ namespace RE
 
 	BSTrackedControllerDevice* BSInputDeviceManager::GetVRControllerLeft()
 	{
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 		return nullptr;
 #else
 		if SKYRIM_REL_VR_CONSTEXPR (!REL::Module::IsVR()) {

@@ -968,7 +968,7 @@ namespace RE
 		return func(this, a_manager, a_toSeq, a_fromSeq, a_arg4);
 	}
 
-#ifdef SKYRIM_CROSS_VR
+#if defined(SKYRIM_CROSS_VR)
 	void TESObjectREFR::SetObjectReference(TESBoundObject* a_object)
 	{
 		REL::RelocateVirtual<decltype(&TESObjectREFR::SetObjectReference)>(0x84, 0x85, this, a_object);

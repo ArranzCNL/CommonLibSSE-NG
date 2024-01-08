@@ -74,21 +74,21 @@ namespace RE
 		}
 
 		// members
-		std::uint8_t    pad59;                           // 59
-		std::uint16_t   pad5A;                           // 5A
-		std::uint32_t   pad5C;                           // 5C
-		BSIInputDevice* devices[INPUT_DEVICES::kTotal];  // 60
-#ifndef SKYRIM_CROSS_VR
+		std::uint8_t               pad59;                           // 59
+		std::uint16_t              pad5A;                           // 5A
+		std::uint32_t              pad5C;                           // 5C
+		BSIInputDevice*            devices[INPUT_DEVICES::kTotal];  // 60
+#if !defined(SKYRIM_CROSS_VR)
 	#if !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
-		BSTrackedControllerDevice* unkDevice;     // 80
-		BSTrackedControllerDevice* vrDevices[2];  // 88
-		RUNTIME_DATA_CONTENT                      // 98
+		BSTrackedControllerDevice* unkDevice;                       // 80
+		BSTrackedControllerDevice* vrDevices[2];                    // 88
+		RUNTIME_DATA_CONTENT                                        // 98
 	#elif !defined(ENABLE_SKYRIM_VR)
-		RUNTIME_DATA_CONTENT  // 80
+		RUNTIME_DATA_CONTENT                                        // 80
 	#endif
 #endif
 	};
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 	static_assert(sizeof(BSInputDeviceManager) == 0xF0);
 #elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 	static_assert(sizeof(BSInputDeviceManager) == 0x108);

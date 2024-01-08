@@ -121,7 +121,7 @@ namespace RE
 	NiSmartPointer(Actor);
 
 	class Actor :
-#ifndef ENABLE_SKYRIM_AE
+#if !defined(ENABLE_SKYRIM_AE)
 		public TESObjectREFR,                              // 000
 		public MagicTarget,                                // 098, 0A0
 		public ActorValueOwner,                            // 0B0, 0B8
@@ -130,7 +130,7 @@ namespace RE
 		public BSTEventSink<bhkCharacterMoveFinishEvent>,  // 0D0, 0D8
 		public IPostAnimationChannelUpdateFunctor          // 0D8, 0E0
 #else
-		public TESObjectREFR  // 000
+		public TESObjectREFR                               // 000
 #endif
 	{
 	private:
@@ -325,7 +325,7 @@ namespace RE
 		bool                                       ShouldPerformRevert() const override;                                                                                                                                                                                 // 07C
 		void                                       UpdateAnimation(float a_delta) override;                                                                                                                                                                              // 07D
 		void                                       RemoveWeapon(BIPED_OBJECT equipIndex) override;                                                                                                                                                                       // 082
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		// Override functions past where Skyrim VR breaks compatibility.
 		void                                       SetObjectReference(TESBoundObject* a_object) override;                                         // 084
 		void                                       MoveHavok(bool a_forceRec) override;                                                           // 085
@@ -349,11 +349,11 @@ namespace RE
 		void                                       UnequipItem(std::uint64_t a_arg1, TESBoundObject* a_object) override;                          // 0A1
 #endif
 
-#ifndef ENABLE_SKYRIM_AE
+#if !defined(ENABLE_SKYRIM_AE)
 		// override (MagicTarget)
-		[[nodiscard]] Actor*                       GetTargetStatsObject() override;      // 002 - { return this; }
-		[[nodiscard]] bool                         MagicTargetIsActor() const override;  // 003 - { return true; }
-		[[nodiscard]] BSSimpleList<ActiveEffect*>* GetActiveEffectList() override;       // 007
+		[[nodiscard]] Actor*                       GetTargetStatsObject() override;                                                               // 002 - { return this; }
+		[[nodiscard]] bool                         MagicTargetIsActor() const override;                                                           // 003 - { return true; }
+		[[nodiscard]] BSSimpleList<ActiveEffect*>* GetActiveEffectList() override;                                                                // 007
 #endif
 
 		// add
@@ -794,7 +794,7 @@ namespace RE
 		}
 
 		// members
-#ifndef ENABLE_SKYRIM_AE
+#if !defined(ENABLE_SKYRIM_AE)
 		RUNTIME_DATA_CONTENT
 #endif
 
@@ -803,7 +803,7 @@ namespace RE
 		float       CalcEquippedWeight();
 		TESFaction* GetCrimeFactionImpl() const;
 	};
-#ifndef ENABLE_SKYRIM_AE
+#if !defined(ENABLE_SKYRIM_AE)
 	static_assert(sizeof(Actor) == 0x2B0);
 #endif
 }

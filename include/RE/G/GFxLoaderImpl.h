@@ -28,7 +28,7 @@ namespace RE
 		std::uint16_t    pad72;         // 72
 		std::uint32_t    pad74;         // 74
 	};
-#ifndef __INTELLISENSE__
+#if !defined(__INTELLISENSE__)
 	static_assert(sizeof(GFxLoaderImpl) == 0x78);
 #endif
 }

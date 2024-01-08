@@ -25,7 +25,7 @@ namespace RE::DirectInput8
 
 	using GUID = SKSE::WinAPI::GUID;
 	using LPGUID = GUID*;
-#ifndef _REFGUID_DEFINED
+#if !defined(_REFGUID_DEFINED)
 	using REFGUID = const GUID&;
 #endif
 	using FILETIME = SKSE::WinAPI::FILETIME;
@@ -33,7 +33,7 @@ namespace RE::DirectInput8
 	using POINT = SKSE::WinAPI::POINT;
 
 	using IID = GUID;
-#ifndef _REFIID_DEFINED
+#if !defined(_REFIID_DEFINED)
 	using REFIID = const IID&;
 #endif
 	using LPIID = IID*;

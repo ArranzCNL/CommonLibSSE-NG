@@ -150,7 +150,7 @@ namespace RE
 		std::uint32_t                         unk2B54;                          // 2B54
 		std::uint64_t                         unk2B58[(0x2BE8 - 0x2B58) >> 3];  // 2B58
 	};
-#ifndef __INTELLISENSE__
+#if !defined(__INTELLISENSE__)
 	static_assert(sizeof(GFxMovieRoot) == 0x2BF0);
 #endif
 }

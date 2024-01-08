@@ -51,7 +51,7 @@ namespace RE
 		return func(this, a_arrBuffLen);
 	}
 
-#ifdef SKYRIM_CROSS_VR
+#if defined(SKYRIM_CROSS_VR)
 	void NiNode::AttachChild(NiAVObject* a_child, bool a_firstAvail)
 	{
 		REL::RelocateVirtual<decltype(&NiNode::AttachChild)>(0x35, 0x36, this, a_child, a_firstAvail);

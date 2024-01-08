@@ -50,15 +50,16 @@ namespace RE
 		{
 #if !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 #define MODEL_DATA_CONTENT               \
-			NiBound  modelBound; /* 0 */  \
+			NiBound  modelBound; /* 00 */ \
 			NiPoint3 unk148;     /* 10 */ \
 			NiPoint3 unk154;     /* 2C */
 #else
-#	define MODEL_DATA_CONTENT NiBound modelBound; /* 0 */
+#define MODEL_DATA_CONTENT              \
+			NiBound modelBound;  /* 0 */
 #endif
 			MODEL_DATA_CONTENT
 		};
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 		static_assert(sizeof(MODEL_DATA) == 0x10);
 #elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 		static_assert(sizeof(MODEL_DATA) == 0x28);
@@ -80,24 +81,24 @@ namespace RE
 		~BSGeometry() override;  // 00
 
 		// override (NiAVObject)
-		const NiRTTI* GetRTTI() const override;                            // 02
-		BSGeometry*   AsGeometry() override;                               // 07 - { return this; }
-		void          LoadBinary(NiStream& a_stream) override;             // 18
-		void          LinkObject(NiStream& a_stream) override;             // 19
-		bool          RegisterStreamables(NiStream& a_stream) override;    // 1A
-		void          SaveBinary(NiStream& a_stream) override;             // 1B
-		bool          IsEqual(NiObject* a_object) override;                // 1C - { return false; }
-		void          ProcessClone(NiCloningProcess& a_cloning) override;  // 1D
-		void          PostLinkObject(NiStream& a_stream) override;         // 1E
-#ifndef SKYRIM_CROSS_VR
+		const NiRTTI* GetRTTI() const override;                                                                                    // 02
+		BSGeometry*   AsGeometry() override;                                                                                       // 07 - { return this; }
+		void          LoadBinary(NiStream& a_stream) override;                                                                     // 18
+		void          LinkObject(NiStream& a_stream) override;                                                                     // 19
+		bool          RegisterStreamables(NiStream& a_stream) override;                                                            // 1A
+		void          SaveBinary(NiStream& a_stream) override;                                                                     // 1B
+		bool          IsEqual(NiObject* a_object) override;                                                                        // 1C - { return false; }
+		void          ProcessClone(NiCloningProcess& a_cloning) override;                                                          // 1D
+		void          PostLinkObject(NiStream& a_stream) override;                                                                 // 1E
+#if !defined(SKYRIM_CROSS_VR)
 		// The following are virtual functions past the point where VR compatibility breaks.
-		void AttachProperty(NiAlphaProperty* a_property) override;                                                        // 27
-		void SetSelectiveUpdateFlags(bool& a_selectiveUpdate, bool a_selectiveUpdateTransforms, bool& a_rigid) override;  // 2B
-		void UpdateDownwardPass(NiUpdateData& a_data, std::uint32_t a_arg2) override;                                     // 2C
-		void UpdateSelectedDownwardPass(NiUpdateData& a_data, std::uint32_t a_arg2) override;                             // 2D
-		void UpdateRigidDownwardPass(NiUpdateData& a_data, std::uint32_t a_arg2) override;                                // 2E
-		void UpdateWorldBound() override;                                                                                 // 2F
-		void OnVisible(NiCullingProcess& a_process) override;                                                             // 34
+		void          AttachProperty(NiAlphaProperty* a_property) override;                                                        // 27
+		void          SetSelectiveUpdateFlags(bool& a_selectiveUpdate, bool a_selectiveUpdateTransforms, bool& a_rigid) override;  // 2B
+		void          UpdateDownwardPass(NiUpdateData& a_data, std::uint32_t a_arg2) override;                                     // 2C
+		void          UpdateSelectedDownwardPass(NiUpdateData& a_data, std::uint32_t a_arg2) override;                             // 2D
+		void          UpdateRigidDownwardPass(NiUpdateData& a_data, std::uint32_t a_arg2) override;                                // 2E
+		void          UpdateWorldBound() override;                                                                                 // 2F
+		void          OnVisible(NiCullingProcess& a_process) override;                                                             // 34
 #endif
 
 		// add
@@ -136,14 +137,14 @@ namespace RE
 		}
 
 		// members
-#ifndef SKYRIM_CROSS_VR
-		MODEL_DATA_CONTENT;    // 110, 138
-		RUNTIME_DATA_CONTENT;  // 120, 160
-	#ifndef ENABLE_SKYRIM_VR
-		stl::enumeration<Type, std::uint8_t> type;   // 150
-		std::uint8_t                         pad31;  // 151
-		std::uint16_t                        pad32;  // 152
-		std::uint32_t                        pad34;  // 154
+#if !defined(SKYRIM_CROSS_VR)
+		MODEL_DATA_CONTENT;                           // 110, 138
+		RUNTIME_DATA_CONTENT;                         // 120, 160
+	#if !defined(ENABLE_SKYRIM_VR)
+		stl::enumeration<Type, std::uint8_t>  type;   // 150
+		std::uint8_t                          pad31;  // 151
+		std::uint16_t                         pad32;  // 152
+		std::uint32_t                         pad34;  // 154
 	#elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 		stl::enumeration<Type, std::uint32_t> type;   // 190
 		std::uint8_t                          pad31;  // 194
@@ -152,7 +153,7 @@ namespace RE
 	#endif
 #endif
 	};
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 	static_assert(sizeof(BSGeometry) == 0x158);
 #elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 	static_assert(sizeof(BSGeometry) == 0x1A0);

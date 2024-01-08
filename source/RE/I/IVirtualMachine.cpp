@@ -148,7 +148,7 @@ namespace RE
 		}
 #pragma clang diagnostic pop
 
-#ifdef SKYRIM_CROSS_VR
+#if defined(SKYRIM_CROSS_VR)
 		void IVirtualMachine::ForEachBoundObject(VMHandle a_handle, IForEachScriptObjectFunctor* a_functor)
 		{
 			return REL::RelocateVirtual<decltype(&IVirtualMachine::ForEachBoundObject)>(0x1B, 0x1C, this, a_handle, a_functor);

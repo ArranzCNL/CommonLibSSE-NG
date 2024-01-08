@@ -113,7 +113,7 @@ namespace SKSE
 			return result;
 		}
 
-#ifdef SKSE_SUPPORT_XBYAK
+#if defined(SKSE_SUPPORT_XBYAK)
 		[[nodiscard]] void* allocate(Xbyak::CodeGenerator& a_code);
 #endif
 

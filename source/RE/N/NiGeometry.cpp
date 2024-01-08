@@ -6,7 +6,7 @@ using namespace REL;
 
 namespace RE
 {
-#ifdef SKYRIM_CROSS_VR
+#if defined(SKYRIM_CROSS_VR)
 	void NiGeometry::Unk_35()
 	{
 		RelocateVirtual<decltype(&NiGeometry::Unk_35)>(0x35, 0x36, this);

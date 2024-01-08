@@ -72,7 +72,7 @@ namespace RE
 		return func(this);
 	}
 
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 	void PlayerCharacter::EndGrabObject()
 	{
 		if (GetPlayerRuntimeData().grabType == GrabbingType::kNormal) {

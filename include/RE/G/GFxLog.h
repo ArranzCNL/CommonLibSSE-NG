@@ -20,7 +20,7 @@ namespace RE
 
 		void LogMessageByType(LogMessageType a_messageType, const char* a_fmt, ...);
 	};
-#ifndef __INTELLISENSE__
+#if !defined(__INTELLISENSE__)
 	static_assert(sizeof(GFxLog) == 0x20);
 #endif
 }

@@ -54,7 +54,7 @@
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <DisableSpecificWarnings>4005;4061;4068;4200;4201;4265;4266;4267;4371;4514;4582;4583;4623;4625;4626;4710;4711;4820;5026;5027;5045;5053;5204;5220</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4005;4061;4068;4200;4201;4265;4266;4267;4324;4371;4514;4582;4583;4623;4625;4626;4710;4711;4820;5026;5027;5045;5053;5204;5220</DisableSpecificWarnings>
       <ExceptionHandling>Sync</ExceptionHandling>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
@@ -84,7 +84,7 @@
       <AdditionalIncludeDirectories>../../PCH;../../include;../../vendor/rapidcsv/src;../../vendor/xbyak;../../vendor/spdlog/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /bigobj /utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
-      <DisableSpecificWarnings>4005;4061;4068;4200;4201;4265;4266;4267;4371;4514;4582;4583;4623;4625;4626;4710;4711;4820;5026;5027;5045;5053;5204;5220</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4005;4061;4068;4200;4201;4265;4266;4267;4324;4371;4514;4582;4583;4623;4625;4626;4710;4711;4820;5026;5027;5045;5053;5204;5220</DisableSpecificWarnings>
       <ExceptionHandling>Sync</ExceptionHandling>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>

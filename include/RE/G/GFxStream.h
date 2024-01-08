@@ -39,7 +39,7 @@ namespace RE
 		char             buffer[0x200];  // 06C
 		std::uint32_t    pad26C;         // 26C
 	};
-#ifndef __INTELLISENSE__
+#if !defined(__INTELLISENSE__)
 	static_assert(sizeof(GFxStream) == 0x270);
 #endif
 }

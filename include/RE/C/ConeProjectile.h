@@ -33,7 +33,7 @@ namespace RE
 		void      InitLoadGame(BGSLoadFormBuffer* a_buf) override;                                                                                                                            // 10
 		void      FinishLoadGame(BGSLoadFormBuffer* a_buf) override;                                                                                                                          // 11
 		void      Revert(BGSLoadFormBuffer* a_buf) override;                                                                                                                                  // 12
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		void      Process3D() override;                                                                                                                                                       // A9
 		void      UpdateImpl(float a_delta) override;                                                                                                                                         // AB
 		bool      ProcessImpacts() override;                                                                                                                                                  // AC
@@ -78,11 +78,11 @@ namespace RE
 		}
 
 		// members
-#ifndef ENABLE_SKYRIM_AE
+#if !defined(ENABLE_SKYRIM_AE)
 		CONE_RUNTIME_DATA_CONTENT
 #endif
 	};
-#ifndef ENABLE_SKYRIM_AE
+#if !defined(ENABLE_SKYRIM_AE)
 	static_assert(sizeof(ConeProjectile) == 0x218);
 #endif
 }

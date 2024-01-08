@@ -12,11 +12,11 @@ namespace RE
 	// flags = kAllowSaving | kCustomRendering | kAssignCursorToRenderer
 	// context = kNone
 	class KinectMenu :
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		public IMenu,                            // 00
 		public BSTEventSink<MenuOpenCloseEvent>  // 30
 #else
-		public IMenu  // 00
+		public IMenu                             // 00
 #endif
 	{
 	public:
@@ -28,7 +28,7 @@ namespace RE
 		// override (IMenu)
 		UI_MESSAGE_RESULTS ProcessMessage(UIMessage& a_message) override;  // 04
 
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		// override (BSTEventSink<MenuOpenCloseEvent>)
 		BSEventNotifyControl ProcessEvent(const MenuOpenCloseEvent* a_event, BSTEventSource<MenuOpenCloseEvent>* a_eventSource) override;  // 01
 #endif
@@ -54,11 +54,11 @@ namespace RE
 		}
 
 		// members
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		GFxValue root;  // 38, 48 - "Menu_mc"
 #endif
 	};
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 	static_assert(sizeof(KinectMenu) == 0x50);
 #elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 	static_assert(sizeof(KinectMenu) == 0x60);

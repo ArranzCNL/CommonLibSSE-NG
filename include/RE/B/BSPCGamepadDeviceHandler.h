@@ -44,14 +44,14 @@ namespace RE
 			return REL::RelocateMember<RUNTIME_DATA>(this, 0x8, 0x10);
 		}
 		// members
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		RUNTIME_DATA_CONTENT
 #endif
 	protected:
 		friend class BSInputDeviceFactory;
 		BSPCGamepadDeviceHandler();
 	};
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 	static_assert(sizeof(BSPCGamepadDeviceHandler) == 0x10);
 #elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 	static_assert(sizeof(BSPCGamepadDeviceHandler) == 0x10);

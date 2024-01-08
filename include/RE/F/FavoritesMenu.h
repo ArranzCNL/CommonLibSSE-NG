@@ -14,7 +14,7 @@ namespace RE
 	// flags = kPausesGame | kUpdateUsesCursor | kInventoryItemMenu | kCustomRendering
 	// context = kFavorites
 	class FavoritesMenu :
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		public IMenu,            // 00
 		public MenuEventHandler  // 30
 #else
@@ -53,7 +53,7 @@ namespace RE
 		UI_MESSAGE_RESULTS ProcessMessage(UIMessage& a_message) override;    // 04
 
 		// override (MenuEventHandler)
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		bool CanProcess(InputEvent* a_event) override;      // 01
 		bool ProcessKinect(KinectEvent* a_event) override;  // 02
 		bool ProcessButton(ButtonEvent* a_event) override;  // 05
@@ -80,11 +80,11 @@ namespace RE
 		}
 
 		// members
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		RUNTIME_DATA_CONTENT  // 40, 50
 #endif
 	};
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 	static_assert(sizeof(FavoritesMenu) == 0x78);
 #elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 	static_assert(sizeof(FavoritesMenu) == 0x88);

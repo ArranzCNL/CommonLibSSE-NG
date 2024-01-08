@@ -116,7 +116,7 @@ namespace RE
 		void SetViewport(std::int32_t a_bufW, std::int32_t a_bufH, std::int32_t a_left, std::int32_t a_top, std::int32_t a_width, std::int32_t a_height, GViewport::Flag a_flags = GViewport::Flag::kNone);
 		void InvokeNoReturn(const char* a_methodName, const GFxValue* a_args, std::uint32_t a_numArgs);
 	};
-#ifndef __INTELLISENSE__
+#if !defined(__INTELLISENSE__)
 	static_assert(sizeof(GFxMovieView) == 0x18);
 #endif
 }

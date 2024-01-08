@@ -24,12 +24,12 @@ namespace RE
 		~GrenadeProjectile() override;  // 00
 
 		// override (Projectile)
-		void SaveGame(BGSSaveFormBuffer* a_buf) override;        // 0E
-		void LoadGame(BGSLoadFormBuffer* a_buf) override;        // 0F
-		void InitLoadGame(BGSLoadFormBuffer* a_buf) override;    // 10
-		void FinishLoadGame(BGSLoadFormBuffer* a_buf) override;  // 11
-		void Revert(BGSLoadFormBuffer* a_buf) override;          // 12
-#ifndef SKYRIM_CROSS_VR
+		void                         SaveGame(BGSSaveFormBuffer* a_buf) override;        // 0E
+		void                         LoadGame(BGSLoadFormBuffer* a_buf) override;        // 0F
+		void                         InitLoadGame(BGSLoadFormBuffer* a_buf) override;    // 10
+		void                         FinishLoadGame(BGSLoadFormBuffer* a_buf) override;  // 11
+		void                         Revert(BGSLoadFormBuffer* a_buf) override;          // 12
+#if !defined(SKYRIM_CROSS_VR)
 		// Override functions past where Skyrim VR breaks compatibility.
 		[[nodiscard]] BGSDecalGroup* GetDecalGroup() const override;                                                                                                                                             // 9F - { return decalGroup; }
 		bool                         IsGrenadeProjectile() override;                                                                                                                                             // A3 - { return 1; }
@@ -70,11 +70,11 @@ namespace RE
 		}
 
 		// members
-#ifndef ENABLE_SKYRIM_AE
+#if !defined(ENABLE_SKYRIM_AE)
 		GRENADE_RUNTIME_DATA_CONTENT
 #endif
 	};
-#ifndef ENABLE_SKYRIM_AE
+#if !defined(ENABLE_SKYRIM_AE)
 	static_assert(sizeof(GrenadeProjectile) == 0x1E8);
 #endif
 }

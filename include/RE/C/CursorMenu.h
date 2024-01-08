@@ -9,7 +9,7 @@ namespace RE
 	// flags = kAllowSaving | kCustomRendering
 	// context = kNone
 	class CursorMenu :
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		public IMenu,            // 00
 		public MenuEventHandler  // 30
 #else
@@ -26,7 +26,7 @@ namespace RE
 		UI_MESSAGE_RESULTS ProcessMessage(UIMessage& a_message) override;  // 04
 
 		// override (MenuEventHandler)
-#ifndef SKYRIM_CROSS_VR
+#if !defined(SKYRIM_CROSS_VR)
 		bool CanProcess(InputEvent* a_event) override;              // 01
 		bool ProcessThumbstick(ThumbstickEvent* a_event) override;  // 03
 		bool ProcessMouseMove(MouseMoveEvent* a_event) override;    // 04
@@ -42,7 +42,7 @@ namespace RE
 			return const_cast<CursorMenu*>(this)->AsMenuEventHandler();
 		}
 	};
-#ifndef ENABLE_SKYRIM_VR
+#if !defined(ENABLE_SKYRIM_VR)
 	static_assert(sizeof(CursorMenu) == 0x40);
 #elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 	static_assert(sizeof(CursorMenu) == 0x50);
