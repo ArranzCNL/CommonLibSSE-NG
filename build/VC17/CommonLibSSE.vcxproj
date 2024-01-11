@@ -1513,6 +1513,7 @@
     <ClInclude Include="..\..\include\RE\S\ScriptFunction.h" />
     <ClInclude Include="..\..\include\RE\S\ScrollItem.h" />
     <ClInclude Include="..\..\include\RE\S\SendPlayerToJailFunctor.h" />
+    <ClInclude Include="..\..\include\RE\S\SendUIMessage.h" />
     <ClInclude Include="..\..\include\RE\S\SetEventData.h" />
     <ClInclude Include="..\..\include\RE\S\SetMotionTypeFunctor.h" />
     <ClInclude Include="..\..\include\RE\S\SetPositionFunctor.h" />
@@ -1763,7 +1764,6 @@
     <ClInclude Include="..\..\include\SKSE\API.h" />
     <ClInclude Include="..\..\include\SKSE\Events.h" />
     <ClInclude Include="..\..\include\SKSE\IAT.h" />
-    <ClInclude Include="..\..\include\SKSE\Impl\ScePadAPI.h" />
     <ClInclude Include="..\..\include\SKSE\InputMap.h" />
     <ClInclude Include="..\..\include\SKSE\Interfaces.h" />
     <ClInclude Include="..\..\include\SKSE\Logger.h" />
@@ -1774,9 +1774,11 @@
     <ClInclude Include="..\..\include\SKSE\SKSE.h" />
     <ClInclude Include="..\..\include\SKSE\Trampoline.h" />
     <ClInclude Include="..\..\include\SKSE\Translation.h" />
+    <ClInclude Include="..\..\include\SKSE\Version.h" />
     <ClInclude Include="..\..\include\SKSE\Impl\DInputAPI.h" />
     <ClInclude Include="..\..\include\SKSE\Impl\PrecompiledHeader.h" />
     <ClInclude Include="..\..\include\SKSE\Impl\RegistrationTraits.h" />
+    <ClInclude Include="..\..\include\SKSE\Impl\ScePadAPI.h" />
     <ClInclude Include="..\..\include\SKSE\Impl\Stubs.h" />
     <ClInclude Include="..\..\include\SKSE\Impl\WinAPI.h" />
     <ClInclude Include="..\..\include\SKSE\Impl\XInputAPI.h" />
@@ -2072,6 +2074,7 @@
     <ClCompile Include="..\..\source\RE\S\ScrapHeap.cpp" />
     <ClCompile Include="..\..\source\RE\S\Script.cpp" />
     <ClCompile Include="..\..\source\RE\S\ScriptEventSourceHolder.cpp" />
+    <ClCompile Include="..\..\source\RE\S\SendUIMessage.cpp" />
     <ClCompile Include="..\..\source\RE\S\Setting.cpp" />
     <ClCompile Include="..\..\source\RE\S\ShoutAttack.cpp" />
     <ClCompile Include="..\..\source\RE\S\SkillIncrease.cpp" />
@@ -2117,6 +2120,7 @@
     <ClCompile Include="..\..\source\RE\T\TESTopicInfo.cpp" />
     <ClCompile Include="..\..\source\RE\T\TESWorldSpace.cpp" />
     <ClCompile Include="..\..\source\RE\T\ThumbstickEvent.cpp" />
+    <ClCompile Include="..\..\source\RE\T\TweenMenu.cpp" />
     <ClCompile Include="..\..\source\RE\T\TypeInfo.cpp" />
     <ClCompile Include="..\..\source\RE\U\UI.cpp" />
     <ClCompile Include="..\..\source\RE\U\UI3DSceneManager.cpp" />

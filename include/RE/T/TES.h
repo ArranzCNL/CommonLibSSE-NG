@@ -8,6 +8,7 @@
 #include "RE/M/MaterialIDs.h"
 #include "RE/N/NiPoint3.h"
 #include "RE/N/NiSmartPointer.h"
+#include "SKSE/Version.h"
 
 namespace RE
 {
@@ -77,6 +78,142 @@ namespace RE
 		NiAVObject*     Pick(bhkPickData& a_pickData);
 		void            PurgeBufferedCells();
 
+		struct RUNTIME_DATA_SE
+		{
+#define RUNTIME_DATA_CONTENT_SE                                                       \
+			std::uint8_t                                   unk128;           /* 128 */ \
+			bool                                           showLANDborders;  /* 129 */ \
+			std::uint8_t                                   unk12A;           /* 12A */ \
+			std::uint8_t                                   unk12B;           /* 12B */ \
+			std::uint8_t                                   unk12C;           /* 12C */ \
+			std::uint8_t                                   unk12D;           /* 12D */ \
+			std::uint8_t                                   unk12E;           /* 12E */ \
+			std::uint8_t                                   unk12F;           /* 12F */ \
+			std::uint16_t                                  unk130;           /* 130 */ \
+			std::uint8_t                                   unk132;           /* 132 */ \
+			std::uint8_t                                   unk133;           /* 133 */ \
+			std::uint32_t                                  unk134;           /* 134 */ \
+			std::uint64_t                                  unk138;           /* 138 */
+
+			RUNTIME_DATA_CONTENT_SE
+		};
+
+		// 1130 and later
+		struct RUNTIME_DATA_LATEST
+		{
+#define RUNTIME_DATA_CONTENT_LATEST                                                    \
+			std::uint32_t                                   unk128;           /* 128 */ \
+			std::uint32_t                                   landBorderMode;   /* 12C */ \
+			std::uint32_t                                   borderColorAGBR;  /* 130 */ \
+			std::uint32_t                                   unk134;           /* 134 */ \
+			std::uint64_t                                   unk138;           /* 138 */ \
+			std::uint64_t                                   unk140;           /* 140 - actual offset change is somewhere near showLandBorder */
+
+			RUNTIME_DATA_CONTENT_LATEST
+		};
+
+		struct RUNTIME_DATA2
+		{
+#define RUNTIME_DATA2_CONTENT                                                                 \
+			TESWorldSpace*                                  worldSpace;  /* 140 */             \
+			BSSimpleList<BSTTuple<TESNPC*, std::uint16_t>*> deadCount;   /* 148 */             \
+			void*                                           unk158;      /* 158 - smart ptr */ \
+			void*                                           unk160;      /* 160 - smart ptr */ \
+			void*                                           unk168;      /* 168 - smart ptr */ \
+			void*                                           unk170;      /* 170 - smart ptr */ \
+			std::uint64_t                                   unk178;      /* 178 */             \
+			std::uint64_t                                   unk180;      /* 180 */             \
+			std::uint64_t                                   unk188;      /* 188 */             \
+			std::uint64_t                                   unk190;      /* 190 */             \
+			std::uint64_t                                   unk198;      /* 198 */             \
+			std::uint64_t                                   unk1A0;      /* 1A0 */             \
+			std::uint64_t                                   unk1A8;      /* 1A8 */             \
+			std::uint64_t                                   unk1B0;      /* 1B0 */             \
+			std::uint64_t                                   unk1B8;      /* 1B8 */             \
+			std::uint64_t                                   unk1C0;      /* 1C0 */             \
+			std::uint64_t                                   unk1C8;      /* 1C8 */             \
+			std::uint64_t                                   unk1D0;      /* 1D0 */             \
+			std::uint64_t                                   unk1D8;      /* 1D8 */             \
+			std::uint64_t                                   unk1E0;      /* 1E0 */             \
+			std::uint64_t                                   unk1E8;      /* 1E8 */             \
+			std::uint64_t                                   unk1F0;      /* 1F0 */             \
+			std::uint64_t                                   unk1F8;      /* 1F8 */             \
+			std::uint64_t                                   unk200;      /* 200 */             \
+			std::uint64_t                                   unk208;      /* 208 */             \
+			std::uint64_t                                   unk210;      /* 210 */             \
+			std::uint64_t                                   unk218;      /* 218 */             \
+			std::uint64_t                                   unk220;      /* 220 */             \
+			std::uint64_t                                   unk228;      /* 228 */             \
+			std::uint64_t                                   unk230;      /* 230 */             \
+			std::uint64_t                                   unk238;      /* 238 */             \
+			std::uint64_t                                   unk240;      /* 240 */             \
+			std::uint64_t                                   unk248;      /* 248 */             \
+			std::uint64_t                                   unk250;      /* 250 */             \
+			std::uint64_t                                   unk258;      /* 258 */             \
+			std::uint64_t                                   unk260;      /* 260 */             \
+			std::uint64_t                                   unk268;      /* 268 */             \
+			std::uint64_t                                   unk270;      /* 270 */             \
+			std::uint64_t                                   unk278;      /* 278 */             \
+			std::uint64_t                                   unk280;      /* 280 */             \
+			std::uint64_t                                   unk288;      /* 288 */             \
+			SystemEventAdapter                              unk290;      /* 290 */             \
+			std::uint64_t                                   unk2A0;      /* 2A0 */             \
+			NavMeshInfoMap*                                 unk2A8;      /* 2A8 */             \
+			std::uint64_t                                   unk2B0;      /* 2B0 */
+
+			RUNTIME_DATA2_CONTENT
+		};
+
+		[[nodiscard]] inline RUNTIME_DATA_SE* GetRuntimeDataSE() noexcept
+		{
+			if SKYRIM_REL_CONSTEXPR (REL::Module::IsAE()) {
+				if (REL::Module::get().version().compare(SKSE::RUNTIME_SSE_1_6_1130) != std::strong_ordering::less) {
+					return nullptr;
+				}
+			}
+			return REL::RelocateMember<RUNTIME_DATA_SE*>(this, 0x128, 0x128);
+		}
+
+		[[nodiscard]] inline const RUNTIME_DATA_SE* GetRuntimeDataSE() const noexcept
+		{
+			if SKYRIM_REL_CONSTEXPR (REL::Module::IsAE()) {
+				if (REL::Module::get().version().compare(SKSE::RUNTIME_SSE_1_6_1130) != std::strong_ordering::less) {
+					return nullptr;
+				}
+			}
+			return REL::RelocateMember<RUNTIME_DATA_SE*>(this, 0x128, 0x128);
+		}
+
+		[[nodiscard]] inline RUNTIME_DATA_LATEST* GetRuntimeDataLatest() noexcept
+		{
+			if SKYRIM_REL_CONSTEXPR (REL::Module::IsAE()) {
+				if (REL::Module::get().version().compare(SKSE::RUNTIME_SSE_1_6_1130) != std::strong_ordering::less) {
+					return REL::RelocateMember<RUNTIME_DATA_LATEST*>(this, 0x120);
+				}
+			}
+			return nullptr;
+		}
+
+		[[nodiscard]] inline const RUNTIME_DATA_LATEST* GetRuntimeDataLatest() const noexcept
+		{
+			if SKYRIM_REL_CONSTEXPR (REL::Module::IsAE()) {
+				if (REL::Module::get().version().compare(SKSE::RUNTIME_SSE_1_6_1130) != std::strong_ordering::less) {
+					return REL::RelocateMember<RUNTIME_DATA_LATEST*>(this, 0x120);
+				}
+			}
+			return nullptr;
+		}
+
+		[[nodiscard]] inline RUNTIME_DATA2& GetRuntimeData2() noexcept
+		{
+			return REL::RelocateMemberIfNewer<RUNTIME_DATA2>(SKSE::RUNTIME_SSE_1_6_1130, this, 0x140, 0x148);
+		}
+
+		[[nodiscard]] inline const RUNTIME_DATA2& GetRuntimeData2() const noexcept
+		{
+			return REL::RelocateMemberIfNewer<RUNTIME_DATA2>(SKSE::RUNTIME_SSE_1_6_1130, this, 0x140, 0x148);
+		}
+
 		// members
 		std::uint64_t                                       unk070;                     // 070
 		GridCellArray*                                      gridCells;                  // 078
@@ -101,64 +238,19 @@ namespace RE
 		BSSimpleList<NiPointer<ImageSpaceModifierInstance>> activeImageSpaceModifiers;  // 108
 		std::uint64_t                                       unk118;                     // 118
 		std::uint64_t                                       unk120;                     // 120
-		std::uint8_t                                        unk128;                     // 128
-		bool                                                showLANDborders;            // 129
-		std::uint8_t                                        unk12A;                     // 12A
-		std::uint8_t                                        unk12B;                     // 12B
-		std::uint8_t                                        unk12C;                     // 12C
-		std::uint8_t                                        unk12D;                     // 12D
-		std::uint8_t                                        unk12E;                     // 12E
-		std::uint8_t                                        unk12F;                     // 12F
-		std::uint16_t                                       unk130;                     // 130
-		std::uint8_t                                        unk132;                     // 132
-		std::uint8_t                                        unk133;                     // 133
-		std::uint32_t                                       unk134;                     // 134
-		std::uint64_t                                       unk138;                     // 138
-		TESWorldSpace*                                      worldSpace;                 // 140
-		BSSimpleList<BSTTuple<TESNPC*, std::uint16_t>*>     deadCount;                  // 148
-		void*                                               unk158;                     // 158 - smart ptr
-		void*                                               unk160;                     // 160 - smart ptr
-		void*                                               unk168;                     // 168 - smart ptr
-		void*                                               unk170;                     // 170 - smart ptr
-		std::uint64_t                                       unk178;                     // 178
-		std::uint64_t                                       unk180;                     // 180
-		std::uint64_t                                       unk188;                     // 188
-		std::uint64_t                                       unk190;                     // 190
-		std::uint64_t                                       unk198;                     // 198
-		std::uint64_t                                       unk1A0;                     // 1A0
-		std::uint64_t                                       unk1A8;                     // 1A8
-		std::uint64_t                                       unk1B0;                     // 1B0
-		std::uint64_t                                       unk1B8;                     // 1B8
-		std::uint64_t                                       unk1C0;                     // 1C0
-		std::uint64_t                                       unk1C8;                     // 1C8
-		std::uint64_t                                       unk1D0;                     // 1D0
-		std::uint64_t                                       unk1D8;                     // 1D8
-		std::uint64_t                                       unk1E0;                     // 1E0
-		std::uint64_t                                       unk1E8;                     // 1E8
-		std::uint64_t                                       unk1F0;                     // 1F0
-		std::uint64_t                                       unk1F8;                     // 1F8
-		std::uint64_t                                       unk200;                     // 200
-		std::uint64_t                                       unk208;                     // 208
-		std::uint64_t                                       unk210;                     // 210
-		std::uint64_t                                       unk218;                     // 218
-		std::uint64_t                                       unk220;                     // 220
-		std::uint64_t                                       unk228;                     // 228
-		std::uint64_t                                       unk230;                     // 230
-		std::uint64_t                                       unk238;                     // 238
-		std::uint64_t                                       unk240;                     // 240
-		std::uint64_t                                       unk248;                     // 248
-		std::uint64_t                                       unk250;                     // 250
-		std::uint64_t                                       unk258;                     // 258
-		std::uint64_t                                       unk260;                     // 260
-		std::uint64_t                                       unk268;                     // 268
-		std::uint64_t                                       unk270;                     // 270
-		std::uint64_t                                       unk278;                     // 278
-		std::uint64_t                                       unk280;                     // 280
-		std::uint64_t                                       unk288;                     // 288
-		SystemEventAdapter                                  unk290;                     // 290
-		std::uint64_t                                       unk2A0;                     // 2A0
-		NavMeshInfoMap*                                     unk2A8;                     // 2A8
-		std::uint64_t                                       unk2B0;                     // 2B0
+#if defined(ENABLE_SKYRIM_AE)
+		RUNTIME_DATA_CONTENT_LATEST;
+#else
+		RUNTIME_DATA_CONTENT_SE;
+#endif
+		RUNTIME_DATA2_CONTENT;
 	};
+#if defined(ENABLE_SKYRIM_AE)
+	static_assert(sizeof(TES) == 0x2C0);
+#else
 	static_assert(sizeof(TES) == 0x2B8);
+#endif
 }
+#undef RUNTIME_DATA_CONTENT_SE
+#undef RUNTIME_DATA_CONTENT_LATEST
+#undef RUNTIME_DATA2_CONTENT

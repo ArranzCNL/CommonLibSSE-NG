@@ -19,17 +19,6 @@ namespace RE
 		inline static constexpr auto      RTTI = RTTI_TweenMenu;
 		constexpr static std::string_view MENU_NAME = "TweenMenu";
 
-		struct RUNTIME_DATA
-		{
-#define RUNTIME_DATA_CONTENT                     \
-			BSTArray<PerkData> perkData; /* 00 */ \
-			float              unk48;    /* 18 */ \
-			float              unk4C;    /* 1C */
-
-			RUNTIME_DATA_CONTENT
-		};
-		static_assert(sizeof(RUNTIME_DATA) == 0x20);
-
 		struct PerkData
 		{
 		public:
@@ -46,32 +35,13 @@ namespace RE
 		UI_MESSAGE_RESULTS ProcessMessage(UIMessage& a_message) override;    // 04
 		void               PostDisplay() override;                           // 06
 
-		static void CloseTweenMenu()
-		{
-			using func_t = decltype(&CloseTweenMenu);
-			REL::Relocation<func_t> func{ RELOCATION_ID(51839, 52711) };
-			return func();
-		}
-
-		[[nodiscard]] inline RUNTIME_DATA& GetRuntimeData() noexcept
-		{
-			return REL::RelocateMember<RUNTIME_DATA>(this, 0x30, 0x40);
-		}
-
-		[[nodiscard]] inline const RUNTIME_DATA& GetRuntimeData() const noexcept
-		{
-			return REL::RelocateMember<RUNTIME_DATA>(this, 0x30, 0x40);
-		}
+		// add
+		void               CloseTweenMenu();
 
 		// members
-#if !defined(SKYRIM_CROSS_VR)
-		RUNTIME_DATA_CONTENT  // 30, 40
-#endif
+		BSTArray<PerkData> perkData; /* 00 */
+		float              unk48;    /* 18 */
+		float              unk4C;    /* 1C */
 	};
-#if !defined(ENABLE_SKYRIM_VR)
 	static_assert(sizeof(TweenMenu) == 0x50);
-#elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
-	static_assert(sizeof(TweenMenu) == 0x60);
-#endif
 }
-#undef RUNTIME_DATA_CONTENT

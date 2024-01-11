@@ -856,6 +856,9 @@
     <ClCompile Include="..\..\source\RE\S\ScriptEventSourceHolder.cpp">
       <Filter>source\RE\S</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\source\RE\S\SendUIMessage.cpp">
+      <Filter>source\RE\S</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\source\RE\S\Setting.cpp">
       <Filter>source\RE\S</Filter>
     </ClCompile>
@@ -989,6 +992,9 @@
       <Filter>source\RE\T</Filter>
     </ClCompile>
     <ClCompile Include="..\..\source\RE\T\ThumbstickEvent.cpp">
+      <Filter>source\RE\T</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\RE\T\TweenMenu.cpp">
       <Filter>source\RE\T</Filter>
     </ClCompile>
     <ClCompile Include="..\..\source\RE\T\TypeInfo.cpp">
@@ -5268,6 +5274,9 @@
     <ClInclude Include="..\..\include\RE\S\SendPlayerToJailFunctor.h">
       <Filter>include\RE\S</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\RE\S\SendUIMessage.h">
+      <Filter>include\RE\S</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\RE\S\SetEventData.h">
       <Filter>include\RE\S</Filter>
     </ClInclude>
@@ -6048,6 +6057,9 @@
     <ClInclude Include="..\..\include\SKSE\Translation.h">
       <Filter>include\SKSE</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\SKSE\Version.h">
+      <Filter>include\SKSE</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\SKSE\Impl\DInputAPI.h">
       <Filter>include\SKSE\Impl</Filter>
     </ClInclude>
@@ -6069,14 +6081,14 @@
     <ClInclude Include="..\..\include\SKSE\Impl\XInputAPI.h">
       <Filter>include\SKSE\Impl</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\PCH\PCH.h">
+      <Filter>PCH</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\vendor\rapidcsv\src\rapidcsv.h">
       <Filter>vendor\rapidcsv</Filter>
     </ClInclude>
     <ClInclude Include="..\..\vendor\xbyak\xbyak\xbyak.h">
       <Filter>vendor\xbyak</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\PCH\PCH.h">
-      <Filter>PCH</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -3,6 +3,7 @@
 #include "RE/S/Script.h"
 
 #include "RE/M/MemoryManager.h"
+#include "SKSE/Version.h"
 
 namespace RE
 {
@@ -58,7 +59,7 @@ namespace RE
 	void Script::CompileAndRun_Impl(ScriptCompiler* a_compiler, COMPILER_NAME a_name, TESObjectREFR* a_targetRef)
 	{
 		using func_t = decltype(&Script::CompileAndRun_Impl);
-		REL::Relocation<func_t> func{ Offset::Script::CompileAndRun };
+		REL::Relocation<func_t> func{ RELOCATION_ID(21416, CHECK_RUNTIME(SKSE::RUNTIME_SSE_1_6_1130, 441582, 21890)) };
 		return func(this, a_compiler, a_name, a_targetRef);
 	}
 }

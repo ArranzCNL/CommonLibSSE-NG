@@ -111,11 +111,6 @@ namespace RE::Offset
 		constexpr auto SetEndianSwap = RELOCATION_ID(69643, 71021);
 	}
 
-	namespace BSScaleformTranslator
-	{
-		constexpr auto GetCachedString = RELOCATION_ID(67844, 69188);
-	}
-
 	namespace BSScript
 	{
 		namespace ObjectBindPolicy
@@ -168,7 +163,6 @@ namespace RE::Offset
 
 	namespace Console
 	{
-		constexpr auto SelectedRef = RELOCATION_ID(519394, 405935);
 		constexpr auto SetSelectedRef = RELOCATION_ID(50164, 51093);
 	}
 
@@ -470,7 +464,6 @@ namespace RE::Offset
 
 	namespace Script
 	{
-		constexpr auto CompileAndRun = RELOCATION_ID(21416, 21890);
 		constexpr auto GetProcessScripts = RELOCATION_ID(21436, 21921);
 		constexpr auto SetProcessScripts = RELOCATION_ID(21435, 21920);
 	}

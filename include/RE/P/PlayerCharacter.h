@@ -265,6 +265,20 @@ namespace RE
 			kDisableSaving = 1 << 0,
 			kHandsBound = 1 << 2
 		};
+		
+		struct GrabData
+		{
+#define GRAB_DATA_CONTENT                                                                \
+			BSTSmallArray<hkRefPtr<bhkMouseSpringAction>, 4> grabSpring;        /* 898 */ \
+			ObjectRefHandle                                  grabbedObject;     /* 8C8 */ \
+			float                                            grabObjectWeight;  /* 8CC */ \
+			float                                            grabDistance;      /* 8d0 */ \
+			float                                            unk004;            /* 8d4 */ \
+			std::uint64_t                                    unk008;            /* 8d8 */
+
+			GRAB_DATA_CONTENT
+		};
+		static_assert(sizeof(GrabData) == 0x48);
 
 		struct PlayerFlags
 		{
@@ -374,11 +388,11 @@ namespace RE
 
 		struct CrimeValue
 		{
-#define CRIME_VALUE_CONTENT                                                                  \
+#define CRIME_DATA_CONTENT                                                                   \
 			BSTHashMap<const TESFaction*, CrimeGoldStruct>       crimeGoldMap;       /* 00 */ \
 			BSTHashMap<const TESFaction*, StolenItemValueStruct> stolenItemValueMap; /* 30 */
 
-			CRIME_VALUE_CONTENT
+			CRIME_DATA_CONTENT
 		};
 		static_assert(sizeof(CrimeValue) == 0x60);
 
@@ -468,10 +482,6 @@ namespace RE
 		struct INFO_RUNTIME_DATA
 		{
 #define INFO_RUNTIME_DATA_CONTENT                                                            \
-			float                      grabDistance;                                /* 000 */ \
-			float                      unk004;                                      /* 004 */ \
-			std::uint64_t              unk008;                                      /* 008 */ \
-			std::uint32_t              unk010;                                      /* 010 */ \
 			std::uint32_t              sleepSeconds;                                /* 014 */ \
 			BSTSmartPointer<BipedAnim> largeBiped;                                  /* 018 */ \
 			NiPointer<NiNode>          firstPerson3D;                               /* 020 */ \
@@ -524,7 +534,7 @@ namespace RE
 
 			INFO_RUNTIME_DATA_CONTENT
 		};
-		static_assert(sizeof(INFO_RUNTIME_DATA) == 0x150);
+		static_assert(sizeof(INFO_RUNTIME_DATA) == 0x140);
 
 		~PlayerCharacter() override;  // 000
 
@@ -549,9 +559,7 @@ namespace RE
 		bool                                   CenterOnCell(TESObjectCELL* a_cell);
 		bool                                   CheckCast(MagicItem* a_spell, Effect* a_effect, MagicSystem::CannotCastReason& a_reason);
 		void                                   DestroyMouseSprings();
-#if !defined(ENABLE_SKYRIM_VR)
 		void                                   EndGrabObject();
-#endif
 		[[nodiscard]] NiPointer<Actor>         GetActorDoingPlayerCommand() const;
 		[[nodiscard]] float                    GetArmorValue(InventoryEntryData* a_form);
 		[[nodiscard]] float                    GetDamage(InventoryEntryData* a_form);
@@ -631,8 +639,8 @@ namespace RE
 		{
 #if !defined(ENABLE_SKYRIM_VR)                                                                                 // Non-VR
 #define PLAYER_RUNTIME_DATA_CONTENT                                                                                                  \
-			mutable BSSpinLock questTargetsLock;                                                               /* 3D8, 3E0 */         \
-			CRIME_VALUE_CONTENT;                                                                               /* 3E0 */              \
+			mutable BSSpinLock                                      questTargetsLock;                          /* 3D8, 3E0 */         \
+			CRIME_DATA_CONTENT;                                                                                /* 3E0 */              \
 			ObjectRefHandle                                         commandWaitMarker;                         /* 440 */              \
 			std::uint32_t                                           pad444;                                    /* 444 */              \
 			BSTHashMap<const TESFaction*, FriendshipFactionsStruct> factionOwnerFriendsMap;                    /* 448 */              \
@@ -694,10 +702,9 @@ namespace RE
 			PlayerActionObject                                      playerActionObjects[15];                   /* 7DC */              \
 			PLAYER_ACTION                                           mostRecentAction;                          /* 890 */              \
 			ActorHandle                                             actorDoingPlayerCommand;                   /* 894 */              \
-			BSTSmallArray<hkRefPtr<bhkMouseSpringAction>, 4>        grabSpring;                                /* 898 */              \
-			ObjectRefHandle                                         grabbedObject;                             /* 8C8 */              \
-			float                                                   grabObjectWeight;                          /* 8CC */              \
-			INFO_RUNTIME_DATA_CONTENT;                                                                         /* 8D0 */              \
+			GrabData                                                grabData;                                  /* 898 */              \
+			std::uint32_t                                           unk8E0;                                    /* 8E0 */              \
+			INFO_RUNTIME_DATA_CONTENT;                                                                         /* 8E4 */              \
 			std::uint8_t                                            unkA20[0xA0];                              /* A20 */              \
 			std::uint32_t                                           unkAC0;                                    /* AC0 */              \
 			std::uint32_t                                           unkAC4;                                    /* AC4 */              \
@@ -743,7 +750,7 @@ namespace RE
 			std::uint64_t                                           unk698;                                    /* 698 */              \
 			std::uint64_t                                           unk6A0;                                    /* 6A0 */              \
 			std::uint64_t                                           unk6A8[0x65];                              /* 6A8 */              \
-			CRIME_VALUE_CONTENT;                                                                               /* 9D0 */              \
+			CRIME_DATA_CONTENT;                                                                                /* 9D0 */              \
 			std::uint64_t                                           unkA30[0x11];                              /* A30 */              \
 			void*                                                   perkArray;                                 /* AB8 */              \
 			std::uint64_t                                           unk6C0[0x14];                              /* AC0 */              \
@@ -900,21 +907,21 @@ namespace RE
 		}
 
 		// members
-#if (!defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)) || (!defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_VR))
 		PLAYER_RUNTIME_DATA_CONTENT
-#endif
 
 	private:
 		bool CenterOnCell_Impl(const char* a_cellName, RE::TESObjectCELL* a_cell);
 	};
-#if !defined(ENABLE_SKYRIM_VR) && !defined(ENABLE_SKYRIM_AE)
-	static_assert(sizeof(PlayerCharacter) == 0xBE0);
+#if !defined(ENABLE_SKYRIM_VR) && defined(ENABLE_SKYRIM_AE)
+	static_assert(sizeof(PlayerCharacter) == 0x890);
 #elif !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 	static_assert(sizeof(PlayerCharacter) == 0x12D8);
 #endif
 }
 #undef PLAYER_RUNTIME_DATA_CONTENT
-#undef VR_NODE_DATA_CONTENT
 #undef INFO_RUNTIME_DATA_CONTENT
 #undef GAME_STATE_DATA_CONTENT
 #undef RACE_DATA_CONTENT
+#undef CRIME_DATA_CONTENT
+#undef GRAB_DATA_CONTENT
+#undef VR_NODE_DATA_CONTENT

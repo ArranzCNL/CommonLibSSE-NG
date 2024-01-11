@@ -794,6 +794,7 @@ namespace REL
 }
 
 #define RELOCATION_ID(a_se, a_ae) REL::RelocationID(a_se, a_ae)
+#define CHECK_RUNTIME(a_version, a_newer, a_older) REL::Module::get().version().compare(a_version) != std::strong_ordering::less ? a_newer : a_older
 
 #include "REL/Relocation.h"
 

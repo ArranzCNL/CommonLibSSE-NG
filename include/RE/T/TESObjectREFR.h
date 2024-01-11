@@ -325,160 +325,156 @@ namespace RE
 		virtual void                                            SetBiped(const BSTSmartPointer<BipedAnim>& a_biped);                                                                                                                                                         // 81 - { return; }
 		virtual void                                            RemoveWeapon(BIPED_OBJECT equipIndex);                                                                                                                                                                       // 82 - { return; }
 		virtual void                                            Unk_83(void);                                                                                                                                                                                                // 83 - { return; }
-		                                                                                                                                                                                                                                                                     // Virtual functions defined in TESObjectREFR after the vtable structure becomes different in VR.
-#if !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
-		virtual void Unk_84(void);
-#endif
-		SKYRIM_REL_VR_VIRTUAL void                         SetObjectReference(TESBoundObject* a_object);                                         // 84 - sets flag 24 if the object has destructibles
-		SKYRIM_REL_VR_VIRTUAL void                         MoveHavok(bool a_forceRec);                                                           // 85
-		SKYRIM_REL_VR_VIRTUAL void                         GetLinearVelocity(NiPoint3& a_velocity) const;                                        // 86
-		SKYRIM_REL_VR_VIRTUAL void                         SetActionComplete(bool a_set);                                                        // 87 - { return; }
-		SKYRIM_REL_VR_VIRTUAL void                         SetMovementComplete(bool a_set);                                                      // 88 - { return; }
-		SKYRIM_REL_VR_VIRTUAL void                         Disable();                                                                            // 89
-		SKYRIM_REL_VR_VIRTUAL void                         ResetInventory(bool a_leveledOnly);                                                   // 8A
-		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL NiNode*        GetFireNode();                                                                        // 8B - { return 0; }
-		SKYRIM_REL_VR_VIRTUAL void                         SetFireNode(NiNode* a_fireNode);                                                      // 8C - { return; }
-		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL NiAVObject*    GetCurrent3D() const;                                                                 // 8D - { return Get3D2(); }
-		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL Explosion*     AsExplosion();                                                                        // 8E - { return 0; }
-		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL Projectile*    AsProjectile();                                                                       // 8F - { return 0; }
-		SKYRIM_REL_VR_VIRTUAL bool                         OnAddCellPerformQueueReference(TESObjectCELL& a_cell) const;                          // 90 - { return true; }
-		SKYRIM_REL_VR_VIRTUAL void                         DoMoveToHigh();                                                                       // 91 - { return; }
-		SKYRIM_REL_VR_VIRTUAL void                         TryMoveToMiddleLow();                                                                 // 92 - { return; }
-		SKYRIM_REL_VR_VIRTUAL bool                         TryChangeSkyCellActorsProcessLevel();                                                 // 93 - { return false; }
-		SKYRIM_REL_VR_VIRTUAL void                         Unk_94(void);                                                                         // 94 - { return; }
-		SKYRIM_REL_VR_VIRTUAL void                         TryUpdateActorLastSeenTime();                                                         // 95 - { return; }
-		SKYRIM_REL_VR_VIRTUAL void                         Unk_96(void);                                                                         // 96 - related to lockpicking
-		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL TESObjectCELL* GetSaveParentCell() const;                                                            // 97
-		SKYRIM_REL_VR_VIRTUAL void                         SetParentCell(TESObjectCELL* a_cell);                                                 // 98
-		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bool           IsDead(bool a_notEssential = true) const;                                             // 99
-		SKYRIM_REL_VR_VIRTUAL BSAnimNoteReceiver*          CreateAnimNoteReceiver();                                                             // 9A
-		SKYRIM_REL_VR_VIRTUAL BSAnimNoteReceiver*          GetAnimNoteReceiver();                                                                // 9B
-		SKYRIM_REL_VR_VIRTUAL bool                         ProcessInWater(hkpCollidable* a_collidable, float a_waterHeight, float a_deltaTime);  // 9C
-		SKYRIM_REL_VR_VIRTUAL bool                         ApplyCurrent(float a_velocityTime, const hkVector4& a_velocity);                      // 9D - { return 0; }
-		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL TESAmmo*       GetCurrentAmmo() const;                                                               // 9E - { return 0; }
-		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL BGSDecalGroup* GetDecalGroup() const;                                                                // 9F
-		SKYRIM_REL_VR_VIRTUAL bool                         Unk_A0(NiAVObject* a_node, float& a_angleX, float& a_angleZ, NiPoint3& a_pos);        // A0
-		SKYRIM_REL_VR_VIRTUAL void                         UnequipItem(std::uint64_t a_arg1, TESBoundObject* a_object);                          // A1 - { return; }
+		SKYRIM_REL_VR_VIRTUAL void                              SetObjectReference(TESBoundObject* a_object);                                                                                                                                                                // 84 - sets flag 24 if the object has destructibles
+		SKYRIM_REL_VR_VIRTUAL void                              MoveHavok(bool a_forceRec);                                                                                                                                                                                  // 85
+		SKYRIM_REL_VR_VIRTUAL void                              GetLinearVelocity(NiPoint3& a_velocity) const;                                                                                                                                                               // 86
+		SKYRIM_REL_VR_VIRTUAL void                              SetActionComplete(bool a_set);                                                                                                                                                                               // 87 - { return; }
+		SKYRIM_REL_VR_VIRTUAL void                              SetMovementComplete(bool a_set);                                                                                                                                                                             // 88 - { return; }
+		SKYRIM_REL_VR_VIRTUAL void                              Disable();                                                                                                                                                                                                   // 89
+		SKYRIM_REL_VR_VIRTUAL void                              ResetInventory(bool a_leveledOnly);                                                                                                                                                                          // 8A
+		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL NiNode*             GetFireNode();                                                                                                                                                                                               // 8B - { return 0; }
+		SKYRIM_REL_VR_VIRTUAL void                              SetFireNode(NiNode* a_fireNode);                                                                                                                                                                             // 8C - { return; }
+		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL NiAVObject*         GetCurrent3D() const;                                                                                                                                                                                        // 8D - { return Get3D2(); }
+		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL Explosion*          AsExplosion();                                                                                                                                                                                               // 8E - { return 0; }
+		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL Projectile*         AsProjectile();                                                                                                                                                                                              // 8F - { return 0; }
+		SKYRIM_REL_VR_VIRTUAL bool                              OnAddCellPerformQueueReference(TESObjectCELL& a_cell) const;                                                                                                                                                 // 90 - { return true; }
+		SKYRIM_REL_VR_VIRTUAL void                              DoMoveToHigh();                                                                                                                                                                                              // 91 - { return; }
+		SKYRIM_REL_VR_VIRTUAL void                              TryMoveToMiddleLow();                                                                                                                                                                                        // 92 - { return; }
+		SKYRIM_REL_VR_VIRTUAL bool                              TryChangeSkyCellActorsProcessLevel();                                                                                                                                                                        // 93 - { return false; }
+		SKYRIM_REL_VR_VIRTUAL void                              Unk_94(void);                                                                                                                                                                                                // 94 - { return; }
+		SKYRIM_REL_VR_VIRTUAL void                              TryUpdateActorLastSeenTime();                                                                                                                                                                                // 95 - { return; }
+		SKYRIM_REL_VR_VIRTUAL void                              Unk_96(void);                                                                                                                                                                                                // 96 - related to lockpicking
+		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL TESObjectCELL*      GetSaveParentCell() const;                                                                                                                                                                                   // 97
+		SKYRIM_REL_VR_VIRTUAL void                              SetParentCell(TESObjectCELL* a_cell);                                                                                                                                                                        // 98
+		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL bool                IsDead(bool a_notEssential = true) const;                                                                                                                                                                    // 99
+		SKYRIM_REL_VR_VIRTUAL BSAnimNoteReceiver*               CreateAnimNoteReceiver();                                                                                                                                                                                    // 9A
+		SKYRIM_REL_VR_VIRTUAL BSAnimNoteReceiver*               GetAnimNoteReceiver();                                                                                                                                                                                       // 9B
+		SKYRIM_REL_VR_VIRTUAL bool                              ProcessInWater(hkpCollidable* a_collidable, float a_waterHeight, float a_deltaTime);                                                                                                                         // 9C
+		SKYRIM_REL_VR_VIRTUAL bool                              ApplyCurrent(float a_velocityTime, const hkVector4& a_velocity);                                                                                                                                             // 9D - { return 0; }
+		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL TESAmmo*            GetCurrentAmmo() const;                                                                                                                                                                                      // 9E - { return 0; }
+		[[nodiscard]] SKYRIM_REL_VR_VIRTUAL BGSDecalGroup*      GetDecalGroup() const;                                                                                                                                                                                       // 9F
+		SKYRIM_REL_VR_VIRTUAL bool                              Unk_A0(NiAVObject* a_node, float& a_angleX, float& a_angleZ, NiPoint3& a_pos);                                                                                                                               // A0
+		SKYRIM_REL_VR_VIRTUAL void                              UnequipItem(std::uint64_t a_arg1, TESBoundObject* a_object);                                                                                                                                                 // A1 - { return; }
 
-		static NiPointer<TESObjectREFR>                 LookupByHandle(RefHandle a_refHandle);
-		static bool                                     LookupByHandle(RefHandle a_refHandle, NiPointer<TESObjectREFR>& a_refrOut);
-		static TESObjectREFR*                           FindReferenceFor3D(NiAVObject* a_object3D);
+		static NiPointer<TESObjectREFR>                         LookupByHandle(RefHandle a_refHandle);
+		static bool                                             LookupByHandle(RefHandle a_refHandle, NiPointer<TESObjectREFR>& a_refrOut);
+		static TESObjectREFR*                                   FindReferenceFor3D(NiAVObject* a_object3D);
 
-		bool                                            ActivateRef(TESObjectREFR* a_activator, std::uint8_t a_arg2, TESBoundObject* a_object, std::int32_t a_count, bool a_defaultProcessingOnly);
-		ModelReferenceEffect*                           ApplyArtObject(BGSArtObject* a_artObject, float a_duration = -1.0f, TESObjectREFR* a_facingRef = nullptr, bool a_faceTarget = false, bool a_attachToCamera = false, NiAVObject* a_attachNode = nullptr, bool a_interfaceEffect = false);
-		ShaderReferenceEffect*                          ApplyEffectShader(TESEffectShader* a_effectShader, float a_duration = -1.0f, TESObjectREFR* a_facingRef = nullptr, bool a_faceTarget = false, bool a_attachToCamera = false, NiAVObject* a_attachNode = nullptr, bool a_interfaceEffect = false);
-		[[nodiscard]] bool                              CanBeMoved();
-		ObjectRefHandle                                 CreateRefHandle();
-		void                                            DoTrap(TrapData& a_data);
-		void                                            DoTrap(TrapEntry* a_trap, TargetEntry* a_target);
-		void                                            Enable(bool a_resetInventory);
-		[[nodiscard]] std::optional<RE::NiPoint3>       FindNearestVertex(const float a_minimum_offset = 0.f);
-		[[nodiscard]] NiAVObject*                       Get3D() const;
-		[[nodiscard]] NiAVObject*                       Get3D(bool a_firstPerson) const;
-		[[nodiscard]] TESNPC*                           GetActorOwner();
-		[[nodiscard]] NiPoint3                          GetAngle() const;
-		[[nodiscard]] float                             GetAngleX() const;
-		[[nodiscard]] float                             GetAngleY() const;
-		[[nodiscard]] float                             GetAngleZ() const;
-		[[nodiscard]] float                             GetBaseHeight() const;
-		[[nodiscard]] TESBoundObject*                   GetBaseObject();
-		[[nodiscard]] const TESBoundObject*             GetBaseObject() const;
-		[[nodiscard]] const BSTSmartPointer<BipedAnim>& GetBiped() const;
-		[[nodiscard]] const BSTSmartPointer<BipedAnim>& GetBiped(bool a_firstPerson) const;
-		[[nodiscard]] std::uint16_t                     GetCalcLevel(bool a_adjustLevel) const;
-		[[nodiscard]] TESContainer*                     GetContainer() const;
-		[[nodiscard]] BGSLocation*                      GetCurrentLocation() const;
-		[[nodiscard]] const char*                       GetDisplayFullName();
-		[[nodiscard]] InventoryDropMap                  GetDroppedInventory();
-		[[nodiscard]] InventoryDropMap                  GetDroppedInventory(std::function<bool(TESBoundObject&)> a_filter);
-		[[nodiscard]] BGSLocation*                      GetEditorLocation() const;
-		[[nodiscard]] bool                              GetEditorLocation(NiPoint3& a_outPos, NiPoint3& a_outRot, TESForm*& a_outWorldOrCell, TESObjectCELL* a_fallback);
-		[[nodiscard]] std::optional<double>             GetEnchantmentCharge() const;
-		[[nodiscard]] TESFaction*                       GetFactionOwner();
-		[[nodiscard]] ObjectRefHandle                   GetHandle();
-		[[nodiscard]] float                             GetHeadingAngle(const RE::NiPoint3& a_pos, bool a_abs);
-		[[nodiscard]] float                             GetHeight() const;
-		[[nodiscard]] InventoryItemMap                  GetInventory();
-		[[nodiscard]] InventoryItemMap                  GetInventory(std::function<bool(TESBoundObject&)> a_filter, bool a_noInit = false);
-		[[nodiscard]] std::int32_t                      GetInventoryCount(bool a_noInit = false);
-		[[nodiscard]] InventoryCountMap                 GetInventoryCounts();
-		[[nodiscard]] InventoryCountMap                 GetInventoryCounts(std::function<bool(TESBoundObject&)> a_filter, bool a_noInit = false);
-		[[nodiscard]] InventoryChanges*                 GetInventoryChanges(bool a_noInit = false);
-		[[nodiscard]] TESObjectREFR*                    GetLinkedRef(BGSKeyword* a_keyword);
-		[[nodiscard]] REFR_LOCK*                        GetLock() const;
-		[[nodiscard]] LOCK_LEVEL                        GetLockLevel() const;
-		[[nodiscard]] const char*                       GetName() const;
-		[[nodiscard]] NiAVObject*                       GetNodeByName(const BSFixedString& a_nodeName);
-		[[nodiscard]] constexpr TESBoundObject*         GetObjectReference() const noexcept { return data.objectReference; }
-		[[nodiscard]] TESForm*                          GetOwner() const;
-		[[nodiscard]] constexpr TESObjectCELL*          GetParentCell() const noexcept { return parentCell; }
-		[[nodiscard]] constexpr NiPoint3                GetPosition() const noexcept { return data.location; }
-		[[nodiscard]] constexpr float                   GetPositionX() const noexcept { return data.location.x; }
-		[[nodiscard]] constexpr float                   GetPositionY() const noexcept { return data.location.y; }
-		[[nodiscard]] constexpr float                   GetPositionZ() const noexcept { return data.location.z; }
-		[[nodiscard]] float                             GetScale() const;
-		[[nodiscard]] NiControllerSequence*             GetSequence(stl::zstring a_name) const;
-		[[nodiscard]] std::uint32_t                     GetStealValue(const InventoryEntryData* a_entryData, std::uint32_t a_numItems, bool a_useMult) const;
-		void                                            GetTransform(NiTransform& a_transform) const;
-		[[nodiscard]] float                             GetWaterHeight() const;
-		[[nodiscard]] float                             GetWeight() const;
-		[[nodiscard]] float                             GetWeightInContainer();
-		[[nodiscard]] TESWorldSpace*                    GetWorldspace() const;
-		[[nodiscard]] bool                              HasCollision() const;
-		[[nodiscard]] bool                              HasContainer() const;
-		[[nodiscard]] bool                              HasKeyword(const BGSKeyword* a_keyword) const;
-		[[nodiscard]] bool                              HasKeywordInArray(const std::vector<BGSKeyword*>& a_keywords, bool a_matchAll) const;
-		[[nodiscard]] bool                              HasKeywordInList(BGSListForm* a_keywordList, bool a_matchAll) const;
-		bool                                            HasKeywordWithType(DEFAULT_OBJECT keywordType) const;
-		bool                                            HasKeywordWithType(DefaultObjectID keywordType) const;
-		[[nodiscard]] bool                              HasQuestObject() const;
-		void                                            InitChildActivates(TESObjectREFR* a_actionRef);
-		bool                                            InitInventoryIfRequired(bool a_ignoreContainerExtraData = false);
-		[[nodiscard]] bool                              Is3DLoaded() const;
-		[[nodiscard]] bool                              IsActivationBlocked() const;
-		bool                                            IsAnimal() const;
-		[[nodiscard]] bool                              IsAnOwner(const Actor* a_testOwner, bool a_useFaction, bool a_requiresOwner) const;
-		[[nodiscard]] bool                              IsCrimeToActivate();
-		[[nodiscard]] bool                              IsDisabled() const;
-		bool                                            IsDragon() const;
-		[[nodiscard]] bool                              IsEnchanted() const;
-		[[nodiscard]] bool                              IsHorse() const;
-		bool                                            IsHumanoid() const;
-		[[nodiscard]] bool                              IsInitiallyDisabled() const;
-		[[nodiscard]] bool                              IsInWater() const;
-		bool                                            IsJewelry() const;
-		[[nodiscard]] bool                              IsLocked() const;
-		[[nodiscard]] bool                              IsMarkedForDeletion() const;
-		[[nodiscard]] bool                              IsOffLimits();
-		[[nodiscard]] bool                              IsPersistent() const;
-		[[nodiscard]] float                             IsPointDeepUnderWater(float a_zPos, TESObjectCELL* a_cell) const;
-		[[nodiscard]] bool                              IsPointSubmergedMoreThan(const NiPoint3& a_pos, TESObjectCELL* a_cell, float a_waterLevel) const;
-		void                                            MoveTo(TESObjectREFR* a_target);
-		bool                                            MoveToNearestNavmesh(const float a_minimum_offset = 0.f);
-		bool                                            MoveToNode(TESObjectREFR* a_target, const BSFixedString& a_nodeName);
-		bool                                            MoveToNode(TESObjectREFR* a_target, NiAVObject* a_node);
-		bool                                            NameIncludes(std::string a_word);
-		NiPointer<TESObjectREFR>                        PlaceObjectAtMe(TESBoundObject* a_baseToPlace, bool a_forcePersist) const;
-		void                                            PlayAnimation(stl::zstring a_from, stl::zstring a_to);
-		void                                            PlayAnimation(NiControllerManager* a_manager, NiControllerSequence* a_toSeq, NiControllerSequence* a_fromSeq);
-		void                                            SetActivationBlocked(bool a_blocked);
-		void                                            SetCollision(bool a_enable);
-		bool                                            SetDisplayName(const BSFixedString& a_name, bool a_force);
-		void                                            SetEncounterZone(BGSEncounterZone* a_zone);
-		bool                                            SetMotionType(MotionType a_motionType, bool a_allowActivate = true);
-		void                                            SetPosition(float a_x, float a_y, float a_z);
-		void                                            SetPosition(NiPoint3 a_pos);
+		bool                                                    ActivateRef(TESObjectREFR* a_activator, std::uint8_t a_arg2, TESBoundObject* a_object, std::int32_t a_count, bool a_defaultProcessingOnly);
+		ModelReferenceEffect*                                   ApplyArtObject(BGSArtObject* a_artObject, float a_duration = -1.0f, TESObjectREFR* a_facingRef = nullptr, bool a_faceTarget = false, bool a_attachToCamera = false, NiAVObject* a_attachNode = nullptr, bool a_interfaceEffect = false);
+		ShaderReferenceEffect*                                  ApplyEffectShader(TESEffectShader* a_effectShader, float a_duration = -1.0f, TESObjectREFR* a_facingRef = nullptr, bool a_faceTarget = false, bool a_attachToCamera = false, NiAVObject* a_attachNode = nullptr, bool a_interfaceEffect = false);
+		[[nodiscard]] bool                                      CanBeMoved();
+		ObjectRefHandle                                         CreateRefHandle();
+		void                                                    DoTrap(TrapData& a_data);
+		void                                                    DoTrap(TrapEntry* a_trap, TargetEntry* a_target);
+		void                                                    Enable(bool a_resetInventory);
+		[[nodiscard]] std::optional<RE::NiPoint3>               FindNearestVertex(const float a_minimum_offset = 0.f);
+		[[nodiscard]] NiAVObject*                               Get3D() const;
+		[[nodiscard]] NiAVObject*                               Get3D(bool a_firstPerson) const;
+		[[nodiscard]] TESNPC*                                   GetActorOwner();
+		[[nodiscard]] NiPoint3                                  GetAngle() const;
+		[[nodiscard]] float                                     GetAngleX() const;
+		[[nodiscard]] float                                     GetAngleY() const;
+		[[nodiscard]] float                                     GetAngleZ() const;
+		[[nodiscard]] float                                     GetBaseHeight() const;
+		[[nodiscard]] TESBoundObject*                           GetBaseObject();
+		[[nodiscard]] const TESBoundObject*                     GetBaseObject() const;
+		[[nodiscard]] const BSTSmartPointer<BipedAnim>&         GetBiped() const;
+		[[nodiscard]] const BSTSmartPointer<BipedAnim>&         GetBiped(bool a_firstPerson) const;
+		[[nodiscard]] std::uint16_t                             GetCalcLevel(bool a_adjustLevel) const;
+		[[nodiscard]] TESContainer*                             GetContainer() const;
+		[[nodiscard]] BGSLocation*                              GetCurrentLocation() const;
+		[[nodiscard]] const char*                               GetDisplayFullName();
+		[[nodiscard]] InventoryDropMap                          GetDroppedInventory();
+		[[nodiscard]] InventoryDropMap                          GetDroppedInventory(std::function<bool(TESBoundObject&)> a_filter);
+		[[nodiscard]] BGSLocation*                              GetEditorLocation() const;
+		[[nodiscard]] bool                                      GetEditorLocation(NiPoint3& a_outPos, NiPoint3& a_outRot, TESForm*& a_outWorldOrCell, TESObjectCELL* a_fallback);
+		[[nodiscard]] std::optional<double>                     GetEnchantmentCharge() const;
+		[[nodiscard]] TESFaction*                               GetFactionOwner();
+		[[nodiscard]] ObjectRefHandle                           GetHandle();
+		[[nodiscard]] float                                     GetHeadingAngle(const RE::NiPoint3& a_pos, bool a_abs);
+		[[nodiscard]] float                                     GetHeight() const;
+		[[nodiscard]] InventoryItemMap                          GetInventory();
+		[[nodiscard]] InventoryItemMap                          GetInventory(std::function<bool(TESBoundObject&)> a_filter, bool a_noInit = false);
+		[[nodiscard]] std::int32_t                              GetInventoryCount(bool a_noInit = false);
+		[[nodiscard]] InventoryCountMap                         GetInventoryCounts();
+		[[nodiscard]] InventoryCountMap                         GetInventoryCounts(std::function<bool(TESBoundObject&)> a_filter, bool a_noInit = false);
+		[[nodiscard]] InventoryChanges*                         GetInventoryChanges(bool a_noInit = false);
+		[[nodiscard]] TESObjectREFR*                            GetLinkedRef(BGSKeyword* a_keyword);
+		[[nodiscard]] REFR_LOCK*                                GetLock() const;
+		[[nodiscard]] LOCK_LEVEL                                GetLockLevel() const;
+		[[nodiscard]] const char*                               GetName() const;
+		[[nodiscard]] NiAVObject*                               GetNodeByName(const BSFixedString& a_nodeName);
+		[[nodiscard]] constexpr TESBoundObject*                 GetObjectReference() const noexcept { return data.objectReference; }
+		[[nodiscard]] TESForm*                                  GetOwner() const;
+		[[nodiscard]] constexpr TESObjectCELL*                  GetParentCell() const noexcept { return parentCell; }
+		[[nodiscard]] constexpr NiPoint3                        GetPosition() const noexcept { return data.location; }
+		[[nodiscard]] constexpr float                           GetPositionX() const noexcept { return data.location.x; }
+		[[nodiscard]] constexpr float                           GetPositionY() const noexcept { return data.location.y; }
+		[[nodiscard]] constexpr float                           GetPositionZ() const noexcept { return data.location.z; }
+		[[nodiscard]] float                                     GetScale() const;
+		[[nodiscard]] NiControllerSequence*                     GetSequence(stl::zstring a_name) const;
+		[[nodiscard]] std::uint32_t                             GetStealValue(const InventoryEntryData* a_entryData, std::uint32_t a_numItems, bool a_useMult) const;
+		void                                                    GetTransform(NiTransform& a_transform) const;
+		[[nodiscard]] float                                     GetWaterHeight() const;
+		[[nodiscard]] float                                     GetWeight() const;
+		[[nodiscard]] float                                     GetWeightInContainer();
+		[[nodiscard]] TESWorldSpace*                            GetWorldspace() const;
+		[[nodiscard]] bool                                      HasCollision() const;
+		[[nodiscard]] bool                                      HasContainer() const;
+		[[nodiscard]] bool                                      HasKeyword(const BGSKeyword* a_keyword) const;
+		[[nodiscard]] bool                                      HasKeywordInArray(const std::vector<BGSKeyword*>& a_keywords, bool a_matchAll) const;
+		[[nodiscard]] bool                                      HasKeywordInList(BGSListForm* a_keywordList, bool a_matchAll) const;
+		bool                                                    HasKeywordWithType(DEFAULT_OBJECT keywordType) const;
+		bool                                                    HasKeywordWithType(DefaultObjectID keywordType) const;
+		[[nodiscard]] bool                                      HasQuestObject() const;
+		void                                                    InitChildActivates(TESObjectREFR* a_actionRef);
+		bool                                                    InitInventoryIfRequired(bool a_ignoreContainerExtraData = false);
+		[[nodiscard]] bool                                      Is3DLoaded() const;
+		[[nodiscard]] bool                                      IsActivationBlocked() const;
+		bool                                                    IsAnimal() const;
+		[[nodiscard]] bool                                      IsAnOwner(const Actor* a_testOwner, bool a_useFaction, bool a_requiresOwner) const;
+		[[nodiscard]] bool                                      IsCrimeToActivate();
+		[[nodiscard]] bool                                      IsDisabled() const;
+		bool                                                    IsDragon() const;
+		[[nodiscard]] bool                                      IsEnchanted() const;
+		[[nodiscard]] bool                                      IsHorse() const;
+		bool                                                    IsHumanoid() const;
+		[[nodiscard]] bool                                      IsInitiallyDisabled() const;
+		[[nodiscard]] bool                                      IsInWater() const;
+		bool                                                    IsJewelry() const;
+		[[nodiscard]] bool                                      IsLocked() const;
+		[[nodiscard]] bool                                      IsMarkedForDeletion() const;
+		[[nodiscard]] bool                                      IsOffLimits();
+		[[nodiscard]] bool                                      IsPersistent() const;
+		[[nodiscard]] float                                     IsPointDeepUnderWater(float a_zPos, TESObjectCELL* a_cell) const;
+		[[nodiscard]] bool                                      IsPointSubmergedMoreThan(const NiPoint3& a_pos, TESObjectCELL* a_cell, float a_waterLevel) const;
+		void                                                    MoveTo(TESObjectREFR* a_target);
+		bool                                                    MoveToNearestNavmesh(const float a_minimum_offset = 0.f);
+		bool                                                    MoveToNode(TESObjectREFR* a_target, const BSFixedString& a_nodeName);
+		bool                                                    MoveToNode(TESObjectREFR* a_target, NiAVObject* a_node);
+		bool                                                    NameIncludes(std::string a_word);
+		NiPointer<TESObjectREFR>                                PlaceObjectAtMe(TESBoundObject* a_baseToPlace, bool a_forcePersist) const;
+		void                                                    PlayAnimation(stl::zstring a_from, stl::zstring a_to);
+		void                                                    PlayAnimation(NiControllerManager* a_manager, NiControllerSequence* a_toSeq, NiControllerSequence* a_fromSeq);
+		void                                                    SetActivationBlocked(bool a_blocked);
+		void                                                    SetCollision(bool a_enable);
+		bool                                                    SetDisplayName(const BSFixedString& a_name, bool a_force);
+		void                                                    SetEncounterZone(BGSEncounterZone* a_zone);
+		bool                                                    SetMotionType(MotionType a_motionType, bool a_allowActivate = true);
+		void                                                    SetPosition(float a_x, float a_y, float a_z);
+		void                                                    SetPosition(NiPoint3 a_pos);
 
 		struct REFERENCE_RUNTIME_DATA
 		{
-#define RUNTIME_DATA_CONTENT                        \
-			std::uint64_t unk88;        /* 88, 90 */ \
-			std::uint16_t refScale;     /* 90, 98 */ \
-			std::int8_t   modelState;   /* 92, 9A */ \
-			bool          preDestroyed; /* 93, 9B */ \
-			std::uint32_t pad94;        /* 94, 9C */
+#define REFERENCE_RUNTIME_DATA_CONTENT               \
+			std::uint64_t unk88;         /* 88, 90 */ \
+			std::uint16_t refScale;      /* 90, 98 */ \
+			std::int8_t   modelState;    /* 92, 9A */ \
+			bool          preDestroyed;  /* 93, 9B */ \
+			std::uint32_t pad94;         /* 94, 9C */
 
-			RUNTIME_DATA_CONTENT
+			REFERENCE_RUNTIME_DATA_CONTENT
 		};
 
 		[[nodiscard]] inline REFERENCE_RUNTIME_DATA& GetReferenceRuntimeData() noexcept
@@ -497,9 +493,7 @@ namespace RE
 		LOADED_REF_DATA* loadedData;  // 68
 		ExtraDataList    extraList;   // 70
 
-#if !defined(ENABLE_SKYRIM_AE)
-		RUNTIME_DATA_CONTENT
-#endif
+		REFERENCE_RUNTIME_DATA_CONTENT
 
 	private:
 		InventoryChanges* ForceInitInventoryChanges();
@@ -507,8 +501,5 @@ namespace RE
 		void              MoveTo_Impl(const ObjectRefHandle& a_targetHandle, TESObjectCELL* a_targetCell, TESWorldSpace* a_selfWorldSpace, const NiPoint3& a_position, const NiPoint3& a_rotation);
 		void              PlayAnimation_Impl(NiControllerManager* a_manager, NiControllerSequence* a_toSeq, NiControllerSequence* a_fromSeq, bool a_arg4 = false);
 	};
-#if !defined(ENABLE_SKYRIM_AE)
-	static_assert(sizeof(TESObjectREFR) == 0x98);
-#endif
 }
-#undef RUNTIME_DATA_CONTENT
+#undef REFERENCE_RUNTIME_DATA_CONTENT
