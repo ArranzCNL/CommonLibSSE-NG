@@ -2,6 +2,8 @@
 
 namespace RE
 {
+	class hkpConstraintMotor;
+
 	struct hkpConstraintAtom
 	{
 	public:
@@ -150,23 +152,23 @@ namespace RE
 
 	struct hkpAngMotorConstraintAtom : public hkpConstraintAtom
 	{
-		bool           enabled;                                  // 02
-		std::uint8_t   motorAxis;                                // 03
-		std::int16_t   initializedOffset;                        // 04
-		std::int16_t   previousTargetAngleOffset;                // 06
-		std::int16_t   correspondingAngLimitSolverResultOffset;  // 08
-		float          targetAngle;                              // 0C
-		std::uintptr_t motor;                                    // 10
+		bool                enabled;                                  // 02
+		std::uint8_t        motorAxis;                                // 03
+		std::int16_t        initializedOffset;                        // 04
+		std::int16_t        previousTargetAngleOffset;                // 06
+		std::int16_t        correspondingAngLimitSolverResultOffset;  // 08
+		float               targetAngle;                              // 0C
+		hkpConstraintMotor* motor;                                    // 10
 	};
 	static_assert(sizeof(hkpAngMotorConstraintAtom) == 0x18);
 
 	struct hkpRagdollMotorConstraintAtom : public hkpConstraintAtom
 	{
-		bool           enabled;                     // 02
-		std::int16_t   initializedOffset;           // 04
-		std::int16_t   previousTargetAnglesOffset;  // 06
-		hkMatrix3      target_bRca;                 // 10
-		std::uintptr_t motors[3];                   // 40
+		bool                enabled;                     // 02
+		std::int16_t        initializedOffset;           // 04
+		std::int16_t        previousTargetAnglesOffset;  // 06
+		hkMatrix3           target_bRca;                 // 10
+		hkpConstraintMotor* motors[3];                   // 40
 	};
 	static_assert(sizeof(hkpRagdollMotorConstraintAtom) == 0x60);
 }

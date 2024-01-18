@@ -1104,6 +1104,7 @@
     <ClInclude Include="..\..\include\RE\H\hkpConstraintData.h" />
     <ClInclude Include="..\..\include\RE\H\hkpConstraintInfo.h" />
     <ClInclude Include="..\..\include\RE\H\hkpConstraintInstance.h" />
+    <ClInclude Include="..\..\include\RE\H\hkpConstraintMotor.h" />
     <ClInclude Include="..\..\include\RE\H\hkpConstraintOwner.h" />
     <ClInclude Include="..\..\include\RE\H\hkpContactListener.h" />
     <ClInclude Include="..\..\include\RE\H\hkpContactPointEvent.h" />
@@ -1148,6 +1149,7 @@
     <ClInclude Include="..\..\include\RE\H\hkpSimulationIsland.h" />
     <ClInclude Include="..\..\include\RE\H\hkpSingleShapeContainer.h" />
     <ClInclude Include="..\..\include\RE\H\hkpSolverInfo.h" />
+    <ClInclude Include="..\..\include\RE\H\hkpSolverResults.h" />
     <ClInclude Include="..\..\include\RE\H\hkpSphereRepShape.h" />
     <ClInclude Include="..\..\include\RE\H\hkpSphereShape.h" />
     <ClInclude Include="..\..\include\RE\H\hkpTypedBroadPhaseHandle.h" />

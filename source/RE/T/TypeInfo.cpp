@@ -173,11 +173,11 @@ namespace RE
 			case RawType::kBool:
 				return "bool";
 			case RawType::kObject:
-				return GetTypeInfo()->name.c_str();
+				return GetTypeInfo() ? GetTypeInfo()->name.c_str() : "none";
 			case RawType::kNoneArray:
 				return "none";
 			case RawType::kObjectArray:
-				return std::string(GetTypeInfo()->name.c_str()) + "[]";
+				return GetTypeInfo() ? std::string(GetTypeInfo()->name.c_str()) + "[]" : "none";
 			case RawType::kStringArray:
 				return "string[]";
 			case RawType::kIntArray:

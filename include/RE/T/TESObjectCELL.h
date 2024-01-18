@@ -194,8 +194,8 @@ namespace RE
 		[[nodiscard]] bool IsParentForm() override;                                                              // 34 - { return true; }
 		[[nodiscard]] bool IsFormTypeChild(FormType a_type) override;                                            // 36
 
-		void                                ForEachReference(std::function<BSContainer::ForEachResult(TESObjectREFR&)> a_callback) const;
-		void                                ForEachReferenceInRange(const NiPoint3& a_origin, float a_radius, std::function<BSContainer::ForEachResult(TESObjectREFR&)> a_callback) const;
+		void                                ForEachReference(std::function<BSContainer::ForEachResult(TESObjectREFR*)> a_callback) const;
+		void                                ForEachReferenceInRange(const NiPoint3& a_origin, float a_radius, std::function<BSContainer::ForEachResult(TESObjectREFR*)> a_callback) const;
 		[[nodiscard]] TESNPC*               GetActorOwner();
 		[[nodiscard]] bhkWorld*             GetbhkWorld() const;
 		[[nodiscard]] EXTERIOR_DATA*        GetCoordinates();
@@ -206,7 +206,7 @@ namespace RE
 		[[nodiscard]] TESForm*              GetOwner();
 		[[nodiscard]] float                 GetExteriorWaterHeight() const;
 		[[nodiscard]] TESRegionList*        GetRegionList(bool a_createIfMissing);
-		bool                                GetWaterHeight(const NiPoint3& a_pos, float& a_waterHeight);
+		[[nodiscard]] bool                  GetWaterHeight(const NiPoint3& a_pos, float& a_waterHeight);
 		[[nodiscard]] bool                  IsAttached() const;
 		[[nodiscard]] bool                  IsExteriorCell() const;
 		[[nodiscard]] bool                  IsInteriorCell() const;

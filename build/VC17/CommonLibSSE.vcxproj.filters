@@ -4047,6 +4047,9 @@
     <ClInclude Include="..\..\include\RE\H\hkpConstraintInstance.h">
       <Filter>include\RE\H</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\RE\H\hkpConstraintMotor.h">
+      <Filter>include\RE\H</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\RE\H\hkpConstraintOwner.h">
       <Filter>include\RE\H</Filter>
     </ClInclude>
@@ -4177,6 +4180,9 @@
       <Filter>include\RE\H</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\RE\H\hkpSolverInfo.h">
+      <Filter>include\RE\H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\RE\H\hkpSolverResults.h">
       <Filter>include\RE\H</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\RE\H\hkpSphereRepShape.h">

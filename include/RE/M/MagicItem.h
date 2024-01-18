@@ -90,7 +90,7 @@ namespace RE
 		[[nodiscard]] virtual bool                     IsFood() const;                                               // 5D - { return false; }
 		[[nodiscard]] virtual bool                     GetNoAbsorb() const;                                          // 5E - { return false; }
 		[[nodiscard]] virtual bool                     GetNoDualCastModifications() const;                           // 5F - { return false; }
-		virtual bool                                   GetSkillUsageData(SkillUsageData& a_data) const;              // 60 - { return false; }
+		[[nodiscard]] virtual bool                     GetSkillUsageData(SkillUsageData& a_data) const;              // 60 - { return false; }
 		[[nodiscard]] virtual bool                     IsPoison() const;                                             // 61 - { return GetSpellType() == MagicSystem::SpellType::kPoison; }
 		[[nodiscard]] virtual bool                     IsMedicine() const;                                           // 62 - { return false; }
 		virtual void                                   AdjustCost(float& a_cost, Actor* a_actor) const;              // 63 - { return; }
@@ -119,6 +119,7 @@ namespace RE
 		[[nodiscard]] std::int32_t           GetLargestArea() const;
 		[[nodiscard]] std::uint32_t          GetLongestDuration() const;
 		[[nodiscard]] bool                   HasEffect(EffectArchetype a_archetype);
+		[[nodiscard]] bool                   IsHostile() const;
 		[[nodiscard]] bool                   IsPermanent() const;
 		void                                 Traverse(MagicItemTraversalFunctor& a_visitor) const;
 
