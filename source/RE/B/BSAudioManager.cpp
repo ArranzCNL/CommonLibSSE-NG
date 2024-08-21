@@ -12,7 +12,7 @@ namespace RE
 	BSAudioManager* BSAudioManager::GetSingleton()
 	{
 		using func_t = decltype(&BSAudioManager::GetSingleton);
-		REL::Relocation<func_t> func{ Offset::BSAudioManager::GetSingleton };
+		static REL::Relocation<func_t> func{ Offset::BSAudioManager::GetSingleton };
 		return func();
 	}
 
@@ -31,14 +31,14 @@ namespace RE
 	bool BSAudioManager::BuildSoundDataFromDescriptor(BSSoundHandle& a_soundHandle, BSISoundDescriptor* a_descriptor, std::uint32_t a_flags)
 	{
 		using func_t = decltype(&BSAudioManager::BuildSoundDataFromDescriptor);
-		REL::Relocation<func_t> func{ Offset::BSAudioManager::BuildSoundDataFromDescriptor };
+		static REL::Relocation<func_t> func{ Offset::BSAudioManager::BuildSoundDataFromDescriptor };
 		return func(this, a_soundHandle, a_descriptor, a_flags);
 	}
 
 	void BSAudioManager::BuildSoundDataFromEditorID(BSSoundHandle& a_soundHandle, const char* a_editorID, std::uint32_t a_flags)
 	{
 		using func_t = decltype(&BSAudioManager::BuildSoundDataFromEditorID);
-		REL::Relocation<func_t> func{ RELOCATION_ID(66403, 67665) };
+		static REL::Relocation<func_t> func{ RELOCATION_ID(66403, 67665) };
 		return func(this, a_soundHandle, a_editorID, a_flags);
 	}
 }

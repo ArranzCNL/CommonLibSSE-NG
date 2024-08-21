@@ -182,7 +182,7 @@ namespace RE
 		static void AddCompileIndex(FormID& a_id, TESFile* a_file)
 		{
 			using func_t = decltype(&TESForm::AddCompileIndex);
-			REL::Relocation<func_t> func{ RELOCATION_ID(14509, 14667) };
+			static REL::Relocation<func_t> func{ RELOCATION_ID(14509, 14667) };
 			return func(a_id, a_file);
 		}
 

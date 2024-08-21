@@ -13,28 +13,28 @@ namespace RE
 	void Inventory3DManager::UpdateItem3D(InventoryEntryData* a_objDesc)
 	{
 		using func_t = decltype(&Inventory3DManager::UpdateItem3D);
-		REL::Relocation<func_t> func{ RELOCATION_ID(50884, 51757) };
+		static REL::Relocation<func_t> func{ RELOCATION_ID(50884, 51757) };
 		return func(this, a_objDesc);
 	}
 
 	void Inventory3DManager::UpdateMagic3D(TESForm* a_form, std::uint32_t a_arg2)
 	{
 		using func_t = decltype(&Inventory3DManager::UpdateMagic3D);
-		REL::Relocation<func_t> func{ RELOCATION_ID(50885, 51758) };
+		static REL::Relocation<func_t> func{ RELOCATION_ID(50885, 51758) };
 		return func(this, a_form, a_arg2);
 	}
 
 	void Inventory3DManager::Clear3D()
 	{
 		using func_t = decltype(&Inventory3DManager::Clear3D);
-		REL::Relocation<func_t> func{ RELOCATION_ID(50886, 51759) };
+		static REL::Relocation<func_t> func{ RELOCATION_ID(50886, 51759) };
 		return func(this);
 	}
 
 	std::uint32_t Inventory3DManager::Render()
 	{
 		using func_t = decltype(&Inventory3DManager::Render);
-		REL::Relocation<func_t> func{ RELOCATION_ID(50882, 51755) };
+		static REL::Relocation<func_t> func{ RELOCATION_ID(50882, 51755) };
 		return func(this);
 	}
 }

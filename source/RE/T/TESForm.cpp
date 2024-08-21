@@ -41,7 +41,7 @@ namespace RE
 	float TESForm::GetWeight() const
 	{
 		using func_t = decltype(&TESForm::GetWeight);
-		REL::Relocation<func_t> func{ RELOCATION_ID(14809, 14988) };
+		static REL::Relocation<func_t> func{ RELOCATION_ID(14809, 14988) };
 		return func(this);
 	}
 
@@ -218,7 +218,7 @@ namespace RE
 	void TESForm::SetPlayerKnows(bool a_known)
 	{
 		using func_t = decltype(&TESForm::SetPlayerKnows);
-		REL::Relocation<func_t> func{ RELOCATION_ID(14482, 14639) };
+		static REL::Relocation<func_t> func{ RELOCATION_ID(14482, 14639) };
 		return func(this, a_known);
 	}
 }

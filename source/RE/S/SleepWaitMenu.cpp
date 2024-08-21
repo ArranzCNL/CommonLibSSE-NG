@@ -7,7 +7,7 @@ namespace RE
 	void SleepWaitMenu::OpenSleepWaitMenu(bool isSleep)
 	{
 		using func_t = decltype(&OpenSleepWaitMenu);
-		REL::Relocation<func_t> func{ RELOCATION_ID(51618, 52490) };
+		static REL::Relocation<func_t> func{ RELOCATION_ID(51618, 52490) };
 		return func(isSleep);
 	}
 }

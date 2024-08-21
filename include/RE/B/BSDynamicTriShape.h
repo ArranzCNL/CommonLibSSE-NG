@@ -49,7 +49,7 @@ namespace RE
 		BSDynamicTriShape* ctor()
 		{
 			using func_t = decltype(&BSDynamicTriShape::ctor);
-			REL::Relocation<func_t> func{ RELOCATION_ID(69564, 70948) };
+			static REL::Relocation<func_t> func{ RELOCATION_ID(69564, 70948) };
 			return func(this);
 		}
 
