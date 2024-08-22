@@ -17,6 +17,7 @@ namespace RE
 	public:
 		inline static constexpr auto RTTI = RTTI_bhkRigidBody;
 		inline static constexpr auto Ni_RTTI = NiRTTI_bhkRigidBody;
+		inline static constexpr auto VTABLE = VTABLE_bhkRigidBody;
 
 		~bhkRigidBody() override;  // 00
 
@@ -66,6 +67,7 @@ namespace RE
 	public:
 		inline static constexpr auto RTTI = RTTI_bhkRigidBodyT;
 		inline static constexpr auto Ni_RTTI = NiRTTI_bhkRigidBodyT;
+		inline static constexpr auto VTABLE = VTABLE_bhkRigidBodyT;
 
 		hkQuaternion rotation;     // 40
 		hkVector4    translation;  // 50

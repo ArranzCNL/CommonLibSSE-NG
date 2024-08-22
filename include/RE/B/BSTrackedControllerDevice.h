@@ -10,6 +10,7 @@ namespace RE
 	public:
 #if !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 		inline static constexpr auto RTTI = RTTI_BSTrackedControllerDevice;
+		inline static constexpr auto VTABLE = VTABLE_BSTrackedControllerDevice;
 #endif
 
 		~BSTrackedControllerDevice() override;

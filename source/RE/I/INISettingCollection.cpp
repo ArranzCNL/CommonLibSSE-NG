@@ -6,7 +6,7 @@ namespace RE
 {
 	INISettingCollection* INISettingCollection::GetSingleton()
 	{
-		REL::Relocation<INISettingCollection**> singleton{ Offset::INISettingCollection::Singleton };
+		static REL::Relocation<INISettingCollection**> singleton{ Offset::INISettingCollection::Singleton };
 		return *singleton;
 	}
 

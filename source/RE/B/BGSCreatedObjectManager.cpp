@@ -6,7 +6,7 @@ namespace RE
 {
 	BGSCreatedObjectManager* BGSCreatedObjectManager::GetSingleton()
 	{
-		REL::Relocation<BGSCreatedObjectManager**> singleton{ RELOCATION_ID(514172, 400320) };
+		static REL::Relocation<BGSCreatedObjectManager**> singleton{ RELOCATION_ID(514172, 400320) };
 		return *singleton;
 	}
 

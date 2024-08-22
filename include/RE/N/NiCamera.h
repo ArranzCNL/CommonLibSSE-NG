@@ -13,6 +13,7 @@ namespace RE
 	public:
 		inline static constexpr auto RTTI = RTTI_NiCamera;
 		inline static constexpr auto Ni_RTTI = NiRTTI_NiCamera;
+		inline static constexpr auto VTABLE = VTABLE_NiCamera;
 
 		struct RUNTIME_DATA
 		{
@@ -68,8 +69,8 @@ namespace RE
 		bool          IsEqual(NiObject* a_object) override;               // 1C
 #if !defined(ENABLE_SKYRIM_VR) || (!defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_VR))
 		// The following are virtual functions past the point where VR compatibility breaks.
-		void UpdateWorldBound() override;                     // 2F - { return; }
-		void UpdateWorldData(NiUpdateData* a_data) override;  // 30
+		void          UpdateWorldBound() override;                        // 2F - { return; }
+		void          UpdateWorldData(NiUpdateData* a_data) override;     // 30
 #endif
 
 		static bool BoundInFrustum(const NiBound& a_bound, NiCamera* a_camera);

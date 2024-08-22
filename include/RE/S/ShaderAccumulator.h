@@ -11,6 +11,7 @@ namespace RE
 		public:
 			inline static constexpr auto RTTI = RTTI_BSShaderAccumulator;
 			inline static constexpr auto Ni_RTTI = NiRTTI_BSShaderAccumulator;
+			inline static constexpr auto VTABLE = VTABLE_BSShaderAccumulator;
 
 			virtual ~BSShaderAccumulator() = default;
 			virtual void StartAccumulating(NiCamera const*) override;

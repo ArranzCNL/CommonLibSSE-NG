@@ -20,6 +20,7 @@ namespace RE
 	public:
 #if !defined(ENABLE_SKYRIM_AE) && !defined(ENABLE_SKYRIM_SE)
 		inline static constexpr auto RTTI = RTTI_WorldSpaceMenu;
+		inline static constexpr auto VTABLE = VTABLE_WorldSpaceMenu;
 #endif
 
 		~WorldSpaceMenu() override;  // 00

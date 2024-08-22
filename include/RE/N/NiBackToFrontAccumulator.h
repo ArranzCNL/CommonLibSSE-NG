@@ -8,6 +8,7 @@ namespace RE
 	public:
 		inline static constexpr auto RTTI = RTTI_NiBackToFrontAccumulator;
 		inline static constexpr auto Ni_RTTI = NiRTTI_NiBackToFrontAccumulator;
+		inline static constexpr auto VTABLE = VTABLE_NiBackToFrontAccumulator;
 
 		virtual ~NiBackToFrontAccumulator() = default;  //00
 

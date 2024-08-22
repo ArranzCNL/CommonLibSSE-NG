@@ -12,7 +12,7 @@ namespace RE
 {
 	ProcessLists* ProcessLists::GetSingleton()
 	{
-		REL::Relocation<ProcessLists**> singleton{ RELOCATION_ID(514167, 400315) };
+		static REL::Relocation<ProcessLists**> singleton{ RELOCATION_ID(514167, 400315) };
 		return *singleton;
 	}
 

@@ -6,7 +6,7 @@ namespace RE
 {
 	ActorEquipManager* ActorEquipManager::GetSingleton()
 	{
-		REL::Relocation<ActorEquipManager**> singleton{ Offset::ActorEquipManager::Singleton };
+		static REL::Relocation<ActorEquipManager**> singleton{ Offset::ActorEquipManager::Singleton };
 		return *singleton;
 	}
 

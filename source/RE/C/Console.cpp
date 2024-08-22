@@ -15,7 +15,7 @@ namespace RE
 
 	ObjectRefHandle Console::GetSelectedRefHandle()
 	{
-		REL::Relocation<ObjectRefHandle*> selectedRef{ RELOCATION_ID(519394, CHECK_RUNTIME(SKSE::RUNTIME_SSE_1_6_1130, 504099, 405935)) };
+		static REL::Relocation<ObjectRefHandle*> selectedRef{ RELOCATION_ID(519394, CHECK_RUNTIME(SKSE::RUNTIME_SSE_1_6_1130, 504099, 405935)) };
 		return *selectedRef;
 	}
 

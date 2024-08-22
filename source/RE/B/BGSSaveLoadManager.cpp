@@ -6,7 +6,7 @@ namespace RE
 {
 	BGSSaveLoadManager* BGSSaveLoadManager::GetSingleton()
 	{
-		REL::Relocation<BGSSaveLoadManager**> singleton{ Offset::BGSSaveLoadManager::Singleton };
+		static REL::Relocation<BGSSaveLoadManager**> singleton{ Offset::BGSSaveLoadManager::Singleton };
 		return *singleton;
 	}
 

@@ -14,6 +14,7 @@ namespace RE
 		{
 		public:
 			inline static constexpr auto RTTI = RTTI__BSResource__RegisterPrefix_char_const___char_const___BSResource__Location_______2___Traverser;
+			inline static constexpr auto VTABLE = VTABLE__BSResource__RegisterPrefix_char_const___char_const___BSResource__Location_______2___Traverser;
 
 			// override (LocationTraverser)
 			void ProcessName(const char* a_name, Location& a_location) override;  // 00

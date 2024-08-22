@@ -11,13 +11,14 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_ExtraSceneData;
+		inline static constexpr auto VTABLE = VTABLE_ExtraSceneData;
 		inline static constexpr auto EXTRADATATYPE = ExtraDataType::kSceneData;
 
 		~ExtraSceneData() override;  // 00
 
 		// override (BSExtraData)
 		ExtraDataType GetType() const override;                             // 01 - { return kSceneData; }
-		bool          IsNotEqual(const BSExtraData* a_rhs) const override;  // 02 - { return unk10 != a_rhs->unk10; }
+		bool          IsNotEqual(const BSExtraData* a_rhs) const override;  // 02 - { return scene != a_rhs->scene; }
 
 		// members
 		BGSScene* scene;  // 10

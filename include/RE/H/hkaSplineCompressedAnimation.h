@@ -8,6 +8,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_hkaSplineCompressedAnimation;
+		inline static constexpr auto VTABLE = VTABLE_hkaSplineCompressedAnimation;
 
 		// override (hkaAnimation)
 		void         SampleTracks(float a_time, hkQsTransform* a_transformTracksOut, float* a_floatTracksOut, hkaChunkCache* cache) const override;                                                                                     // 03

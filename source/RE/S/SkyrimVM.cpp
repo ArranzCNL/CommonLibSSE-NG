@@ -8,7 +8,7 @@ namespace RE
 {
 	SkyrimVM* SkyrimVM::GetSingleton()
 	{
-		REL::Relocation<SkyrimVM**> singleton{ Offset::SkyrimVM::Singleton };
+		static REL::Relocation<SkyrimVM**> singleton{ Offset::SkyrimVM::Singleton };
 		return *singleton;
 	}
 

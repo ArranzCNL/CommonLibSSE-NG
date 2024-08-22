@@ -6,7 +6,7 @@ namespace RE
 {
 	const NiRTTI* NiTimeController::GetRTTI() const
 	{
-		REL::Relocation<const NiRTTI*> rtti{ NiTimeController::Ni_RTTI };
+		static REL::Relocation<const NiRTTI*> rtti{ NiTimeController::Ni_RTTI };
 		return rtti.get();
 	}
 

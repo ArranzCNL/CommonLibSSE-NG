@@ -35,6 +35,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_TESForm;
+		inline static constexpr auto VTABLE = VTABLE_TESForm;
 		inline static constexpr auto FORMTYPE = FormType::None;
 
 		struct ChangeFlags
@@ -191,8 +192,8 @@ namespace RE
 				BSTHashMap<FormID, TESForm*>*,
 				std::reference_wrapper<BSReadWriteLock>>
 		{
-			REL::Relocation<BSTHashMap<FormID, TESForm*>**> allForms{ RELOCATION_ID(514351, 400507) };
-			REL::Relocation<BSReadWriteLock*>               allFormsMapLock{ RELOCATION_ID(514360, 400517) };
+			static REL::Relocation<BSTHashMap<FormID, TESForm*>**> allForms{ RELOCATION_ID(514351, 400507) };
+			static REL::Relocation<BSReadWriteLock*>               allFormsMapLock{ RELOCATION_ID(514360, 400517) };
 			return { *allForms, std::ref(*allFormsMapLock) };
 		}
 
@@ -201,8 +202,8 @@ namespace RE
 				BSTHashMap<BSFixedString, TESForm*>*,
 				std::reference_wrapper<BSReadWriteLock>>
 		{
-			REL::Relocation<BSTHashMap<BSFixedString, TESForm*>**> allFormsByEditorID{ RELOCATION_ID(514352, 400509) };
-			REL::Relocation<BSReadWriteLock*>                      allFormsEditorIDMapLock{ RELOCATION_ID(514361, 400518) };
+			static REL::Relocation<BSTHashMap<BSFixedString, TESForm*>**> allFormsByEditorID{ RELOCATION_ID(514352, 400509) };
+			static REL::Relocation<BSReadWriteLock*>                      allFormsEditorIDMapLock{ RELOCATION_ID(514361, 400518) };
 			return { *allFormsByEditorID, std::ref(*allFormsEditorIDMapLock) };
 		}
 

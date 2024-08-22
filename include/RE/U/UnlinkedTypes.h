@@ -99,6 +99,7 @@ namespace RE
 			public:
 				inline static constexpr auto RTTI = RTTI_BSScript____VMTypeResolveFunctor;
 				inline static constexpr auto VTABLE = VTABLE_BSScript____VMTypeResolveFunctor;
+
 				~VMTypeResolveFunctor() override;  // 00
 
 				bool ConvertVariableType(BSFixedString* a_typeAsString, TypeInfo& a_typeOut) override;  // 01

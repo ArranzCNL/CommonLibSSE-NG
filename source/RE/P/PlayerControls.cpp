@@ -14,7 +14,7 @@ namespace RE
 
 	PlayerControls* PlayerControls::GetSingleton()
 	{
-		REL::Relocation<PlayerControls**> singleton{ Offset::PlayerControls::Singleton };
+		static REL::Relocation<PlayerControls**> singleton{ Offset::PlayerControls::Singleton };
 		return *singleton;
 	}
 

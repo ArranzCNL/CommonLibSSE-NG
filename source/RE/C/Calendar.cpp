@@ -10,7 +10,7 @@ namespace RE
 {
 	Calendar* Calendar::GetSingleton()
 	{
-		REL::Relocation<Calendar**> singleton{ Offset::Calendar::Singleton };
+		static REL::Relocation<Calendar**> singleton{ Offset::Calendar::Singleton };
 		return *singleton;
 	}
 
@@ -26,7 +26,7 @@ namespace RE
 
 	std::string Calendar::GetDayName() const
 	{
-		auto     gmst = RE::GameSettingCollection::GetSingleton();
+		auto gmst = RE::GameSettingCollection::GetSingleton();
 		Setting* setting = nullptr;
 
 		if (gmst) {
@@ -90,7 +90,7 @@ namespace RE
 
 	float Calendar::GetHoursPerDay() const
 	{
-		REL::Relocation<float*> hours{ RELOCATION_ID(241610, 195681) };
+		static REL::Relocation<float*> hours{ RELOCATION_ID(241610, 195681) };
 		return *hours;
 	}
 

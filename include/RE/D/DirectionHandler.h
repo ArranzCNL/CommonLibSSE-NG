@@ -8,6 +8,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_DirectionHandler;
+		inline static constexpr auto VTABLE = VTABLE_DirectionHandler;
 
 		~DirectionHandler() override;  // 00
 

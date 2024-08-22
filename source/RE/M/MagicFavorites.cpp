@@ -6,7 +6,7 @@ namespace RE
 {
 	MagicFavorites* MagicFavorites::GetSingleton()
 	{
-		REL::Relocation<MagicFavorites**> singleton{ Offset::MagicFavorites::Singleton };
+		static REL::Relocation<MagicFavorites**> singleton{ Offset::MagicFavorites::Singleton };
 		return *singleton;
 	}
 

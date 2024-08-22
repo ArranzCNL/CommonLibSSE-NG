@@ -14,6 +14,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_Precipitation;
+		inline static constexpr auto VTABLE = VTABLE_Precipitation;
 
 		class OcclusionMapData
 		{
@@ -31,7 +32,7 @@ namespace RE
 
 		static NiPoint3 GetDirection()
 		{
-			REL::Relocation<NiPoint3*> precipDirection{ RELOCATION_ID(515509, 401648) };
+			static REL::Relocation<NiPoint3*> precipDirection{ RELOCATION_ID(515509, 401648) };
 			return *precipDirection;
 		}
 

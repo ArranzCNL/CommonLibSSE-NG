@@ -8,7 +8,8 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_NiDirectionalLight;
-		inline static auto           Ni_RTTI = NiRTTI_NiDirectionalLight;
+		inline static constexpr auto Ni_RTTI = NiRTTI_NiDirectionalLight;
+		inline static constexpr auto VTABLE = VTABLE_NiDirectionalLight;
 
 		struct DIRECTIONAL_LIGHT_RUNTIME_DATA
 		{

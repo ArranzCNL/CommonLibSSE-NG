@@ -9,6 +9,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_BSBatchRenderer;
+		inline static constexpr auto VTABLE = VTABLE_BSBatchRenderer;
 
 		virtual ~BSBatchRenderer();  // 00
 

@@ -33,7 +33,7 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_TESContainer;
-
+		inline static constexpr auto VTABLE = VTABLE_TESContainer;
 		~TESContainer() override;  // 00
 
 		// override (BaseFormComponent)

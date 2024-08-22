@@ -40,8 +40,8 @@ namespace RE
 	{
 	public:
 		inline static constexpr auto RTTI = RTTI_TESObjectCONT;
-		inline static constexpr auto FORMTYPE = FormType::Container;
 		inline static constexpr auto VTABLE = VTABLE_TESObjectCONT;
+		inline static constexpr auto FORMTYPE = FormType::Container;
 
 		struct RecordFlags
 		{

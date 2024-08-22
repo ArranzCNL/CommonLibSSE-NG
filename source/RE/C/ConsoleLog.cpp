@@ -8,7 +8,7 @@ namespace RE
 {
 	ConsoleLog* ConsoleLog::GetSingleton()
 	{
-		REL::Relocation<ConsoleLog**> singleton{ Offset::ConsoleLog::Singleton };
+		static REL::Relocation<ConsoleLog**> singleton{ Offset::ConsoleLog::Singleton };
 		return *singleton;
 	}
 

@@ -9,6 +9,7 @@ namespace RE
 	public:
 		using BipedObjectSlot = BIPED_MODEL::BipedObjectSlot;
 		inline static constexpr auto RTTI = RTTI___GetArmorInSlotFunctor;
+		inline static constexpr auto VTABLE = VTABLE___GetArmorInSlotFunctor;
 
 		virtual ~GetArmorInSlotFunctor();  // 00 
 
