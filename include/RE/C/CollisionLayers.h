@@ -58,6 +58,6 @@ namespace RE
 		kUnused5 = 51,
 		kUnused6 = 52,
 		kUnused7 = 53,
-		kUnused8 = 54  // Occurs at the start of "coc BleakFallsBarrow02"
+		kInvalid = 54  // Occurs at the start of "coc BleakFallsBarrow02"
 	};
 }
